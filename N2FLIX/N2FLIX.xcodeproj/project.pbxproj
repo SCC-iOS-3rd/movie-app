@@ -24,6 +24,7 @@
 		DE8223702BD632E700AFDDE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE8223732BD632E700AFDDE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE8223752BD632E700AFDDE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE82237E2BD65E8000AFDDE7 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 				DE8223702BD632E700AFDDE7 /* Assets.xcassets */,
 				DE8223722BD632E700AFDDE7 /* LaunchScreen.storyboard */,
 				DE8223752BD632E700AFDDE7 /* Info.plist */,
+				DE82237E2BD65E8000AFDDE7 /* Config.xcconfig */,
 			);
 			path = N2FLIX;
 			sourceTree = "<group>";
