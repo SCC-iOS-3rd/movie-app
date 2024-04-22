@@ -7,28 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE8223682BD632E600AFDDE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223672BD632E600AFDDE7 /* AppDelegate.swift */; };
-		DE82236A2BD632E600AFDDE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223692BD632E600AFDDE7 /* SceneDelegate.swift */; };
-		DE82236C2BD632E600AFDDE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE82236B2BD632E600AFDDE7 /* ViewController.swift */; };
-		DE82236F2BD632E600AFDDE7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DE82236E2BD632E600AFDDE7 /* Base */; };
-		DE8223712BD632E700AFDDE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8223702BD632E700AFDDE7 /* Assets.xcassets */; };
-		DE8223742BD632E700AFDDE7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DE8223732BD632E700AFDDE7 /* Base */; };
+		DE82238C2BD6703F00AFDDE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE82238B2BD6703F00AFDDE7 /* AppDelegate.swift */; };
+		DE82238E2BD6703F00AFDDE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE82238D2BD6703F00AFDDE7 /* SceneDelegate.swift */; };
+		DE8223902BD6703F00AFDDE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE82238F2BD6703F00AFDDE7 /* ViewController.swift */; };
+		DE8223932BD6703F00AFDDE7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DE8223922BD6703F00AFDDE7 /* Base */; };
+		DE8223962BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE8223942BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld */; };
+		DE8223982BD6704000AFDDE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8223972BD6704000AFDDE7 /* Assets.xcassets */; };
+		DE82239B2BD6704000AFDDE7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DE82239A2BD6704000AFDDE7 /* Base */; };
+		DE8223A62BD6704100AFDDE7 /* N2FLIXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223A52BD6704100AFDDE7 /* N2FLIXTests.swift */; };
+		DE8223B02BD6704100AFDDE7 /* N2FLIXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223AF2BD6704100AFDDE7 /* N2FLIXUITests.swift */; };
+		DE8223B22BD6704100AFDDE7 /* N2FLIXUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223B12BD6704100AFDDE7 /* N2FLIXUITestsLaunchTests.swift */; };
+		DE8223BF2BD6709B00AFDDE7 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DE8223BE2BD6709B00AFDDE7 /* Config.xcconfig */; };
+		DE8223C02BD6709B00AFDDE7 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DE8223BE2BD6709B00AFDDE7 /* Config.xcconfig */; };
+		DE8223C52BD67D3800AFDDE7 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223C42BD67D3800AFDDE7 /* UserData.swift */; };
+		DE8223C72BD67D4800AFDDE7 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223C62BD67D4800AFDDE7 /* MovieData.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DE8223A22BD6704100AFDDE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE8223802BD6703F00AFDDE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE8223872BD6703F00AFDDE7;
+			remoteInfo = N2FLIX;
+		};
+		DE8223AC2BD6704100AFDDE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE8223802BD6703F00AFDDE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE8223872BD6703F00AFDDE7;
+			remoteInfo = N2FLIX;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		DE8223642BD632E600AFDDE7 /* N2FLIX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = N2FLIX.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE8223672BD632E600AFDDE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE8223692BD632E600AFDDE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE82236B2BD632E600AFDDE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DE82236E2BD632E600AFDDE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DE8223702BD632E700AFDDE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DE8223732BD632E700AFDDE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DE8223752BD632E700AFDDE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE82237E2BD65E8000AFDDE7 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		DE8223882BD6703F00AFDDE7 /* N2FLIX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = N2FLIX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE82238B2BD6703F00AFDDE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE82238D2BD6703F00AFDDE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DE82238F2BD6703F00AFDDE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE8223922BD6703F00AFDDE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE8223952BD6703F00AFDDE7 /* N2FLIX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = N2FLIX.xcdatamodel; sourceTree = "<group>"; };
+		DE8223972BD6704000AFDDE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE82239A2BD6704000AFDDE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE82239C2BD6704000AFDDE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8223A12BD6704100AFDDE7 /* N2FLIXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = N2FLIXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8223A52BD6704100AFDDE7 /* N2FLIXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N2FLIXTests.swift; sourceTree = "<group>"; };
+		DE8223AB2BD6704100AFDDE7 /* N2FLIXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = N2FLIXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8223AF2BD6704100AFDDE7 /* N2FLIXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N2FLIXUITests.swift; sourceTree = "<group>"; };
+		DE8223B12BD6704100AFDDE7 /* N2FLIXUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N2FLIXUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DE8223BE2BD6709B00AFDDE7 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		DE8223C42BD67D3800AFDDE7 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		DE8223C62BD67D4800AFDDE7 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DE8223612BD632E600AFDDE7 /* Frameworks */ = {
+		DE8223852BD6703F00AFDDE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE82239E2BD6704100AFDDE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8223A82BD6704100AFDDE7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,57 +85,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DE82235B2BD632E600AFDDE7 = {
+		DE82237F2BD6703F00AFDDE7 = {
 			isa = PBXGroup;
 			children = (
-				DE8223662BD632E600AFDDE7 /* N2FLIX */,
-				DE8223652BD632E600AFDDE7 /* Products */,
+				DE82238A2BD6703F00AFDDE7 /* N2FLIX */,
+				DE8223A42BD6704100AFDDE7 /* N2FLIXTests */,
+				DE8223AE2BD6704100AFDDE7 /* N2FLIXUITests */,
+				DE8223892BD6703F00AFDDE7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		DE8223652BD632E600AFDDE7 /* Products */ = {
+		DE8223892BD6703F00AFDDE7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE8223642BD632E600AFDDE7 /* N2FLIX.app */,
+				DE8223882BD6703F00AFDDE7 /* N2FLIX.app */,
+				DE8223A12BD6704100AFDDE7 /* N2FLIXTests.xctest */,
+				DE8223AB2BD6704100AFDDE7 /* N2FLIXUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DE8223662BD632E600AFDDE7 /* N2FLIX */ = {
+		DE82238A2BD6703F00AFDDE7 /* N2FLIX */ = {
 			isa = PBXGroup;
 			children = (
-				DE8223672BD632E600AFDDE7 /* AppDelegate.swift */,
-				DE8223692BD632E600AFDDE7 /* SceneDelegate.swift */,
-				DE82237D2BD6335300AFDDE7 /* Models */,
-				DE82237C2BD6334C00AFDDE7 /* Views */,
-				DE82237B2BD6334200AFDDE7 /* Controllers */,
-				DE8223702BD632E700AFDDE7 /* Assets.xcassets */,
-				DE8223722BD632E700AFDDE7 /* LaunchScreen.storyboard */,
-				DE8223752BD632E700AFDDE7 /* Info.plist */,
-				DE82237E2BD65E8000AFDDE7 /* Config.xcconfig */,
+				DE82238B2BD6703F00AFDDE7 /* AppDelegate.swift */,
+				DE82238D2BD6703F00AFDDE7 /* SceneDelegate.swift */,
+				DE8223C32BD67D0D00AFDDE7 /* Models */,
+				DE8223C22BD67D0800AFDDE7 /* Views */,
+				DE8223C12BD67CFE00AFDDE7 /* Controllers */,
+				DE8223972BD6704000AFDDE7 /* Assets.xcassets */,
+				DE8223992BD6704000AFDDE7 /* LaunchScreen.storyboard */,
+				DE82239C2BD6704000AFDDE7 /* Info.plist */,
+				DE8223942BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld */,
+				DE8223BE2BD6709B00AFDDE7 /* Config.xcconfig */,
 			);
 			path = N2FLIX;
 			sourceTree = "<group>";
 		};
-		DE82237B2BD6334200AFDDE7 /* Controllers */ = {
+		DE8223A42BD6704100AFDDE7 /* N2FLIXTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE82236B2BD632E600AFDDE7 /* ViewController.swift */,
+				DE8223A52BD6704100AFDDE7 /* N2FLIXTests.swift */,
+			);
+			path = N2FLIXTests;
+			sourceTree = "<group>";
+		};
+		DE8223AE2BD6704100AFDDE7 /* N2FLIXUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE8223AF2BD6704100AFDDE7 /* N2FLIXUITests.swift */,
+				DE8223B12BD6704100AFDDE7 /* N2FLIXUITestsLaunchTests.swift */,
+			);
+			path = N2FLIXUITests;
+			sourceTree = "<group>";
+		};
+		DE8223C12BD67CFE00AFDDE7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE82238F2BD6703F00AFDDE7 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		DE82237C2BD6334C00AFDDE7 /* Views */ = {
+		DE8223C22BD67D0800AFDDE7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DE82236D2BD632E600AFDDE7 /* Main.storyboard */,
+				DE8223912BD6703F00AFDDE7 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		DE82237D2BD6335300AFDDE7 /* Models */ = {
+		DE8223C32BD67D0D00AFDDE7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DE8223C42BD67D3800AFDDE7 /* UserData.swift */,
+				DE8223C62BD67D4800AFDDE7 /* MovieData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,13 +167,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DE8223632BD632E600AFDDE7 /* N2FLIX */ = {
+		DE8223872BD6703F00AFDDE7 /* N2FLIX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DE8223782BD632E700AFDDE7 /* Build configuration list for PBXNativeTarget "N2FLIX" */;
+			buildConfigurationList = DE8223B52BD6704100AFDDE7 /* Build configuration list for PBXNativeTarget "N2FLIX" */;
 			buildPhases = (
-				DE8223602BD632E600AFDDE7 /* Sources */,
-				DE8223612BD632E600AFDDE7 /* Frameworks */,
-				DE8223622BD632E600AFDDE7 /* Resources */,
+				DE8223842BD6703F00AFDDE7 /* Sources */,
+				DE8223852BD6703F00AFDDE7 /* Frameworks */,
+				DE8223862BD6703F00AFDDE7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -110,25 +181,69 @@
 			);
 			name = N2FLIX;
 			productName = N2FLIX;
-			productReference = DE8223642BD632E600AFDDE7 /* N2FLIX.app */;
+			productReference = DE8223882BD6703F00AFDDE7 /* N2FLIX.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DE8223A02BD6704100AFDDE7 /* N2FLIXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8223B82BD6704100AFDDE7 /* Build configuration list for PBXNativeTarget "N2FLIXTests" */;
+			buildPhases = (
+				DE82239D2BD6704100AFDDE7 /* Sources */,
+				DE82239E2BD6704100AFDDE7 /* Frameworks */,
+				DE82239F2BD6704100AFDDE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE8223A32BD6704100AFDDE7 /* PBXTargetDependency */,
+			);
+			name = N2FLIXTests;
+			productName = N2FLIXTests;
+			productReference = DE8223A12BD6704100AFDDE7 /* N2FLIXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE8223AA2BD6704100AFDDE7 /* N2FLIXUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8223BB2BD6704100AFDDE7 /* Build configuration list for PBXNativeTarget "N2FLIXUITests" */;
+			buildPhases = (
+				DE8223A72BD6704100AFDDE7 /* Sources */,
+				DE8223A82BD6704100AFDDE7 /* Frameworks */,
+				DE8223A92BD6704100AFDDE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE8223AD2BD6704100AFDDE7 /* PBXTargetDependency */,
+			);
+			name = N2FLIXUITests;
+			productName = N2FLIXUITests;
+			productReference = DE8223AB2BD6704100AFDDE7 /* N2FLIXUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DE82235C2BD632E600AFDDE7 /* Project object */ = {
+		DE8223802BD6703F00AFDDE7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					DE8223632BD632E600AFDDE7 = {
+					DE8223872BD6703F00AFDDE7 = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					DE8223A02BD6704100AFDDE7 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = DE8223872BD6703F00AFDDE7;
+					};
+					DE8223AA2BD6704100AFDDE7 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = DE8223872BD6703F00AFDDE7;
 					};
 				};
 			};
-			buildConfigurationList = DE82235F2BD632E600AFDDE7 /* Build configuration list for PBXProject "N2FLIX" */;
+			buildConfigurationList = DE8223832BD6703F00AFDDE7 /* Build configuration list for PBXProject "N2FLIX" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -136,55 +251,106 @@
 				en,
 				Base,
 			);
-			mainGroup = DE82235B2BD632E600AFDDE7;
-			productRefGroup = DE8223652BD632E600AFDDE7 /* Products */;
+			mainGroup = DE82237F2BD6703F00AFDDE7;
+			productRefGroup = DE8223892BD6703F00AFDDE7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DE8223632BD632E600AFDDE7 /* N2FLIX */,
+				DE8223872BD6703F00AFDDE7 /* N2FLIX */,
+				DE8223A02BD6704100AFDDE7 /* N2FLIXTests */,
+				DE8223AA2BD6704100AFDDE7 /* N2FLIXUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DE8223622BD632E600AFDDE7 /* Resources */ = {
+		DE8223862BD6703F00AFDDE7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE8223712BD632E700AFDDE7 /* Assets.xcassets in Resources */,
-				DE8223742BD632E700AFDDE7 /* Base in Resources */,
-				DE82236F2BD632E600AFDDE7 /* Base in Resources */,
+				DE8223BF2BD6709B00AFDDE7 /* Config.xcconfig in Resources */,
+				DE8223982BD6704000AFDDE7 /* Assets.xcassets in Resources */,
+				DE82239B2BD6704000AFDDE7 /* Base in Resources */,
+				DE8223932BD6703F00AFDDE7 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE82239F2BD6704100AFDDE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8223C02BD6709B00AFDDE7 /* Config.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8223A92BD6704100AFDDE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DE8223602BD632E600AFDDE7 /* Sources */ = {
+		DE8223842BD6703F00AFDDE7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE82236C2BD632E600AFDDE7 /* ViewController.swift in Sources */,
-				DE8223682BD632E600AFDDE7 /* AppDelegate.swift in Sources */,
-				DE82236A2BD632E600AFDDE7 /* SceneDelegate.swift in Sources */,
+				DE8223C72BD67D4800AFDDE7 /* MovieData.swift in Sources */,
+				DE8223902BD6703F00AFDDE7 /* ViewController.swift in Sources */,
+				DE82238C2BD6703F00AFDDE7 /* AppDelegate.swift in Sources */,
+				DE8223962BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld in Sources */,
+				DE8223C52BD67D3800AFDDE7 /* UserData.swift in Sources */,
+				DE82238E2BD6703F00AFDDE7 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE82239D2BD6704100AFDDE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8223A62BD6704100AFDDE7 /* N2FLIXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8223A72BD6704100AFDDE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8223B02BD6704100AFDDE7 /* N2FLIXUITests.swift in Sources */,
+				DE8223B22BD6704100AFDDE7 /* N2FLIXUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DE8223A32BD6704100AFDDE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE8223872BD6703F00AFDDE7 /* N2FLIX */;
+			targetProxy = DE8223A22BD6704100AFDDE7 /* PBXContainerItemProxy */;
+		};
+		DE8223AD2BD6704100AFDDE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE8223872BD6703F00AFDDE7 /* N2FLIX */;
+			targetProxy = DE8223AC2BD6704100AFDDE7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		DE82236D2BD632E600AFDDE7 /* Main.storyboard */ = {
+		DE8223912BD6703F00AFDDE7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DE82236E2BD632E600AFDDE7 /* Base */,
+				DE8223922BD6703F00AFDDE7 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		DE8223722BD632E700AFDDE7 /* LaunchScreen.storyboard */ = {
+		DE8223992BD6704000AFDDE7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DE8223732BD632E700AFDDE7 /* Base */,
+				DE82239A2BD6704000AFDDE7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -192,7 +358,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DE8223762BD632E700AFDDE7 /* Debug */ = {
+		DE8223B32BD6704100AFDDE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -255,7 +421,7 @@
 			};
 			name = Debug;
 		};
-		DE8223772BD632E700AFDDE7 /* Release */ = {
+		DE8223B42BD6704100AFDDE7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -311,7 +477,7 @@
 			};
 			name = Release;
 		};
-		DE8223792BD632E700AFDDE7 /* Debug */ = {
+		DE8223B62BD6704100AFDDE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -324,9 +490,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,17 +499,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.Chynmn.N2FLIX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		DE82237A2BD632E700AFDDE7 /* Release */ = {
+		DE8223B72BD6704100AFDDE7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -357,9 +518,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,38 +527,141 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.Chynmn.N2FLIX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE8223B92BD6704100AFDDE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 694BMG973X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.Chynmn.N2FLIXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/N2FLIX.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/N2FLIX";
+			};
+			name = Debug;
+		};
+		DE8223BA2BD6704100AFDDE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 694BMG973X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.Chynmn.N2FLIXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/N2FLIX.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/N2FLIX";
+			};
+			name = Release;
+		};
+		DE8223BC2BD6704100AFDDE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 694BMG973X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.Chynmn.N2FLIXUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = N2FLIX;
+			};
+			name = Debug;
+		};
+		DE8223BD2BD6704100AFDDE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 694BMG973X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.Chynmn.N2FLIXUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = N2FLIX;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DE82235F2BD632E600AFDDE7 /* Build configuration list for PBXProject "N2FLIX" */ = {
+		DE8223832BD6703F00AFDDE7 /* Build configuration list for PBXProject "N2FLIX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE8223762BD632E700AFDDE7 /* Debug */,
-				DE8223772BD632E700AFDDE7 /* Release */,
+				DE8223B32BD6704100AFDDE7 /* Debug */,
+				DE8223B42BD6704100AFDDE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DE8223782BD632E700AFDDE7 /* Build configuration list for PBXNativeTarget "N2FLIX" */ = {
+		DE8223B52BD6704100AFDDE7 /* Build configuration list for PBXNativeTarget "N2FLIX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE8223792BD632E700AFDDE7 /* Debug */,
-				DE82237A2BD632E700AFDDE7 /* Release */,
+				DE8223B62BD6704100AFDDE7 /* Debug */,
+				DE8223B72BD6704100AFDDE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8223B82BD6704100AFDDE7 /* Build configuration list for PBXNativeTarget "N2FLIXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8223B92BD6704100AFDDE7 /* Debug */,
+				DE8223BA2BD6704100AFDDE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8223BB2BD6704100AFDDE7 /* Build configuration list for PBXNativeTarget "N2FLIXUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8223BC2BD6704100AFDDE7 /* Debug */,
+				DE8223BD2BD6704100AFDDE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE8223942BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE8223952BD6703F00AFDDE7 /* N2FLIX.xcdatamodel */,
+			);
+			currentVersion = DE8223952BD6703F00AFDDE7 /* N2FLIX.xcdatamodel */;
+			path = N2FLIX.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = DE82235C2BD632E600AFDDE7 /* Project object */;
+	rootObject = DE8223802BD6703F00AFDDE7 /* Project object */;
 }
