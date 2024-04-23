@@ -76,7 +76,7 @@ class APIDatamanager {
                     } else {
                         do {
                             let movieDetail =  try JSONDecoder().decode(MovieDetailModel.self, from: data)
-                            print(movieDetail)
+//                            print(movieDetail)
                         } catch {
                             print("Decode Error: \(error)")
                         }

@@ -13,20 +13,17 @@ struct MovieDetailModel: Codable {
     let genres: [Genre]
     let id: Int
     let overview: String
-    let popularity: Double
     let posterPath, releaseDate: String
-    let revenue, runtime: Int
-    let status, tagline, title: String
+    let runtime: Int
+    let status, title: String
     let voteAverage: Double
-    let voteCount: Int
 
     enum CodingKeys: String, CodingKey {
-        case adult, genres, id, overview, popularity
+        case adult, genres, id, overview
         case posterPath = "poster_path"
         case releaseDate = "release_date"
-        case revenue, runtime, status, tagline, title
+        case runtime, status, title
         case voteAverage = "vote_average"
-        case voteCount = "vote_count"
     }
 }
 
