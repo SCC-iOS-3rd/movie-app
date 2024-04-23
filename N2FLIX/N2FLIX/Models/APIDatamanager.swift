@@ -47,7 +47,6 @@ class APIDatamanager {
         let categories: [String] = ["now_playing", "popular", "top_rated", "upcoming"]
         let baseUrl: String = search ? "https://api.themoviedb.org/3/search/movie" : "https://api.themoviedb.org/3/movie/\(keyWord)"
         if let url = URL(string: "\(baseUrl)") {
-            print(url)
             var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
             var queryItems: [URLQueryItem] = categories.contains(keyWord) != false ? [
                 URLQueryItem(name: "language", value: "ko-kr"),
@@ -79,7 +78,6 @@ class APIDatamanager {
                         do {
                             let Movies =  try JSONDecoder().decode(MovieData.self, from: data)
                             self.Movie = Movies.results
-                            print(self.Movie)
                         } catch {
                             print("Decode Error: \(error)")
                         }
@@ -88,7 +86,6 @@ class APIDatamanager {
                             do {
                                 let Movies =  try JSONDecoder().decode(MovieData.self, from: data)
                                 self.Movie = Movies.results
-                                print(self.Movie)
                             } catch {
                                 print("Decode Error: \(error)")
                             }
@@ -96,7 +93,6 @@ class APIDatamanager {
                             do {
                                 let movieDetail =  try JSONDecoder().decode(MovieDetailModel.self, from: data)
                                 self.movieDetailVC.movieDetailModel = movieDetail
-                                print(movieDetail)
                             } catch {
                                 print("Decode Error: \(error)")
                             }
