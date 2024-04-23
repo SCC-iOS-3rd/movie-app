@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53CB15992BD74A560065F157 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 53CB15982BD74A560065F157 /* Config.xcconfig */; };
+		A7BD73B02BD689680059402F /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7BD73AF2BD689680059402F /* Config.xcconfig */; };
+		A7C93BD22BD6B403005CDD19 /* APIDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD12BD6B403005CDD19 /* APIDatamanager.swift */; };
+		A7C93BD42BD748E3005CDD19 /* MovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */; };
+		A7C93BD62BD748F8005CDD19 /* MovieList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */; };
 		DE82238C2BD6703F00AFDDE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE82238B2BD6703F00AFDDE7 /* AppDelegate.swift */; };
 		DE82238E2BD6703F00AFDDE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE82238D2BD6703F00AFDDE7 /* SceneDelegate.swift */; };
 		DE8223902BD6703F00AFDDE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE82238F2BD6703F00AFDDE7 /* ViewController.swift */; };
@@ -40,7 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		53CB15982BD74A560065F157 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		A7BD73AF2BD689680059402F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		A7C93BD12BD6B403005CDD19 /* APIDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDatamanager.swift; sourceTree = "<group>"; };
+		A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListVC.swift; sourceTree = "<group>"; };
+		A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieList.storyboard; sourceTree = "<group>"; };
 		DE8223882BD6703F00AFDDE7 /* N2FLIX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = N2FLIX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE82238B2BD6703F00AFDDE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE82238D2BD6703F00AFDDE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +122,7 @@
 				DE8223992BD6704000AFDDE7 /* LaunchScreen.storyboard */,
 				DE82239C2BD6704000AFDDE7 /* Info.plist */,
 				DE8223942BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld */,
-				53CB15982BD74A560065F157 /* Config.xcconfig */,
+				A7BD73AF2BD689680059402F /* Config.xcconfig */,
 			);
 			path = N2FLIX;
 			sourceTree = "<group>";
@@ -142,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				DE82238F2BD6703F00AFDDE7 /* ViewController.swift */,
+				A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -150,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8223912BD6703F00AFDDE7 /* Main.storyboard */,
+				A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,8 +165,9 @@
 		DE8223C32BD67D0D00AFDDE7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DE8223C42BD67D3800AFDDE7 /* UserData.swift */,
 				DE8223C62BD67D4800AFDDE7 /* MovieData.swift */,
+				DE8223C42BD67D3800AFDDE7 /* UserData.swift */,
+				A7C93BD12BD6B403005CDD19 /* APIDatamanager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,8 +276,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53CB15992BD74A560065F157 /* Config.xcconfig in Resources */,
+				A7BD73B02BD689680059402F /* Config.xcconfig in Resources */,
 				DE8223982BD6704000AFDDE7 /* Assets.xcassets in Resources */,
+				A7C93BD62BD748F8005CDD19 /* MovieList.storyboard in Resources */,
 				DE82239B2BD6704000AFDDE7 /* Base in Resources */,
 				DE8223932BD6703F00AFDDE7 /* Base in Resources */,
 			);
@@ -296,7 +306,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8223C72BD67D4800AFDDE7 /* MovieData.swift in Sources */,
+				A7C93BD42BD748E3005CDD19 /* MovieListVC.swift in Sources */,
 				DE8223902BD6703F00AFDDE7 /* ViewController.swift in Sources */,
+				A7C93BD22BD6B403005CDD19 /* APIDatamanager.swift in Sources */,
 				DE82238C2BD6703F00AFDDE7 /* AppDelegate.swift in Sources */,
 				DE8223962BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld in Sources */,
 				DE8223C52BD67D3800AFDDE7 /* UserData.swift in Sources */,
@@ -477,7 +489,7 @@
 		};
 		DE8223B62BD6704100AFDDE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53CB15982BD74A560065F157 /* Config.xcconfig */;
+			baseConfigurationReference = A7BD73AF2BD689680059402F /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -511,7 +523,7 @@
 		};
 		DE8223B72BD6704100AFDDE7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53CB15982BD74A560065F157 /* Config.xcconfig */;
+			baseConfigurationReference = A7BD73AF2BD689680059402F /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
