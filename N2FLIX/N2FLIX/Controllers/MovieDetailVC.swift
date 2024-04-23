@@ -23,7 +23,7 @@ class MovieDetailVC: UIViewController {
     let releaseDateLabel = UILabel()
     let hdMarkImageView = UIImageView()
     let runTimeLabel = UILabel()
-
+    
     let genresLabel = UILabel()
     let starRatingLabel = UILabel() // 시간되면 별로 변환(StackVIew)
     let overViewText = UITextView()
@@ -167,7 +167,7 @@ extension MovieDetailVC {
             make.width.equalToSuperview().inset(5)
             make.height.equalTo(40)
         }
-    
+        
         releaseDateLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview()
@@ -227,4 +227,7 @@ extension MovieDetailVC {
         return nil
     }
     
+    @objc func pushMovieReservationPage() {
+//        self.present(movieDetailVC, animated: true)
+    }
 }

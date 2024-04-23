@@ -45,7 +45,7 @@ class APIDatamanager {
         if let url = URL(string: "https://api.themoviedb.org/3/movie/\(category)") {
             let categories: [String] = ["now_playing", "popular", "top_rated", "upcoming"]
             var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
-            let queryItems: [URLQueryItem] = categories.contains(category) ? [
+            let queryItems: [URLQueryItem] = categories.contains(category) != false ? [
               URLQueryItem(name: "language", value: "ko-kr"),
             ] : [URLQueryItem(name: "language", value: "ko-kr"),
                  URLQueryItem(name: "page", value: "1"),]
@@ -64,13 +64,24 @@ class APIDatamanager {
                 if let error = error {
                     print("\(error)")
                 }else if let data = data {
-                    do {
-                        let Movies = try JSONDecoder().decode(MovieData.self, from: data)
-                        self.Movie = Movies.results
-                        print(self.Movie)
-                    } catch {
-                        print("Decode Error: \(error)")
+                    // Mark: category가 now_playing 같은 카테고리인지, movie id 인지에 따라 다른 모델이용 디코딩
+                    if categories.contains(category) {
+                        do {
+                            let Movies =  try JSONDecoder().decode(MovieData.self, from: data)
+                            self.Movie = Movies.results
+                            print(self.Movie)
+                        } catch {
+                            print("Decode Error: \(error)")
+                        }
+                    } else {
+                        do {
+                            let movieDetail =  try JSONDecoder().decode(MovieDetailModel.self, from: data)
+                            print(movieDetail)
+                        } catch {
+                            print("Decode Error: \(error)")
+                        }
                     }
+                    
                 }
                 
             }
