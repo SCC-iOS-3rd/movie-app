@@ -43,11 +43,12 @@ class APIDatamanager {
     
     func readAPI(_ category : String){
         if let url = URL(string: "https://api.themoviedb.org/3/movie/\(category)") {
+            let categories: [String] = ["now_playing", "popular", "top_rated", "upcoming"]
             var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
-            let queryItems: [URLQueryItem] = [
+            let queryItems: [URLQueryItem] = categories.contains(category) ? [
               URLQueryItem(name: "language", value: "ko-kr"),
-              URLQueryItem(name: "page", value: "1"),
-            ]
+            ] : [URLQueryItem(name: "language", value: "ko-kr"),
+                 URLQueryItem(name: "page", value: "1"),]
             components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
 
             var request = URLRequest(url: components.url!)

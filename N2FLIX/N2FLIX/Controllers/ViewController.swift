@@ -11,9 +11,10 @@ class ViewController: UIViewController {
     var M = APIDatamanager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .black
         // Do any additional setup after loading the view.
         DispatchQueue.main.async {
-            self.M.readAPI("now_playing")
+            self.M.readAPI("823464")
         }
     }
 }
