@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53879EF72BD7F20B004B448F /* BookingHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */; };
+		53879EF92BD80BC6004B448F /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF82BD80BC6004B448F /* WishListViewController.swift */; };
+		53CB159B2BD754590065F157 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB159A2BD754590065F157 /* MyPageViewController.swift */; };
+		53CB159F2BD756D10065F157 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CB159E2BD756D10065F157 /* MyPage.storyboard */; };
 		A7BD73B02BD689680059402F /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7BD73AF2BD689680059402F /* Config.xcconfig */; };
 		A7C93BD22BD6B403005CDD19 /* APIDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD12BD6B403005CDD19 /* APIDatamanager.swift */; };
 		A7C93BD42BD748E3005CDD19 /* MovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */; };
@@ -43,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHistoryViewController.swift; sourceTree = "<group>"; };
+		53879EF82BD80BC6004B448F /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		53CB159A2BD754590065F157 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		53CB159E2BD756D10065F157 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		A7BD73AF2BD689680059402F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A7C93BD12BD6B403005CDD19 /* APIDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDatamanager.swift; sourceTree = "<group>"; };
 		A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListVC.swift; sourceTree = "<group>"; };
@@ -149,6 +157,9 @@
 			children = (
 				DE82238F2BD6703F00AFDDE7 /* ViewController.swift */,
 				A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */,
+				53CB159A2BD754590065F157 /* MyPageViewController.swift */,
+				53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */,
+				53879EF82BD80BC6004B448F /* WishListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +169,7 @@
 			children = (
 				DE8223912BD6703F00AFDDE7 /* Main.storyboard */,
 				A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */,
+				53CB159E2BD756D10065F157 /* MyPage.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7BD73B02BD689680059402F /* Config.xcconfig in Resources */,
+				53CB159F2BD756D10065F157 /* MyPage.storyboard in Resources */,
 				DE8223982BD6704000AFDDE7 /* Assets.xcassets in Resources */,
 				A7C93BD62BD748F8005CDD19 /* MovieList.storyboard in Resources */,
 				DE82239B2BD6704000AFDDE7 /* Base in Resources */,
@@ -306,11 +319,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8223C72BD67D4800AFDDE7 /* MovieData.swift in Sources */,
+				53CB159B2BD754590065F157 /* MyPageViewController.swift in Sources */,
 				A7C93BD42BD748E3005CDD19 /* MovieListVC.swift in Sources */,
 				DE8223902BD6703F00AFDDE7 /* ViewController.swift in Sources */,
 				A7C93BD22BD6B403005CDD19 /* APIDatamanager.swift in Sources */,
 				DE82238C2BD6703F00AFDDE7 /* AppDelegate.swift in Sources */,
 				DE8223962BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld in Sources */,
+				53879EF92BD80BC6004B448F /* WishListViewController.swift in Sources */,
+				53879EF72BD7F20B004B448F /* BookingHistoryViewController.swift in Sources */,
 				DE8223C52BD67D3800AFDDE7 /* UserData.swift in Sources */,
 				DE82238E2BD6703F00AFDDE7 /* SceneDelegate.swift in Sources */,
 			);

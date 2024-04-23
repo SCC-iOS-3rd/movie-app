@@ -13,6 +13,7 @@ struct MovieData : Codable {
             case results
         }
 }
+
 struct Result : Codable {
     let adult: Bool
     let genreIDS: [Int]
