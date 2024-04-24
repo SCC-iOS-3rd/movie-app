@@ -40,14 +40,16 @@ private var Token: String {
 
 class APIDatamanager {
     var Movie : [Result] = []
-    
-    func readAPI(_ category : String){
+
+    func readAPI(_ category : String, completion: @escaping ([Result]) -> Void){
         if let url = URL(string: "https://api.themoviedb.org/3/movie/\(category)") {
             var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
-            let queryItems: [URLQueryItem] = [
-              URLQueryItem(name: "language", value: "ko-kr"),
-              URLQueryItem(name: "page", value: "1"),
+            var queryItems: [URLQueryItem] = [
+              URLQueryItem(name: "language", value: "ko-kr")
             ]
+            if Int(category) != nil{
+                queryItems.append(URLQueryItem(name: "page", value: "1"))
+            }
             components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
 
             var request = URLRequest(url: components.url!)
@@ -65,13 +67,27 @@ class APIDatamanager {
                 }else if let data = data {
                     do {
                         let Movies = try JSONDecoder().decode(MovieData.self, from: data)
-                        self.Movie = Movies.results
-                        print(self.Movie)
+                        completion(Movies.results)
+                        
                     } catch {
                         print("Decode Error: \(error)")
                     }
                 }
                 
+            }
+            task.resume()
+        }
+        
+    }
+    func readImage(_ image : String,completion: @escaping (Data) -> Void){
+        if let url = URL(string: "https://image.tmdb.org/t/p/w500/\(image)") {
+            let task = URLSession.shared.dataTask(with: url) {
+                data, response, error in
+                if let error = error {
+                    print("\(error)")
+                }else if let data = data {
+                    completion(data)
+                }
             }
             task.resume()
         }
