@@ -20,7 +20,7 @@ class MyPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // 프로필 이미지뷰를 원형으로 만들기
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
         profileImageView.clipsToBounds = true
@@ -38,8 +38,8 @@ class MyPageViewController: UIViewController {
     func updateUserInfo() {
         // 사용자 정보 가져오기
         let userData = UserData.shared
-        let nickname = userData.nickname ?? "교양있는게스트"
-        let email = userData.email ?? "n2flix@gmail.com"
+        let nickname = userData.userNickName ?? "교양있는게스트"
+        let email = userData.userID ?? "n2flix@gmail.com"
         
         // UI 업데이트
         nicknameLabel.text = nickname
@@ -72,8 +72,8 @@ class MyPageViewController: UIViewController {
     // 닉네임 업데이트 메서드
     func updateNickname(_ newNickname: String) {
         // 사용자 정보 업데이트
-        let userData = UserData.shared
-        userData.nickname = newNickname
+        var userData = UserData.shared
+        userData.userNickName = newNickname
         
         // UI 업데이트
         nicknameLabel.text = newNickname
