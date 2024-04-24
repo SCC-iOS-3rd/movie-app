@@ -15,7 +15,7 @@ class SignUpView: UIView {
     // MARK: - email 입력 텍스트 뷰
     private lazy var emailTextFieldView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         view.layer.borderWidth = 2
         view.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         view.layer.cornerRadius = 5
@@ -273,6 +273,7 @@ extension SignUpView: UITextFieldDelegate {
         
         if textField == pwTextField {
             pwTextFieldView.backgroundColor = #colorLiteral(red: 0.2972877622, green: 0.2973434925, blue: 0.297280401, alpha: 1)
+            pwTextFieldView.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             pwInfoLabel.font = UIFont.systemFont(ofSize: 11)
             pwInfoLabelCenterYConstraint.constant = -13
         }
@@ -297,6 +298,7 @@ extension SignUpView: UITextFieldDelegate {
         if textField == pwTextField {
             pwTextFieldView.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
             if pwTextField.text == "" {
+                pwTextFieldView.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
                 pwInfoLabel.font = UIFont.systemFont(ofSize: 18)
                 pwInfoLabelCenterYConstraint.constant = 0
             }
