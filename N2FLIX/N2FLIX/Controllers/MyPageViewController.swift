@@ -48,7 +48,7 @@ class MyPageViewController: UIViewController {
     
     // 뒤로가기 버튼 설정
     func setupBackButton() {
-        let backButtonImage = UIImage(named: "chevronBack_icon")
+        let backButtonImage = UIImage(named: "Icon/chevronBack_icon")
         let backButton = UIButton(type: .custom)
         backButton.setImage(backButtonImage, for: .normal)
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
