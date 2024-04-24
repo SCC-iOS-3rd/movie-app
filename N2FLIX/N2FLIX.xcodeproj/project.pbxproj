@@ -17,10 +17,13 @@
 		DE8223A62BD6704100AFDDE7 /* N2FLIXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223A52BD6704100AFDDE7 /* N2FLIXTests.swift */; };
 		DE8223B02BD6704100AFDDE7 /* N2FLIXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223AF2BD6704100AFDDE7 /* N2FLIXUITests.swift */; };
 		DE8223B22BD6704100AFDDE7 /* N2FLIXUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223B12BD6704100AFDDE7 /* N2FLIXUITestsLaunchTests.swift */; };
-		DE8223BF2BD6709B00AFDDE7 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DE8223BE2BD6709B00AFDDE7 /* Config.xcconfig */; };
-		DE8223C02BD6709B00AFDDE7 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DE8223BE2BD6709B00AFDDE7 /* Config.xcconfig */; };
 		DE8223C52BD67D3800AFDDE7 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223C42BD67D3800AFDDE7 /* UserData.swift */; };
 		DE8223C72BD67D4800AFDDE7 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223C62BD67D4800AFDDE7 /* MovieData.swift */; };
+		F198763B2BD6896700F5F7E6 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F198763A2BD6896700F5F7E6 /* Config.xcconfig */; };
+		F198763D2BD691FC00F5F7E6 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F198763C2BD691FC00F5F7E6 /* SearchStoryboard.storyboard */; };
+		F19876412BD6926D00F5F7E6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19876402BD6926D00F5F7E6 /* SearchViewController.swift */; };
+		F198764B2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F198764A2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard */; };
+		F198764D2BD7788300F5F7E6 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198764C2BD7788300F5F7E6 /* UpcomingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +58,13 @@
 		DE8223AB2BD6704100AFDDE7 /* N2FLIXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = N2FLIXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8223AF2BD6704100AFDDE7 /* N2FLIXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N2FLIXUITests.swift; sourceTree = "<group>"; };
 		DE8223B12BD6704100AFDDE7 /* N2FLIXUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N2FLIXUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		DE8223BE2BD6709B00AFDDE7 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		DE8223C42BD67D3800AFDDE7 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		DE8223C62BD67D4800AFDDE7 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
+		F198763A2BD6896700F5F7E6 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		F198763C2BD691FC00F5F7E6 /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchStoryboard.storyboard; sourceTree = "<group>"; };
+		F19876402BD6926D00F5F7E6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F198764A2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpcomingStoryboard.storyboard; sourceTree = "<group>"; };
+		F198764C2BD7788300F5F7E6 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +124,7 @@
 				DE8223992BD6704000AFDDE7 /* LaunchScreen.storyboard */,
 				DE82239C2BD6704000AFDDE7 /* Info.plist */,
 				DE8223942BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld */,
-				DE8223BE2BD6709B00AFDDE7 /* Config.xcconfig */,
+				F198763A2BD6896700F5F7E6 /* Config.xcconfig */,
 			);
 			path = N2FLIX;
 			sourceTree = "<group>";
@@ -143,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				DE82238F2BD6703F00AFDDE7 /* ViewController.swift */,
+				F198764C2BD7788300F5F7E6 /* UpcomingViewController.swift */,
+				F19876402BD6926D00F5F7E6 /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				DE8223912BD6703F00AFDDE7 /* Main.storyboard */,
+				F198764A2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard */,
+				F198763C2BD691FC00F5F7E6 /* SearchStoryboard.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,8 +279,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE8223BF2BD6709B00AFDDE7 /* Config.xcconfig in Resources */,
+				F198763B2BD6896700F5F7E6 /* Config.xcconfig in Resources */,
+				F198763D2BD691FC00F5F7E6 /* SearchStoryboard.storyboard in Resources */,
 				DE8223982BD6704000AFDDE7 /* Assets.xcassets in Resources */,
+				F198764B2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard in Resources */,
 				DE82239B2BD6704000AFDDE7 /* Base in Resources */,
 				DE8223932BD6703F00AFDDE7 /* Base in Resources */,
 			);
@@ -279,7 +292,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE8223C02BD6709B00AFDDE7 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +310,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8223C72BD67D4800AFDDE7 /* MovieData.swift in Sources */,
+				F19876412BD6926D00F5F7E6 /* SearchViewController.swift in Sources */,
 				DE8223902BD6703F00AFDDE7 /* ViewController.swift in Sources */,
+				F198764D2BD7788300F5F7E6 /* UpcomingViewController.swift in Sources */,
 				DE82238C2BD6703F00AFDDE7 /* AppDelegate.swift in Sources */,
 				DE8223962BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld in Sources */,
 				DE8223C52BD67D3800AFDDE7 /* UserData.swift in Sources */,
@@ -410,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -467,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -479,6 +493,7 @@
 		};
 		DE8223B62BD6704100AFDDE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F198763A2BD6896700F5F7E6 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,8 +505,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,14 +515,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.Chynmn.N2FLIX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		DE8223B72BD6704100AFDDE7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F198763A2BD6896700F5F7E6 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -518,8 +538,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,9 +548,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.Chynmn.N2FLIX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
