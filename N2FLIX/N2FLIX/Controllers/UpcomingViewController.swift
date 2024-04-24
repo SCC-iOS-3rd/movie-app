@@ -9,24 +9,29 @@ import UIKit
 
 class UpcomingViewController: UIViewController, UICollectionViewDataSource {
     
+    private var results = [Result]()
+    
     @IBOutlet weak var upcomingCollectionView: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
-        }
+        return results.count
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UpcomingCell", for: indexPath) as? UpcomingCell else { return UICollectionViewCell() }
-        
+        let result = results[indexPath.item]
+        cell.movie = result
         return cell
     }
     //withIdentifier: "전달할 컨트롤러 세그웨이 이름"
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedMovie = movies[indexPath.item]
+        let selectedMovie = results[indexPath.item]
         performSegue(withIdentifier: "", sender: selectedMovie)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        upcomingCollectionView.dataSource = self
+        upcomingCollectionView.register(UINib(nibName: "UpcomingCell", bundle: .main),
+                                        forCellWithReuseIdentifier: "UpcomingCell")
     }
 }
 class UpcomingCell: UICollectionViewCell {
@@ -37,15 +42,32 @@ class UpcomingCell: UICollectionViewCell {
     @IBOutlet weak var upcomingDetailLabel: UILabel!
     
     
-    var movie: Movie? {
+    //이미지 URL을 이미지로 변환
+    final private func urlToImage(myUrl: String) -> UIImage? {
+        guard !myUrl.isEmpty, let url = URL(string: myUrl) else {
+            return nil
+        }
+        do {
+            let data = try Data(contentsOf: url)
+            return UIImage(data: data)
+        } catch {
+            print("\(error)")
+            return nil
+        }
+    }
+    //정보 가져오기
+    var movie: Result? {
         didSet {
             if let movie = movie {
-                self.upcomingImageView.image = movie.image
-                self.upcomingSubImageView.image = movie.image
+                let posterUrl = movie.posterPath
+                let image = urlToImage(myUrl: posterUrl)
+                if let image = image {
+                    self.upcomingImageView.image = image
+                    self.upcomingSubImageView.image = image
+                }
                 self.upcomingDateLabel.text = "개봉일: \(movie.releaseDate)"
                 self.upcomingTitleLabel.text = movie.title
                 self.upcomingDetailLabel.text = "\(movie.overview)"
-
             }
         }
     }
