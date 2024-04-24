@@ -17,8 +17,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .black
         // Do any additional setup after loading the view.
-        DispatchQueue.main.async {
-            self.M.readAPI(word: "킹콩", forSearch: true)
+        self.M.readAPI(word: "킹콩", forSearch: true) { movies in
+            DispatchQueue.main.async {
+                            print(movies)
+                self.movieDetailVC.id = movies.first?.id ?? 0
+                        }
+            
         }
         
         self.view.addSubview(pushMoviewDetailPageButton)
