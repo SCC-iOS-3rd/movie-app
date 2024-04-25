@@ -14,7 +14,20 @@ class BookingCell: UITableViewCell {
     @IBOutlet weak var screeningTimeLabel: UILabel!
     @IBOutlet weak var numberOfPeopleLabel: UILabel!
     @IBOutlet weak var paymentAmountLabel: UILabel!
-    
+    @IBOutlet weak var containerView: UIView! // 셀의 컨텐트 뷰
+      
+      override func layoutSubviews() {
+          super.layoutSubviews()
+          
+          // 셀의 컨텐트 뷰의 크기를 조정하여 간격을 설정
+          containerView.frame = CGRect(x: 10, y: 10, width: contentView.frame.width - 20, height: contentView.frame.height - 20)
+          containerView.layer.cornerRadius = 10
+          containerView.layer.shadowColor = UIColor.black.cgColor
+          containerView.layer.shadowOffset = CGSize(width: 0, height: 1)
+          containerView.layer.shadowOpacity = 0.2
+          containerView.layer.shadowRadius = 4
+      }
+      
     func configure(with booking: Booking) {
         movieTitleLabel.text = booking.movieTitle
         screeningTimeLabel.text = booking.screeningTime
@@ -29,10 +42,6 @@ class BookingHistoryViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        // 예매 내역을 표시할 셀을 등록
-//        let nib = UINib(nibName: "BookingCell", bundle: nil)
-//        tableView.register(nib, forCellReuseIdentifier: "BookingCell")
         
         // 예시로 예매 내역 데이터 추가
         let booking1 = Booking(movieTitle: "범죄도시4 (2024) THE ROUNDUP : PUNISHMENT", screeningTime: "2024-04-23", numberOfPeople: 2, paymentAmount: 24000)
@@ -66,7 +75,7 @@ class BookingHistoryViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        // 선택한 예매 내역에 대한 추가 동작을 구현할 수 있습니다.
+        // 선택한 예매 내역에 대한 추가 동작
     }
     
     // MARK: - Actions
@@ -97,8 +106,8 @@ class BookingHistoryViewController: UITableViewController {
             alertController.addAction(deleteAction)
             self?.present(alertController, animated: true, completion: nil)
         }
-        deleteAction.image = UIImage(systemName: "trash.fill")
-        deleteAction.backgroundColor = .systemRed
+        deleteAction.image = UIImage(named: "Icon/trash_icon")
+        deleteAction.backgroundColor =  UIColor(red: 0.09, green: 0.09, blue: 0.09, alpha: 0)
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
         return configuration
     }
