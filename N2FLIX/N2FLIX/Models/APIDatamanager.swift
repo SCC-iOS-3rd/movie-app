@@ -40,24 +40,15 @@ private var Token: String {
 
 class APIDatamanager {
     var Movie : [Result] = []
-    var movieDetailVC = MovieDetailVC()
-    
-    let url = URL(string: "https://api.themoviedb.org/3/search/movie")!
-    func readAPI(word keyWord: String, forSearch search: Bool){
-        let categories: [String] = ["now_playing", "popular", "top_rated", "upcoming"]
-        let baseUrl: String = search ? "https://api.themoviedb.org/3/search/movie" : "https://api.themoviedb.org/3/movie/\(keyWord)"
-        if let url = URL(string: "\(baseUrl)") {
+
+    func readAPI(_ category : String, completion: @escaping ([Result]) -> Void){
+        if let url = URL(string: "https://api.themoviedb.org/3/movie/\(category)") {
             var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
-            var queryItems: [URLQueryItem] = categories.contains(keyWord) != false ? [
-                URLQueryItem(name: "language", value: "ko-kr"),
-            ] : [URLQueryItem(name: "language", value: "ko-kr"),
-                 URLQueryItem(name: "page", value: "1"),]
-            // Mark: search == true일때 query의 value에 검색할 쿼리 입력.
-            if search {
-                queryItems = [URLQueryItem(name: "query", value: keyWord),
-                              URLQueryItem(name: "include_adult", value: "false"),
-                              URLQueryItem(name: "language", value: "en-US"),
-                              URLQueryItem(name: "page", value: "1")]
+            var queryItems: [URLQueryItem] = [
+              URLQueryItem(name: "language", value: "ko-kr")
+            ]
+            if Int(category) != nil{
+                queryItems.append(URLQueryItem(name: "page", value: "1"))
             }
             components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
             
@@ -74,30 +65,27 @@ class APIDatamanager {
                 if let error = error {
                     print("\(error)")
                 }else if let data = data {
-                    if search {
-                        do {
-                            let Movies =  try JSONDecoder().decode(MovieData.self, from: data)
-                            self.Movie = Movies.results
-                        } catch {
-                            print("Decode Error: \(error)")
-                        }
-                    } else {
-                        if categories.contains(keyWord) {
-                            do {
-                                let Movies =  try JSONDecoder().decode(MovieData.self, from: data)
-                                self.Movie = Movies.results
-                            } catch {
-                                print("Decode Error: \(error)")
-                            }
-                        } else {
-                            do {
-                                let movieDetail =  try JSONDecoder().decode(MovieDetailModel.self, from: data)
-                                self.movieDetailVC.movieDetailModel = movieDetail
-                            } catch {
-                                print("Decode Error: \(error)")
-                            }
-                        }
+                    do {
+                        let Movies = try JSONDecoder().decode(MovieData.self, from: data)
+                        completion(Movies.results)
+                        
+                    } catch {
+                        print("Decode Error: \(error)")
                     }
+                }
+            }
+            task.resume()
+        }
+        
+    }
+    func readImage(_ image : String,completion: @escaping (Data) -> Void){
+        if let url = URL(string: "https://image.tmdb.org/t/p/w500/\(image)") {
+            let task = URLSession.shared.dataTask(with: url) {
+                data, response, error in
+                if let error = error {
+                    print("\(error)")
+                }else if let data = data {
+                    completion(data)
                 }
             }
             task.resume()

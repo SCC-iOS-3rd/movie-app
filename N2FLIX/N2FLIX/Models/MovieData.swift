@@ -22,7 +22,6 @@ struct Result : Codable {
     let posterPath, releaseDate, title: String
     let voteAverage: Double
     let voteCount: Int
-    
     enum CodingKeys: String, CodingKey {
         case adult
         case genreIDS = "genre_ids"
@@ -36,4 +35,3 @@ struct Result : Codable {
         case voteCount = "vote_count"
     }
 }
-
