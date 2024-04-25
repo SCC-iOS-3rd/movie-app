@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,16 +12,18 @@
         <!--Search View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="Y6W-OH-hqX" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="Y6W-OH-hqX" customClass="SearchViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i1r-Ya-pCh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-Vp-ybb">
+                            <searchBar contentMode="redraw" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-Vp-ybb">
                                 <rect key="frame" x="58" y="59" width="327" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Fzu-Oz-srl"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -41,7 +43,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tG8-Iy-vMr" customClass="SearchCollectionViewCell" customModule="N2FLIX" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCollectionViewCell" id="tG8-Iy-vMr" customClass="SearchCollectionViewCell" customModule="N2FLIX" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="174"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="N3b-7g-iub">
@@ -102,11 +104,9 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RMp-vc-gmH"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RMp-vc-gmH" firstAttribute="trailing" secondItem="NPy-1O-fyd" secondAttribute="trailing" constant="227" id="1VE-vh-Ed6"/>
                             <constraint firstItem="RMp-vc-gmH" firstAttribute="bottom" secondItem="0GG-2d-Ble" secondAttribute="bottom" id="2h8-Uh-C5Y"/>
-                            <constraint firstItem="0GG-2d-Ble" firstAttribute="top" secondItem="iLP-Vp-ybb" secondAttribute="bottom" constant="50" id="64z-mo-UGy"/>
                             <constraint firstItem="iLP-Vp-ybb" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" id="82E-bR-a5h"/>
                             <constraint firstItem="iLP-Vp-ybb" firstAttribute="trailing" secondItem="0GG-2d-Ble" secondAttribute="trailing" id="C3S-mk-m9T"/>
                             <constraint firstItem="0GG-2d-Ble" firstAttribute="top" secondItem="NPy-1O-fyd" secondAttribute="bottom" constant="14" id="Gf9-Td-zgo"/>
@@ -115,18 +115,18 @@
                             <constraint firstItem="NPy-1O-fyd" firstAttribute="leading" secondItem="RMp-vc-gmH" secondAttribute="leading" constant="8" id="Wai-FA-plk"/>
                             <constraint firstItem="0GG-2d-Ble" firstAttribute="leading" secondItem="RMp-vc-gmH" secondAttribute="leading" constant="8" id="YVJ-Kw-zb2"/>
                             <constraint firstItem="RMp-vc-gmH" firstAttribute="bottom" secondItem="3AG-M0-bAk" secondAttribute="bottom" constant="715" id="aV0-ku-yFf"/>
+                            <constraint firstItem="0GG-2d-Ble" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" constant="94" id="cm4-ts-O4P"/>
                             <constraint firstItem="3AG-M0-bAk" firstAttribute="leading" secondItem="RMp-vc-gmH" secondAttribute="leading" constant="9" id="eSM-57-TcD"/>
                             <constraint firstItem="iLP-Vp-ybb" firstAttribute="leading" secondItem="0GG-2d-Ble" secondAttribute="leading" constant="50" id="fRl-35-QCO"/>
                             <constraint firstItem="NPy-1O-fyd" firstAttribute="top" secondItem="iLP-Vp-ybb" secondAttribute="bottom" constant="12" id="mP5-h5-3tG"/>
                             <constraint firstItem="NPy-1O-fyd" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" constant="56" id="tQD-5C-tG0"/>
-                            <constraint firstItem="0GG-2d-Ble" firstAttribute="top" secondItem="3AG-M0-bAk" secondAttribute="bottom" constant="50" id="uIa-Ln-hWt"/>
                             <constraint firstItem="3AG-M0-bAk" firstAttribute="top" secondItem="i1r-Ya-pCh" secondAttribute="topMargin" constant="3" id="w3A-7u-gfT"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="searchBar" destination="iLP-Vp-ybb" id="FV5-vM-SNL"/>
-                        <outlet property="searchCollectionView" destination="0GG-2d-Ble" id="yJy-5Z-KWc"/>
-                        <outlet property="searchPlaceholderLabel" destination="NPy-1O-fyd" id="i6Z-6F-x6n"/>
+                        <outlet property="searchBar" destination="iLP-Vp-ybb" id="Lg6-HD-Vb3"/>
+                        <outlet property="searchCollectionView" destination="0GG-2d-Ble" id="CKm-Bm-WoK"/>
+                        <outlet property="searchPlaceholderLabel" destination="NPy-1O-fyd" id="nlN-yP-kA5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
