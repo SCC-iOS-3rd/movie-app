@@ -109,7 +109,6 @@
                                 </state>
                                 <connections>
                                     <action selector="wishListButtonTapped:" destination="TAY-fc-Z0s" eventType="touchUpInside" id="FfE-z7-AKy"/>
-                                    <segue destination="YA2-qh-mG0" kind="show" id="LGg-PJ-Pzc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QXq-bQ-Gfx">
@@ -272,7 +271,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="WishListViewController" id="YA2-qh-mG0" customClass="WishListViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Y4Q-Qj-ReK">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
