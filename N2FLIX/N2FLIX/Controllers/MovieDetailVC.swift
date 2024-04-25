@@ -37,19 +37,15 @@ class MovieDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = #colorLiteral(red: 0.07450980392, green: 0.07450980392, blue: 0.07450980392, alpha: 1)
         setUI()
     }
     
-    @objc func pushMovieReservationPage() {
-        //        self.present(movieDetailVC, animated: true)
-    }
-
 }
 
 extension MovieDetailVC {
     final private func setUI() {
-        api.readDetailAPI(id: "\(id)") {movieDetail in
+        api.readAPI(word: String(self.id), forSearch: false, type: MovieDetailModel.self) {movieDetail in
             self.movieDetailModel.append(movieDetail)
             DispatchQueue.main.async {
                 self.setDetails()
@@ -64,7 +60,7 @@ extension MovieDetailVC {
                 self.movieImageView.image  = UIImage(data: data)
             }
         }
-       
+        
         
         movieImageView.contentMode = .scaleToFill
         hdMarkImageView.image = UIImage(named: "hdLogo")
@@ -223,5 +219,5 @@ extension MovieDetailVC {
             make.trailing.equalToSuperview().offset(-10)
         }
     }
-
+    
 }
