@@ -32,6 +32,7 @@
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
 					<string>MovieList</string>
+					<string>MyPage</string>
 					<string>SearchStoryboard</string>
 					<string>MovieList</string>
 				</dict>

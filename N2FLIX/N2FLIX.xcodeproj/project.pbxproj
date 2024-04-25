@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53879EF72BD7F20B004B448F /* BookingHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */; };
+		53879EF92BD80BC6004B448F /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF82BD80BC6004B448F /* WishListViewController.swift */; };
+		53CB159B2BD754590065F157 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB159A2BD754590065F157 /* MyPageViewController.swift */; };
+		53CB159F2BD756D10065F157 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CB159E2BD756D10065F157 /* MyPage.storyboard */; };
 		A7B99BC32BD8929000CBEFB3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B99BC22BD8929000CBEFB3 /* TabBarViewController.swift */; };
 		8E3567662BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */; };
 		8E3567672BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */; };
@@ -66,6 +70,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHistoryViewController.swift; sourceTree = "<group>"; };
+		53879EF82BD80BC6004B448F /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		53CB159A2BD754590065F157 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		53CB159E2BD756D10065F157 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		A7B99BC22BD8929000CBEFB3 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
 		8EEBB4D02BD7B8B6001C59C5 /* MovieReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReservationVC.swift; sourceTree = "<group>"; };
@@ -190,6 +198,9 @@
 				DE82238F2BD6703F00AFDDE7 /* ViewController.swift */,
 				DE8223CA2BD7940800AFDDE7 /* SignUpVC.swift */,
 				A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */,
+				53CB159A2BD754590065F157 /* MyPageViewController.swift */,
+				53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */,
+				53879EF82BD80BC6004B448F /* WishListViewController.swift */,
 				A7C93BD92BD764E1005CDD19 /* MovieCell.swift */,
 				A7C93BDD2BD77CE6005CDD19 /* MovieCollectionCell.swift */,
 				A7B99BC22BD8929000CBEFB3 /* TabBarViewController.swift */,
@@ -210,6 +221,7 @@
 				DE8223912BD6703F00AFDDE7 /* Main.storyboard */,
 				DE8223CC2BD7B50600AFDDE7 /* SignUpView.swift */,
 				A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */,
+				53CB159E2BD756D10065F157 /* MyPage.storyboard */,
 				A7C93BDA2BD764E1005CDD19 /* MovieCell.xib */,
 				A7C93BDE2BD77CE6005CDD19 /* MovieCollectionCell.xib */,
 				F198764A2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard */,
@@ -344,6 +356,7 @@
 			files = (
 				A7C93BDC2BD764E1005CDD19 /* MovieCell.xib in Resources */,
 				A7BD73B02BD689680059402F /* Config.xcconfig in Resources */,
+				53CB159F2BD756D10065F157 /* MyPage.storyboard in Resources */,
 				A7C93BD62BD748F8005CDD19 /* MovieList.storyboard in Resources */,
 				F198763D2BD691FC00F5F7E6 /* SearchStoryboard.storyboard in Resources */,
 				DE8223982BD6704000AFDDE7 /* Assets.xcassets in Resources */,
@@ -379,6 +392,7 @@
 			files = (
 				DE8223CB2BD7940800AFDDE7 /* SignUpVC.swift in Sources */,
 				DE8223C72BD67D4800AFDDE7 /* MovieData.swift in Sources */,
+				53CB159B2BD754590065F157 /* MyPageViewController.swift in Sources */,
 				A7C93BD42BD748E3005CDD19 /* MovieListVC.swift in Sources */,
 				A7B99BC32BD8929000CBEFB3 /* TabBarViewController.swift in Sources */,
 				A7C93BDB2BD764E1005CDD19 /* MovieCell.swift in Sources */,
@@ -393,6 +407,8 @@
 				A7C93BDF2BD77CE6005CDD19 /* MovieCollectionCell.swift in Sources */,
 				DE8223CD2BD7B50600AFDDE7 /* SignUpView.swift in Sources */,
 				DE8223962BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld in Sources */,
+				53879EF92BD80BC6004B448F /* WishListViewController.swift in Sources */,
+				53879EF72BD7F20B004B448F /* BookingHistoryViewController.swift in Sources */,
 				DE8223C52BD67D3800AFDDE7 /* UserData.swift in Sources */,
 				8EEBB4D52BD7C087001C59C5 /* MovieDetailModel.swift in Sources */,
 				DE82238E2BD6703F00AFDDE7 /* SceneDelegate.swift in Sources */,
