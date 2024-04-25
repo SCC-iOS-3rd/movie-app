@@ -9,6 +9,7 @@ import UIKit
 
 class UpcomingViewController: UIViewController, UICollectionViewDataSource {
     
+    let dataManager = APIDatamanager()
     private var results = [Result]()
     
     @IBOutlet weak var upcomingCollectionView: UICollectionView!
@@ -27,11 +28,20 @@ class UpcomingViewController: UIViewController, UICollectionViewDataSource {
         let selectedMovie = results[indexPath.item]
         performSegue(withIdentifier: "", sender: selectedMovie)
     }
+    //upcomin정보만 받아오기
+    func fetchUpcomingMovies() {
+        print("연결")
+        dataManager.readAPI(word: "upcoming", forSearch: true)
+        DispatchQueue.main.async {
+            self.results = self.dataManager.Movie
+            self.upcomingCollectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchUpcomingMovies()
         upcomingCollectionView.dataSource = self
-        upcomingCollectionView.register(UINib(nibName: "UpcomingCell", bundle: .main),
-                                        forCellWithReuseIdentifier: "UpcomingCell")
     }
 }
 class UpcomingCell: UICollectionViewCell {

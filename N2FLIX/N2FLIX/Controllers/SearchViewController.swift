@@ -10,12 +10,11 @@ import UIKit
 class SearchViewController: UIViewController, UICollectionViewDataSource {
     
     let apiDataManager = APIDatamanager()
-    private var results: [Result] = []
+    private var results = [Result]()
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchCollectionView: UICollectionView!
     @IBOutlet weak var searchPlaceholderLabel: UILabel!
-    
     let searchController = UISearchController(searchResultsController: nil)
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return results.count
@@ -30,11 +29,11 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchSearchedMovies(for: "")
+
         fetchRecommendedMovies()
         searchPlaceholderLabel.text = "이런 영화는 어때요?"
+        searchBar.delegate = self
         searchCollectionView.dataSource = self
-        searchCollectionView.register(UINib(nibName: "SearchCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "SearchCollectionViewCell")
     }
     
     //검색 결과 가져오기
@@ -48,7 +47,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
     
     //검색 전, 추천영화 뜨기
     func fetchRecommendedMovies() {
-        apiDataManager.readAPI(word: "upcoming", forSearch: false)
+        apiDataManager.readAPI(word: "popular", forSearch: false)
         DispatchQueue.main.async {
             self.results = self.apiDataManager.Movie
             self.searchCollectionView.reloadData()
@@ -57,6 +56,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
     
     //검색 결과 날짜 순으로 정렬
     func searchMovies(keyword: String) {
+        
     }
     
     //뒤로가기 버튼
@@ -64,7 +64,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
         navigationController?.popViewController(animated: true)
     }
 }
-//검색바에 관련한 동작
+
 //검색바에 관련한 동작
 extension SearchViewController: UISearchBarDelegate {
     private func dismissKeyboard() {
@@ -72,11 +72,10 @@ extension SearchViewController: UISearchBarDelegate {
     }
     func SearchButtontapped(_ searchBar: UISearchBar) {
         dismissKeyboard()
-        guard let searchTerm = searchBar.text, searchTerm.isEmpty else { return }
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
         fetchSearchedMovies(for: searchTerm)
-        //검색란 틀릭 시 문구 숨김
-        searchPlaceholderLabel.isHidden = true
     }
+    //검색시 문구 사라짐
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchPlaceholderLabel.isHidden = !searchText.isEmpty
     }
