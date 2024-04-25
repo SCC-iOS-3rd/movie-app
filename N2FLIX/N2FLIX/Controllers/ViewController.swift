@@ -5,7 +5,7 @@
 //  Created by /Chynmn/M1 pro—̳͟͞͞♡ on 4/22/24.
 //
 
-//import UIKit
+import UIKit
 //
 //class ViewController: UIViewController {
 //    var M = APIDatamanager()
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .black
         // Do any additional setup after loading the view.
-        self.M.readAPI(word: "top_rated", forSearch: false, type: [Result].self) { movies in
+        self.M.readAPI(word: "타이타닉", forSearch: true, type: [Result].self) { movies in
             DispatchQueue.main.async {
                 var myMovies : [Result] = []
                 myMovies = movies

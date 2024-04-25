@@ -31,9 +31,9 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>MyPage</string>
-					<string>SearchStoryboard</string>
-					<string>MovieList</string>
+					<string>Main</string>
+<!--					<string>SearchStoryboard</string>-->
+<!--					<string>MovieList</string>-->
 				</dict>
 			</array>
 		</dict>
