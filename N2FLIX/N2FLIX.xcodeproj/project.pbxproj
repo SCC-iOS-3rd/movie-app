@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		531C054B2BDBC38E00918403 /* WishListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531C054A2BDBC38E00918403 /* WishListCell.xib */; };
 		531C054D2BDBC59F00918403 /* WishListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C054C2BDBC59F00918403 /* WishListCollectionViewCell.swift */; };
+		531C054F2BDBDC9D00918403 /* WishListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531C054E2BDBDC9D00918403 /* WishListCell.xib */; };
 		53879EF72BD7F20B004B448F /* BookingHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */; };
 		53879EF92BD80BC6004B448F /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF82BD80BC6004B448F /* WishListViewController.swift */; };
 		53A299ED2BDB4CF5009C276F /* WishList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A299EC2BDB4CF5009C276F /* WishList.storyboard */; };
@@ -88,8 +88,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		531C054A2BDBC38E00918403 /* WishListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListCell.xib; sourceTree = "<group>"; };
 		531C054C2BDBC59F00918403 /* WishListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCollectionViewCell.swift; sourceTree = "<group>"; };
+		531C054E2BDBDC9D00918403 /* WishListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListCell.xib; sourceTree = "<group>"; };
 		53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHistoryViewController.swift; sourceTree = "<group>"; };
 		53879EF82BD80BC6004B448F /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		53A299EC2BDB4CF5009C276F /* WishList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WishList.storyboard; sourceTree = "<group>"; };
@@ -228,7 +228,6 @@
 				DE8223CA2BD7940800AFDDE7 /* SignUpVC.swift */,
 				A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */,
 				53CB159A2BD754590065F157 /* MyPageViewController.swift */,
-				53A299EE2BDB56E7009C276F /* ImageSelectionViewController.swift */,
 				53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */,
 				53879EF82BD80BC6004B448F /* WishListViewController.swift */,
 				531C054C2BDBC59F00918403 /* WishListCollectionViewCell.swift */,
@@ -251,7 +250,8 @@
 				A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */,
 				53CB159E2BD756D10065F157 /* MyPage.storyboard */,
 				53A299EC2BDB4CF5009C276F /* WishList.storyboard */,
-				531C054A2BDBC38E00918403 /* WishListCell.xib */,
+				531C054E2BDBDC9D00918403 /* WishListCell.xib */,
+				53A299EE2BDB56E7009C276F /* ImageSelectionViewController.swift */,
 				F198764A2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard */,
 				F198763C2BD691FC00F5F7E6 /* SearchStoryboard.storyboard */,
 				A7C93BDA2BD764E1005CDD19 /* MovieCell.xib */,
@@ -387,7 +387,7 @@
 				A7C93BDC2BD764E1005CDD19 /* MovieCell.xib in Resources */,
 				A7BD73B02BD689680059402F /* Config.xcconfig in Resources */,
 				53CB159F2BD756D10065F157 /* MyPage.storyboard in Resources */,
-				531C054B2BDBC38E00918403 /* WishListCell.xib in Resources */,
+				531C054F2BDBDC9D00918403 /* WishListCell.xib in Resources */,
 				F198763D2BD691FC00F5F7E6 /* SearchStoryboard.storyboard in Resources */,
 				DE8223982BD6704000AFDDE7 /* Assets.xcassets in Resources */,
 				A7C93BE02BD77CE6005CDD19 /* MovieCollectionCell.xib in Resources */,

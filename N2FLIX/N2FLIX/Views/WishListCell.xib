@@ -4,34 +4,25 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="131" y="-11"/>
-        </view>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aqS-50-dPO" customClass="WishListCollectionViewCell" customModule="N2FLIX" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="349"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="WishListCell" reuseIdentifier="WishListCell" id="d5M-8E-N7J" customClass="WishListCollectionViewCell" customModule="N2FLIX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="318" height="508"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4fw-kv-t3u">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="349"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="btU-b8-hjL">
+                <rect key="frame" x="0.0" y="0.0" width="318" height="508"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage_M" translatesAutoresizingMaskIntoConstraints="NO" id="zlD-6k-hqR">
-                        <rect key="frame" x="33" y="4" width="235" height="340"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage_M" translatesAutoresizingMaskIntoConstraints="NO" id="OAq-8a-afb">
+                        <rect key="frame" x="35" y="59" width="248" height="346"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GE-YI-sYO">
-                        <rect key="frame" x="52" y="162" width="196" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEP-lt-MAQ">
+                        <rect key="frame" x="56" y="425" width="206" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,18 +30,15 @@
                     </label>
                 </subviews>
             </collectionViewCellContentView>
-            <size key="customSize" width="300" height="349"/>
+            <size key="customSize" width="318" height="508"/>
             <connections>
-                <outlet property="movieImageView" destination="zlD-6k-hqR" id="mXn-n3-HF7"/>
-                <outlet property="movieTitleLabel" destination="5GE-YI-sYO" id="KO5-RT-Sdz"/>
+                <outlet property="movieImageView" destination="OAq-8a-afb" id="fq7-RI-YAU"/>
+                <outlet property="movieTitleLabel" destination="SEP-lt-MAQ" id="0TD-H0-QKd"/>
             </connections>
-            <point key="canvasLocation" x="-276.3358778625954" y="-84.154929577464799"/>
+            <point key="canvasLocation" x="248.85496183206106" y="-64.788732394366207"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="defaultImage_M" width="215" height="311"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

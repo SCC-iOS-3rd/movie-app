@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="apl-RD-WwD">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -13,39 +13,35 @@
         <scene sceneID="fg9-P3-RsN">
             <objects>
                 <viewController storyboardIdentifier="WishListViewController" title="WishListViewController" interactionActivityTrackingBaseName="WishListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="apl-RD-WwD" customClass="WishListViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JMX-z1-k4h" customClass="WishListCollectionViewCell" customModule="N2FLIX" customModuleProvider="target">
+                    <view key="view" contentMode="center" id="JMX-z1-k4h" customClass="WishListCollectionViewCell" customModule="N2FLIX" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oIm-IM-7NF">
-                                <rect key="frame" x="16" y="99" width="361" height="639"/>
-                                <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hdy-cs-oGE">
-                                    <size key="itemSize" width="128" height="128"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oIm-IM-7NF">
+                                <rect key="frame" x="0.0" y="102" width="393" height="716"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1VA-rm-SEg">
+                                    <size key="itemSize" width="280" height="680"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="forceLeftToRight" reuseIdentifier="WishListCell" id="GBJ-US-fwY" customClass="WishListCollectionViewCell" customModule="N2FLIX" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="WishListCell" id="GBJ-US-fwY" customClass="WishListCollectionViewCell" customModule="N2FLIX" customModuleProvider="target">
+                                        <rect key="frame" x="56.666666666666664" y="0.0" width="280" height="680"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JyH-dk-49G">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JyH-dk-49G">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="680"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="280" height="680"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g7n-jg-kSB"/>
-                        <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="g7n-jg-kSB" firstAttribute="trailing" secondItem="oIm-IM-7NF" secondAttribute="trailing" constant="16" id="1WY-oh-0gH"/>
-                            <constraint firstItem="g7n-jg-kSB" firstAttribute="bottom" secondItem="oIm-IM-7NF" secondAttribute="bottom" constant="80" id="d8p-8G-RB2"/>
-                            <constraint firstItem="oIm-IM-7NF" firstAttribute="top" secondItem="g7n-jg-kSB" secondAttribute="top" constant="40" id="ivc-xP-Tti"/>
-                            <constraint firstItem="oIm-IM-7NF" firstAttribute="leading" secondItem="g7n-jg-kSB" secondAttribute="leading" constant="16" id="rnf-yO-L7u"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="oIm-IM-7NF" id="Wdx-9o-bow"/>

@@ -22,60 +22,31 @@ class MyPageViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
     
+    // MARK: - Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // 프로필 이미지뷰를 원형으로 만들기
+        setupProfileImageView()
+        updateUserInfo() // 실제 사용자 정보를 가져와서 UI 업데이트
+        setupBackButton()
+        setupImageSelectionNotification()
+    }
+    
+    // MARK: - UI Setup Methods
+    
+    private func setupProfileImageView() {
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
         profileImageView.clipsToBounds = true
         profileImageView.layer.borderWidth = 2.0
-        profileImageView.layer.borderColor = UIColor(red: 71/255.0, green: 71/255.0, blue: 71/255.0, alpha: 1.0).cgColor
-        
-        // 사용자 정보 설정
-        updateUserInfo()
-        // 뒤로가기 버튼 추가
-        setupBackButton()
-        
-        // 이미지 선택 알림 등록
-        NotificationCenter.default.addObserver(self, selector: #selector(didSelectImage(_:)), name: .didSelectImage, object: nil)
-    }
-
-   
-    
-    // MARK: - UserData Update Methods
-    
-    // 사용자 정보 업데이트
-    func updateUserInfo() {
-        // 사용자 정보 가져오기
-        let userData = UserData.shared
-        let nickname = userData.userNickName ?? "교양있는게스트"
-        let email = userData.userID ?? "n2flix@gmail.com"
-        
-        // UI 업데이트
-        nicknameLabel.text = nickname
-        emailLabel.text = email
+        profileImageView.layer.borderColor = UIColor(white: 0.28, alpha: 1.0).cgColor
     }
     
-    // 닉네임 업데이트 메서드
-    func updateNickname(_ newNickname: String) {
-        // 사용자 정보 업데이트
-        var userData = UserData.shared
-        userData.userNickName = newNickname
-        
-        // UI 업데이트
-        nicknameLabel.text = newNickname
-    }
-    
-    // MARK: - Back Button Setup
-    
-    // 뒤로가기 버튼 설정
-    func setupBackButton() {
+    private func setupBackButton() {
         let backButtonImage = UIImage(named: "Icon/chevronBack_icon")
         let backButton = UIButton(type: .custom)
         backButton.setImage(backButtonImage, for: .normal)
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         backButton.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(backButton)
         
         NSLayoutConstraint.activate([
@@ -86,84 +57,97 @@ class MyPageViewController: UIViewController {
         ])
     }
     
+    // MARK: - Data Update Methods
+    
+    // !UserData 데이터
+    func updateUserInfo() {
+        let userData = UserData.shared
+        let nickname = userData.userNickName ?? "Guest"
+        let email = userData.userID ?? "n2flix@gmail.com"
+        nicknameLabel.text = nickname
+        emailLabel.text = email
+    }
+    
+    func updateNickname(_ newNickname: String) {
+        var userData = UserData.shared
+        userData.userNickName = newNickname
+        nicknameLabel.text = newNickname
+    }
+    
     // MARK: - Action Methods
     
-    // 뒤로가기 버튼 액션
     @objc func backButtonTapped() {
-        navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true) // 이전 화면으로 이동 (!페이지 연결)
     }
     
-    // 이미지 선택 알림 처리
     @objc func didSelectImage(_ notification: Notification) {
         guard let imageName = notification.object as? String else { return }
-        profileImageView.image = UIImage(named: imageName)
+        profileImageView.image = UIImage(named: imageName) // 선택된 이미지로 프로필 이미지 업데이트
     }
     
-    // 프로필 이미지 변경 버튼 액션
     @IBAction func profileButtonTapped(_ sender: UIButton) {
         let imageSelectionVC = ImageSelectionViewController()
-            imageSelectionVC.modalPresentationStyle = .overCurrentContext
-            imageSelectionVC.preferredContentSize = CGSize(width: 320, height: 320)
-            present(imageSelectionVC, animated: true, completion: nil)
-        }
-
-    // 닉네임 변경 버튼 액션
+         imageSelectionVC.modalPresentationStyle = .overCurrentContext
+         present(imageSelectionVC, animated: true) {
+         }
+     }
+    
     @IBAction func changeNicknameButtonTapped(_ sender: UIButton) {
         let alertController = UIAlertController(title: "닉네임 변경", message: "새로운 닉네임을 입력하세요.", preferredStyle: .alert)
-        
         alertController.addTextField { textField in
-            textField.placeholder = "새로운 닉네임"
-            
-            // 텍스트 필드의 내용이 변경될 때마다 호출되는 클로저
+            textField.placeholder = "같이 밥 먹고 싶은 개발자"
             textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         }
         
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         let saveAction = UIAlertAction(title: "저장", style: .default) { [weak self] action in
             guard let newNickname = alertController.textFields?.first?.text else { return }
-            // 닉네임 업데이트 메서드 호출
-            self?.updateNickname(newNickname)
+            
+            self?.updateNickname(newNickname) // 새로운 닉네임으로 업데이트
         }
-        saveAction.isEnabled = false // 초기에는 저장 버튼 비활성화
+        saveAction.isEnabled = false
         
         alertController.addAction(cancelAction)
         alertController.addAction(saveAction)
         present(alertController, animated: true, completion: nil)
     }
-
-    // 텍스트 필드의 내용이 변경될 때 호출되는 메서드
+    
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
-        // 입력된 텍스트가 있는지 확인하여 저장 버튼 활성화/비활성화
         guard let text = textField.text else { return }
-        let saveAction = (presentedViewController as? UIAlertController)?.actions.last // 저장 버튼
-        
-        saveAction?.isEnabled = !text.isEmpty // 텍스트가 비어 있지 않으면 버튼 활성화
+        let saveAction = (presentedViewController as? UIAlertController)?.actions.last
+        saveAction?.isEnabled = !text.isEmpty // 텍스트가 입력되면 저장 버튼 활성화
     }
     
-    // 예매한 영화내역 버튼 액션
     @IBAction func bookingHistoryButtonTapped(_ sender: UIButton) {
-            let bookingHistoryVC = BookingHistoryViewController()
-            navigationController?.pushViewController(bookingHistoryVC, animated: true)
-        }
-    
-    // 찜한 영화 리스트 버튼 액션
-    @IBAction func wishListButtonTapped(_ sender: UIButton) {
-        let wishListVC = UIStoryboard(name: "WishList", bundle: nil).instantiateViewController(withIdentifier: "WishListViewController") as? WishListViewController
-        present(wishListVC!, animated: true)
+        let bookingHistoryVC = BookingHistoryViewController()
+        navigationController?.pushViewController(bookingHistoryVC, animated: true)
     }
-
-    // 로그아웃 버튼 액션
+    
+    @IBAction func wishListButtonTapped(_ sender: UIButton) {
+        let wishListVC = UIStoryboard(name: "WishList", bundle: nil).instantiateViewController(withIdentifier: "WishListViewController") as! WishListViewController
+        wishListVC.modalPresentationStyle = .fullScreen
+        present(wishListVC, animated: false)
+    }
+    
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
-        // 로그아웃 알림창 띄우고 메인화면으로 이동
-        let alertController = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
-        let logoutAction = UIAlertAction(title: "로그아웃", style: .destructive) { _ in
-            UserData.shared.logout()
-            self.navigationController?.popToRootViewController(animated: true)
+        let alertController = UIAlertController(title: "로그아웃", message: "정말 떠나실건가요?", preferredStyle: .alert)
+        let logoutAction = UIAlertAction(title: "떠나기", style: .destructive) { _ in
+            UserData.shared.logout() // 사용자 로그아웃
+            self.navigationController?.popToRootViewController(animated: true) // 루트 뷰 컨트롤러로 이동 (!로그인 페이지와 연결)
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alertController.addAction(logoutAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Helper Methods
+    
+    // 프로필 이미지 데이터
+    private func setupImageSelectionNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didSelectImage(_:)), name: .didSelectImage, object: nil)
     }
 }
 
