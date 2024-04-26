@@ -23,7 +23,7 @@ struct Booking: Codable {
 }
 
 struct UserData {
-    static let shared = UserData()
+    static var shared = UserData()
     
     private let userDefaults = UserDefaults.standard
     

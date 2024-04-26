@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531C054B2BDBC38E00918403 /* WishListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531C054A2BDBC38E00918403 /* WishListCell.xib */; };
+		531C054D2BDBC59F00918403 /* WishListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C054C2BDBC59F00918403 /* WishListCollectionViewCell.swift */; };
 		53879EF72BD7F20B004B448F /* BookingHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */; };
 		53879EF92BD80BC6004B448F /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF82BD80BC6004B448F /* WishListViewController.swift */; };
 		53A299ED2BDB4CF5009C276F /* WishList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A299EC2BDB4CF5009C276F /* WishList.storyboard */; };
@@ -86,6 +88,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		531C054A2BDBC38E00918403 /* WishListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListCell.xib; sourceTree = "<group>"; };
+		531C054C2BDBC59F00918403 /* WishListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCollectionViewCell.swift; sourceTree = "<group>"; };
 		53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHistoryViewController.swift; sourceTree = "<group>"; };
 		53879EF82BD80BC6004B448F /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		53A299EC2BDB4CF5009C276F /* WishList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WishList.storyboard; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 				53A299EE2BDB56E7009C276F /* ImageSelectionViewController.swift */,
 				53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */,
 				53879EF82BD80BC6004B448F /* WishListViewController.swift */,
+				531C054C2BDBC59F00918403 /* WishListCollectionViewCell.swift */,
 				8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */,
 				8EEBB4D02BD7B8B6001C59C5 /* MovieReservationVC.swift */,
 				F198764C2BD7788300F5F7E6 /* UpcomingViewController.swift */,
@@ -246,6 +251,7 @@
 				A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */,
 				53CB159E2BD756D10065F157 /* MyPage.storyboard */,
 				53A299EC2BDB4CF5009C276F /* WishList.storyboard */,
+				531C054A2BDBC38E00918403 /* WishListCell.xib */,
 				F198764A2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard */,
 				F198763C2BD691FC00F5F7E6 /* SearchStoryboard.storyboard */,
 				A7C93BDA2BD764E1005CDD19 /* MovieCell.xib */,
@@ -381,6 +387,7 @@
 				A7C93BDC2BD764E1005CDD19 /* MovieCell.xib in Resources */,
 				A7BD73B02BD689680059402F /* Config.xcconfig in Resources */,
 				53CB159F2BD756D10065F157 /* MyPage.storyboard in Resources */,
+				531C054B2BDBC38E00918403 /* WishListCell.xib in Resources */,
 				F198763D2BD691FC00F5F7E6 /* SearchStoryboard.storyboard in Resources */,
 				DE8223982BD6704000AFDDE7 /* Assets.xcassets in Resources */,
 				A7C93BE02BD77CE6005CDD19 /* MovieCollectionCell.xib in Resources */,
@@ -418,6 +425,7 @@
 				A7C93BD42BD748E3005CDD19 /* MovieListVC.swift in Sources */,
 				A7B99BC32BD8929000CBEFB3 /* TabBarViewController.swift in Sources */,
 				A7C93BDB2BD764E1005CDD19 /* MovieCell.swift in Sources */,
+				531C054D2BDBC59F00918403 /* WishListCollectionViewCell.swift in Sources */,
 				DE8223902BD6703F00AFDDE7 /* ViewController.swift in Sources */,
 				A7C93BD22BD6B403005CDD19 /* APIDatamanager.swift in Sources */,
 				8EEBB4D12BD7B8B6001C59C5 /* MovieReservationVC.swift in Sources */,

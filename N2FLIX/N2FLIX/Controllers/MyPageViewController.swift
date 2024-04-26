@@ -148,10 +148,10 @@ class MyPageViewController: UIViewController {
     
     // 찜한 영화 리스트 버튼 액션
     @IBAction func wishListButtonTapped(_ sender: UIButton) {
-//                let wishListVC = WishListViewController()
-//                navigationController?.pushViewController(wishListVC, animated: true)
+        let wishListVC = UIStoryboard(name: "WishList", bundle: nil).instantiateViewController(withIdentifier: "WishListViewController") as? WishListViewController
+        present(wishListVC!, animated: true)
     }
-    
+
     // 로그아웃 버튼 액션
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
         // 로그아웃 알림창 띄우고 메인화면으로 이동

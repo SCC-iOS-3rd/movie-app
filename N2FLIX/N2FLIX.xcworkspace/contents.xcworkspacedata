@@ -4,4 +4,7 @@
    <FileRef
       location = "group:N2FLIX.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>
