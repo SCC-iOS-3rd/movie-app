@@ -11,7 +11,6 @@ import SnapKit
 
 class TicketingPageView: UIView {
     
-//    private let TicketingVC = TicketingPageVC()
     private let contentView = UIView()
     
     lazy var backButton: UIButton = {
@@ -26,7 +25,7 @@ class TicketingPageView: UIView {
         return imageView
     }()
     
-     let movieNameLabel: UILabel = {
+    let movieNameLabel: UILabel = {
         let label = UILabel()
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
@@ -38,8 +37,6 @@ class TicketingPageView: UIView {
     // Mark: "상영시간"라벨, 상영일, 상영시간
     let screeningTimeSV: UIStackView = {
         let stView = UIStackView()
-//        stView.backgroundColor = .brown
-        
         return stView
     }()
     
@@ -56,19 +53,10 @@ class TicketingPageView: UIView {
         datePicker.datePickerMode = .dateAndTime
         datePicker.locale = Locale(identifier: "ko-KR")
         datePicker.backgroundColor = .clear
-//        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-//        datePicker.setValue(false, forKeyPath: "highlightsToday")
-//        datePicker.minimumDate =
-//        datePicker.maximumDate
-//        datePicker.
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        datePicker.minimumDate = .now
         return datePicker
     }()
-    
-    
-    
-    
-    
-    
     
     // Mark: "인원"라벨, 실제 인원 라벨, 스테퍼
     let ticketsSV: UIStackView = {
@@ -96,9 +84,9 @@ class TicketingPageView: UIView {
         stepper.maximumValue = 8
         stepper.minimumValue = 0
         stepper.value = 0
-//        stepper.set
-//        stepper.setDecrementImage(stepper.decrementImage(for: .normal), for: .normal)
-//        stepper.setIncrementImage(UIImage(named: "increment_icon"), for: .normal)
+        //        stepper.set
+        //        stepper.setDecrementImage(stepper.decrementImage(for: .normal), for: .normal)
+        //        stepper.setIncrementImage(UIImage(named: "increment_icon"), for: .normal)
         return stepper
     }()
     
@@ -115,7 +103,7 @@ class TicketingPageView: UIView {
         return label
     }()
     
-     let priceLabel: UILabel = {
+    let priceLabel: UILabel = {
         let label = UILabel()
         label.text = "0"
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
@@ -123,7 +111,7 @@ class TicketingPageView: UIView {
         return label
     }()
     
-     private let currencyLabel: UILabel = {
+    private let currencyLabel: UILabel = {
         let label = UILabel()
         label.text = "원"
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
@@ -172,9 +160,9 @@ class TicketingPageView: UIView {
     }
     
     func addViews() {
-
+        
         [movieImageView, backButton, movieNameLabel, screeningTimeSV, ticketsSV, priceSV, payButton, cancelButton].forEach{
-           addSubview($0)
+            addSubview($0)
         }
         [screenTimeLabel, datePicker, ].forEach{
             screeningTimeSV.addSubview($0)
@@ -200,11 +188,11 @@ class TicketingPageView: UIView {
         cancelButtonConstraints()
     }
     
-//    private func contentViewConstraints() {
-//        contentView.snp.makeConstraints{ make in
-//            make.top.leading.bottom.trailing.equalToSuperview()
-//        }
-//    }
+    //    private func contentViewConstraints() {
+    //        contentView.snp.makeConstraints{ make in
+    //            make.top.leading.bottom.trailing.equalToSuperview()
+    //        }
+    //    }
     
     private func backButtonConstraints() {
         backButton.snp.makeConstraints { make in
@@ -263,7 +251,7 @@ class TicketingPageView: UIView {
             make.leading.equalToSuperview().offset(5)
             make.centerY.equalToSuperview()
         }
-     
+        
         ticketAmountLabel.snp.makeConstraints{ make in
             make.trailing.equalTo(ticketStepper.snp.leading).offset(-15)
             make.centerY.equalToSuperview()
@@ -317,6 +305,6 @@ class TicketingPageView: UIView {
     
     
     
-   
+    
     
 }

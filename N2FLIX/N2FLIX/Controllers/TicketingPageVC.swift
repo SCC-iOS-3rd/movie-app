@@ -13,7 +13,7 @@ class TicketingPageVC: UIViewController {
     let tickectingView = TicketingPageView()
     
     var ticketingModel = [MovieDetailModel]()
-
+    
     override func loadView() {
         view = tickectingView
     }
@@ -24,6 +24,7 @@ class TicketingPageVC: UIViewController {
         addButtonAction()
         fetchDataToView()
         stepperAddTarget()
+        setMaximumDate()
     }
     
 }
@@ -58,11 +59,8 @@ extension TicketingPageVC {
     }
     
     @objc func stepperTapped(_ sender: UIStepper) {
-        print(sender.value)
-        
-        let stepperNum = Int(sender.value)
         tickectingView.ticketAmountLabel.text = Int(sender.value).description
-
+        
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         
@@ -71,7 +69,15 @@ extension TicketingPageVC {
         }
     }
     
-    
+    func setMaximumDate() {
+        var components = DateComponents()
+        let calender = Calendar(identifier: .gregorian)
+        let currentDate = Date()
+        components.calendar = calender
+        components.day = +14
+        let maxDate = calender.date(byAdding: components, to: currentDate)
+        self.tickectingView.datePicker.maximumDate = maxDate
+    }
     
     @objc func goBackPage() {
         self.dismiss(animated: true, completion: nil)
