@@ -23,6 +23,7 @@ class TicketingPageVC: UIViewController {
         
         addButtonAction()
         fetchDataToView()
+        stepperAddTarget()
     }
     
 }
@@ -52,7 +53,31 @@ extension TicketingPageVC {
         tickectingView.cancelButton.addTarget(self, action: #selector(goBackPage), for: .touchUpInside)
     }
     
+    func stepperAddTarget() {
+        self.tickectingView.ticketStepper.addTarget(self , action: #selector(stepperTapped(_: )), for: .touchUpInside)
+    }
+    
+    @objc func stepperTapped(_ sender: UIStepper) {
+        print(sender.value)
+        
+        let stepperNum = Int(sender.value)
+        tickectingView.ticketAmountLabel.text = Int(sender.value).description
+
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        if let totalPrice = numberFormatter.string(for: Int(sender.value) * 14000 ) {
+            tickectingView.priceLabel.text = "\(totalPrice)"
+        }
+    }
+    
+    
+    
     @objc func goBackPage() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func DoTicketing() {
+        
     }
 }

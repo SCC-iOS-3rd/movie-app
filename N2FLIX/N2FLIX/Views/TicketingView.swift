@@ -28,7 +28,7 @@ class TicketingPageView: UIView {
     
      let movieNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "영화 제목 : 블라블라 블라블라"
+        label.text = ""
         label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         label.textColor = .white
         label.numberOfLines = 0
@@ -58,7 +58,7 @@ class TicketingPageView: UIView {
         datePicker.backgroundColor = .clear
 //        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
 //        datePicker.setValue(false, forKeyPath: "highlightsToday")
-//        datePicker.minimumDate
+//        datePicker.minimumDate =
 //        datePicker.maximumDate
 //        datePicker.
         return datePicker
@@ -85,7 +85,7 @@ class TicketingPageView: UIView {
     
     let ticketAmountLabel: UILabel = {
         let label = UILabel()
-        label.text = "1"
+        label.text = "0"
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         return label
@@ -96,6 +96,7 @@ class TicketingPageView: UIView {
         stepper.maximumValue = 8
         stepper.minimumValue = 0
         stepper.value = 0
+//        stepper.set
 //        stepper.setDecrementImage(stepper.decrementImage(for: .normal), for: .normal)
 //        stepper.setIncrementImage(UIImage(named: "increment_icon"), for: .normal)
         return stepper
@@ -116,7 +117,7 @@ class TicketingPageView: UIView {
     
      let priceLabel: UILabel = {
         let label = UILabel()
-        label.text = "14,000"
+        label.text = "0"
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         label.textColor = .white
         return label
@@ -150,8 +151,6 @@ class TicketingPageView: UIView {
         button.setTitleColor(.white, for: .normal)
         return button
     }()
-    
-    let imageUrl =  "https://image.tmdb.org/t/p/w500//hil2ResSCwP95JweZVJsZ5CbZdc.jpg"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -227,7 +226,7 @@ class TicketingPageView: UIView {
     
     private func movieNameLabelConstraints() {
         movieNameLabel.snp.makeConstraints{ make in
-            make.centerX.trailing.equalToSuperview()
+            make.trailing.equalToSuperview()
             make.top.equalTo(movieImageView.snp.bottom).offset(10)
             make.leading.equalToSuperview().offset(5)
             make.height.equalTo(70)

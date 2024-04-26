@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .black
         // Do any additional setup after loading the view.
-        self.M.readAPI(word: "타이타닉", forSearch: true, type: [Result].self) { movies in
+        self.M.readAPI(word: "쿵푸팬더", forSearch: true, type: [Result].self) { movies in
             DispatchQueue.main.async {
                 var myMovies : [Result] = []
                 myMovies = movies

@@ -55,7 +55,6 @@ extension MovieDetailVC {
             self.movieDetailModel.append(movieDetail)
             // Mark: 장르 이름 뽑아오기, 형태 지정
             movieDetail.genres.map{$0.name}.forEach{self.genreName += "\($0) "}
-            print(self.genreName)
             DispatchQueue.main.async {
                 self.setDetails()
                 self.setLayout()
@@ -117,11 +116,11 @@ extension MovieDetailVC {
         
         ticketingPageVC.modalPresentationStyle = .automatic
         // Mark: addWishListButton은 찜 해두었고, 안해두었고에 따라 생김새가 바뀌어야함.
-        if true {
+//        if true {
             addWishListButton.setTitle("찜하기", for: .normal)
-        } else {
-            addWishListButton.setTitle("찜하기 취소", for: .normal)
-        }
+//        } else {
+//            addWishListButton.setTitle("찜하기 취소", for: .normal)
+//        }
         addWishListButton.backgroundColor = #colorLiteral(red: 0.1827788651, green: 0.1880517602, blue: 0.1930513084, alpha: 1)
         addWishListButton.setTitleColor(.white, for: .normal)
         spacer.backgroundColor = .black
@@ -241,7 +240,7 @@ extension MovieDetailVC {
         
         backButton.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(10)
-            make.trailing.equalToSuperview().offset(-10)
+            make.leading.equalToSuperview().offset(10)
         }
     }
     
