@@ -10,7 +10,12 @@ import UIKit
 class SignUpView: UIView {
     
     // MARK: - N2FLIX logo image
-    
+    private lazy var logoImageView: UIImageView = {
+        let logoImageView = UIImageView()
+        logoImageView.image = UIImage(named: "LaunchScreen/Logo")
+//        logoImageView.addSubview()
+        return logoImageView
+    }()
     
     // MARK: - email 입력 텍스트 뷰
     private lazy var emailTextFieldView: UIView = {
@@ -150,24 +155,31 @@ class SignUpView: UIView {
     }
     
     func addViews() {
-        [stackView].forEach { addSubview($0) }
+        [stackView, logoImageView].forEach { addSubview($0) }
     }
     
     private func setConstraints() {
-//        LogoImageConstraints()
         emailInfoLabelConstraints()
         emailTextFieldContraints()
         pwInfoLabelConstraints()
         pwTextFieldConstraints()
         pwSecureButtonConstraints()
+        LogoImageConstraints()
         stackViewConstraints()
         
     }
     
     // MARK: - AutoLayout
-//    private func LogoImageConstraints() {
-//
-//    }
+    private func LogoImageConstraints() {
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+//            logoImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 80),
+            logoImageView.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -50),
+            logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            logoImageView.widthAnchor.constraint(equalToConstant: 177),
+            logoImageView.heightAnchor.constraint(equalToConstant: 151)
+        ])
+    }
     
     private func emailInfoLabelConstraints() {
         emailInfoLabel.translatesAutoresizingMaskIntoConstraints = false
