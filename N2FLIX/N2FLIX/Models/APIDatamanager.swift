@@ -52,11 +52,18 @@ class APIDatamanager {
                      URLQueryItem(name: "page", value: "1"),]
                 // Mark: search == true일때 query의 value에 검색할 쿼리 입력.
                 if search {
-                    queryItems = [URLQueryItem(name: "query", value: keyWord),
-                                  URLQueryItem(name: "include_adult", value: "false"),
-                                  URLQueryItem(name: "language", value: "en-US"),
-                                  URLQueryItem(name: "page", value: "1")]
+                    queryItems = [URLQueryItem(name: "query", value: keyWord)]
+                    if keyWord == "adults" {
+                        queryItems.append(URLQueryItem(name: "include_adult", value: "true"))
+                        queryItems.append(URLQueryItem(name: "language", value: "ko-kr"))
+                        queryItems.append(URLQueryItem(name: "page", value: "1"))
+                    }else {
+                        queryItems.append(URLQueryItem(name: "include_adult", value: "false"))
+                        queryItems.append(URLQueryItem(name: "language", value: "ko-kr"))
+                        queryItems.append(URLQueryItem(name: "page", value: "1"))
+                    }
                 }
+                
                 components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
                 var request = URLRequest(url: components.url!)
                 request.httpMethod = "GET"
@@ -99,7 +106,6 @@ class APIDatamanager {
                 task.resume()
             }
         }
-    
     func readImage(_ image : String,completion: @escaping (Data) -> Void){
         if let url = URL(string: "https://image.tmdb.org/t/p/w500/\(image)") {
             let task = URLSession.shared.dataTask(with: url) {

@@ -12,18 +12,17 @@
         <!--Search View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="Y6W-OH-hqX" customClass="SearchViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SearchViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i1r-Ya-pCh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-Vp-ybb">
-                                <rect key="frame" x="58" y="59" width="327" height="44"/>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-Vp-ybb">
+                                <rect key="frame" x="48" y="59" width="277" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Fzu-Oz-srl"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -36,28 +35,28 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0GG-2d-Ble">
                                 <rect key="frame" x="8" y="153" width="377" height="665"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3g5-Xp-ElP">
-                                    <size key="itemSize" width="105" height="174"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0zx-TU-1Lk">
+                                    <size key="itemSize" width="105" height="214"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="1" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCollectionViewCell" id="tG8-Iy-vMr" customClass="SearchCollectionViewCell" customModule="N2FLIX" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="105" height="174"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="214"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="N3b-7g-iub">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="174"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="105" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s4A-cc-5mw">
-                                                    <rect key="frame" x="5" y="3.0000000000000071" width="95" height="123.66666666666669"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s4A-cc-5mw">
+                                                    <rect key="frame" x="5" y="3" width="95" height="140"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="123.5" id="ha3-Hf-trf"/>
+                                                        <constraint firstAttribute="height" constant="140" id="ha3-Hf-trf"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화제목" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0P-fy-pWb">
-                                                    <rect key="frame" x="5" y="133.66666666666666" width="95" height="15.666666666666657"/>
+                                                    <rect key="frame" x="5" y="150" width="95" height="15.666666666666657"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -72,61 +71,90 @@
                                                 <constraint firstItem="s4A-cc-5mw" firstAttribute="leading" secondItem="N3b-7g-iub" secondAttribute="leading" constant="5" id="mhp-ZG-uYU"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="105" height="174"/>
+                                        <size key="customSize" width="105" height="214"/>
                                         <connections>
                                             <outlet property="searchImageView" destination="s4A-cc-5mw" id="svq-9k-DD2"/>
                                             <outlet property="searchTitleLabel" destination="q0P-fy-pWb" id="EzR-cq-uOl"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DkO-wI-r01">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="hzP-Sv-gcN"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="1C2-o6-sZI"/>
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AG-M0-bAk">
-                                <rect key="frame" x="9" y="62" width="39" height="41"/>
+                                <rect key="frame" x="7" y="62" width="39" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="39" id="e28-rG-rad"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button" image="backButton"/>
+                                <state key="normal" image="Icon/chevronBack_icon"/>
                                 <connections>
-                                    <action selector="tappedBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ao4-Ih-gXS"/>
+                                    <action selector="tappedBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KuP-lW-At0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색결과가 없습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U9-sK-RCO">
+                                <rect key="frame" x="114" y="260" width="155" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이런 영화는 어때요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPy-1O-fyd">
                                 <rect key="frame" x="8" y="115" width="158" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6o-gQ-F2M">
+                                <rect key="frame" x="332" y="63" width="54" height="35"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="검색"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Shq-2x-5Qg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RMp-vc-gmH"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="3U9-sK-RCO" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" constant="201" id="024-de-MId"/>
                             <constraint firstItem="RMp-vc-gmH" firstAttribute="trailing" secondItem="NPy-1O-fyd" secondAttribute="trailing" constant="227" id="1VE-vh-Ed6"/>
                             <constraint firstItem="RMp-vc-gmH" firstAttribute="bottom" secondItem="0GG-2d-Ble" secondAttribute="bottom" id="2h8-Uh-C5Y"/>
+                            <constraint firstItem="RMp-vc-gmH" firstAttribute="trailing" secondItem="3U9-sK-RCO" secondAttribute="trailing" constant="124" id="6pb-I1-ach"/>
                             <constraint firstItem="iLP-Vp-ybb" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" id="82E-bR-a5h"/>
-                            <constraint firstItem="iLP-Vp-ybb" firstAttribute="trailing" secondItem="0GG-2d-Ble" secondAttribute="trailing" id="C3S-mk-m9T"/>
+                            <constraint firstItem="RMp-vc-gmH" firstAttribute="bottom" secondItem="3U9-sK-RCO" secondAttribute="bottom" constant="537" id="BAF-1v-jCz"/>
+                            <constraint firstItem="iLP-Vp-ybb" firstAttribute="trailing" secondItem="0GG-2d-Ble" secondAttribute="trailing" constant="-60" id="C3S-mk-m9T"/>
+                            <constraint firstItem="RMp-vc-gmH" firstAttribute="trailing" secondItem="e6o-gQ-F2M" secondAttribute="trailing" constant="7" id="DR1-pZ-7M1"/>
                             <constraint firstItem="0GG-2d-Ble" firstAttribute="top" secondItem="NPy-1O-fyd" secondAttribute="bottom" constant="14" id="Gf9-Td-zgo"/>
                             <constraint firstItem="RMp-vc-gmH" firstAttribute="bottom" secondItem="iLP-Vp-ybb" secondAttribute="bottom" constant="715" id="HFx-EW-I9K"/>
                             <constraint firstItem="RMp-vc-gmH" firstAttribute="trailing" secondItem="0GG-2d-Ble" secondAttribute="trailing" constant="8" id="MRe-S2-v9I"/>
+                            <constraint firstItem="3U9-sK-RCO" firstAttribute="leading" secondItem="RMp-vc-gmH" secondAttribute="leading" constant="114" id="OnS-qr-829"/>
+                            <constraint firstItem="3U9-sK-RCO" firstAttribute="top" secondItem="NPy-1O-fyd" secondAttribute="bottom" constant="121" id="VZB-Ac-ldN"/>
                             <constraint firstItem="NPy-1O-fyd" firstAttribute="leading" secondItem="RMp-vc-gmH" secondAttribute="leading" constant="8" id="Wai-FA-plk"/>
                             <constraint firstItem="0GG-2d-Ble" firstAttribute="leading" secondItem="RMp-vc-gmH" secondAttribute="leading" constant="8" id="YVJ-Kw-zb2"/>
                             <constraint firstItem="RMp-vc-gmH" firstAttribute="bottom" secondItem="3AG-M0-bAk" secondAttribute="bottom" constant="715" id="aV0-ku-yFf"/>
+                            <constraint firstItem="0GG-2d-Ble" firstAttribute="top" secondItem="e6o-gQ-F2M" secondAttribute="bottom" constant="55" id="azt-51-UrT"/>
                             <constraint firstItem="0GG-2d-Ble" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" constant="94" id="cm4-ts-O4P"/>
-                            <constraint firstItem="3AG-M0-bAk" firstAttribute="leading" secondItem="RMp-vc-gmH" secondAttribute="leading" constant="9" id="eSM-57-TcD"/>
-                            <constraint firstItem="iLP-Vp-ybb" firstAttribute="leading" secondItem="0GG-2d-Ble" secondAttribute="leading" constant="50" id="fRl-35-QCO"/>
+                            <constraint firstItem="3AG-M0-bAk" firstAttribute="leading" secondItem="RMp-vc-gmH" secondAttribute="leading" constant="7" id="eSM-57-TcD"/>
+                            <constraint firstItem="iLP-Vp-ybb" firstAttribute="leading" secondItem="0GG-2d-Ble" secondAttribute="leading" constant="40" id="fRl-35-QCO"/>
                             <constraint firstItem="NPy-1O-fyd" firstAttribute="top" secondItem="iLP-Vp-ybb" secondAttribute="bottom" constant="12" id="mP5-h5-3tG"/>
+                            <constraint firstItem="e6o-gQ-F2M" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" constant="4" id="oPR-oJ-Ph1"/>
                             <constraint firstItem="NPy-1O-fyd" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" constant="56" id="tQD-5C-tG0"/>
+                            <constraint firstItem="e6o-gQ-F2M" firstAttribute="leading" secondItem="iLP-Vp-ybb" secondAttribute="trailing" constant="7" id="uMZ-zd-UZY"/>
                             <constraint firstItem="3AG-M0-bAk" firstAttribute="top" secondItem="i1r-Ya-pCh" secondAttribute="topMargin" constant="3" id="w3A-7u-gfT"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="searchBar" destination="iLP-Vp-ybb" id="Lg6-HD-Vb3"/>
-                        <outlet property="searchCollectionView" destination="0GG-2d-Ble" id="CKm-Bm-WoK"/>
-                        <outlet property="searchPlaceholderLabel" destination="NPy-1O-fyd" id="nlN-yP-kA5"/>
+                        <outlet property="noResultLabel" destination="3U9-sK-RCO" id="hTX-NY-gsO"/>
+                        <outlet property="searchBar" destination="iLP-Vp-ybb" id="Jjc-0U-Itv"/>
+                        <outlet property="searchCollectionView" destination="0GG-2d-Ble" id="Bla-CP-9mZ"/>
+                        <outlet property="searchPlaceholderLabel" destination="NPy-1O-fyd" id="SAJ-QS-hMK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -135,6 +163,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backButton" width="84" height="93"/>
+        <image name="Icon/chevronBack_icon" width="24" height="24"/>
     </resources>
 </document>

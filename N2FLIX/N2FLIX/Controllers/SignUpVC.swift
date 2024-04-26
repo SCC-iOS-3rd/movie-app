@@ -74,7 +74,18 @@ final class SignUpVC: UIViewController {
                 if let removable = self.view.viewWithTag(102) {
                     removable.removeFromSuperview()
                 }
-                self.performSegue(withIdentifier: "showMain", sender: self)
+                
+                
+                let mainStoryboard = UIStoryboard(name: "MovieList", bundle: nil)
+                let mainTableVC = mainStoryboard.instantiateViewController(withIdentifier: "MovieList") as? MovieListVC
+                view.window?.rootViewController = TabBarViewController()
+                
+                
+//                mainTableVC?.modalPresentationStyle = .fullScreen
+//                present(mainTableVC!, animated: true) // 꼭 쓰려면 풀 스크린
+                
+//                self.navigationController?.pushViewController(mainTableVC, animated: true)
+                
             }
             else {
                 print("로그인 실패")
