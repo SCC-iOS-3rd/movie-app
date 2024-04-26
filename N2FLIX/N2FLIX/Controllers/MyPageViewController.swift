@@ -9,6 +9,8 @@ import UIKit
 
 class MyPageViewController: UIViewController {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var nicknameLabel: UILabel!
@@ -17,6 +19,8 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var bookingHistoryButton: UIButton!
     @IBOutlet weak var wishListButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    
+    // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +36,13 @@ class MyPageViewController: UIViewController {
         // 뒤로가기 버튼 추가
         setupBackButton()
         
-      }
+        // 이미지 선택 알림 등록
+        NotificationCenter.default.addObserver(self, selector: #selector(didSelectImage(_:)), name: .didSelectImage, object: nil)
+    }
+
+   
+    
+    // MARK: - UserData Update Methods
     
     // 사용자 정보 업데이트
     func updateUserInfo() {
@@ -45,6 +55,18 @@ class MyPageViewController: UIViewController {
         nicknameLabel.text = nickname
         emailLabel.text = email
     }
+    
+    // 닉네임 업데이트 메서드
+    func updateNickname(_ newNickname: String) {
+        // 사용자 정보 업데이트
+        var userData = UserData.shared
+        userData.userNickName = newNickname
+        
+        // UI 업데이트
+        nicknameLabel.text = newNickname
+    }
+    
+    // MARK: - Back Button Setup
     
     // 뒤로가기 버튼 설정
     func setupBackButton() {
@@ -64,20 +86,26 @@ class MyPageViewController: UIViewController {
         ])
     }
     
+    // MARK: - Action Methods
+    
     // 뒤로가기 버튼 액션
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
     
-    // 닉네임 업데이트 메서드
-    func updateNickname(_ newNickname: String) {
-        // 사용자 정보 업데이트
-        var userData = UserData.shared
-        userData.userNickName = newNickname
-        
-        // UI 업데이트
-        nicknameLabel.text = newNickname
+    // 이미지 선택 알림 처리
+    @objc func didSelectImage(_ notification: Notification) {
+        guard let imageName = notification.object as? String else { return }
+        profileImageView.image = UIImage(named: imageName)
     }
+    
+    // 프로필 이미지 변경 버튼 액션
+    @IBAction func profileButtonTapped(_ sender: UIButton) {
+        let imageSelectionVC = ImageSelectionViewController()
+            imageSelectionVC.modalPresentationStyle = .overCurrentContext
+            imageSelectionVC.preferredContentSize = CGSize(width: 320, height: 320)
+            present(imageSelectionVC, animated: true, completion: nil)
+        }
 
     // 닉네임 변경 버튼 액션
     @IBAction func changeNicknameButtonTapped(_ sender: UIButton) {
@@ -120,8 +148,8 @@ class MyPageViewController: UIViewController {
     
     // 찜한 영화 리스트 버튼 액션
     @IBAction func wishListButtonTapped(_ sender: UIButton) {
-                let wishListVC = WishListViewController()
-                navigationController?.pushViewController(wishListVC, animated: true)
+//                let wishListVC = WishListViewController()
+//                navigationController?.pushViewController(wishListVC, animated: true)
     }
     
     // 로그아웃 버튼 액션
@@ -137,4 +165,8 @@ class MyPageViewController: UIViewController {
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
     }
+}
+
+extension Notification.Name {
+    static let didSelectImage = Notification.Name("didSelectImage")
 }

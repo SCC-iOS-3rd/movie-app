@@ -23,8 +23,11 @@
                                         <rect key="frame" x="20.666666666666671" y="0.0" width="140" height="140"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="edit"/>
+                                        <connections>
+                                            <action selector="profileButtonTapped:" destination="TAY-fc-Z0s" eventType="touchUpInside" id="DgY-NH-Qr3"/>
+                                        </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImage/defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="5ed-hG-PnU">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImage/profileImage01" translatesAutoresizingMaskIntoConstraints="NO" id="5ed-hG-PnU">
                                         <rect key="frame" x="20.666666666666671" y="0.0" width="140" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="H2W-Nb-Oqz"/>
@@ -264,36 +267,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xb-OJ-dBO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965.64885496183206" y="-503.52112676056339"/>
-        </scene>
-        <!--Wish List View Controller-->
-        <scene sceneID="x8B-YY-ENF">
-            <objects>
-                <tableViewController storyboardIdentifier="WishListViewController" id="YA2-qh-mG0" customClass="WishListViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Y4Q-Qj-ReK">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="z4n-vn-KCr">
-                                <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z4n-vn-KCr" id="ELF-rK-kHc">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="YA2-qh-mG0" id="YnW-n7-I95"/>
-                            <outlet property="delegate" destination="YA2-qh-mG0" id="fbh-m4-ld0"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="j92-ru-sOQ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="guy-fM-sgv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="966" y="169"/>
+            <point key="canvasLocation" x="772" y="-168"/>
         </scene>
     </scenes>
     <resources>
@@ -301,7 +275,7 @@
         <image name="Icon/edit_icon" width="24" height="24"/>
         <image name="Icon/logout_icon" width="24" height="24"/>
         <image name="Icon/wishlist_icon" width="24" height="24"/>
-        <image name="ProfileImage/defaultImage" width="500" height="500"/>
+        <image name="ProfileImage/profileImage01" width="500" height="500"/>
         <image name="defaultImage_M" width="215" height="311"/>
         <image name="edit_icon" width="24" height="24"/>
     </resources>
