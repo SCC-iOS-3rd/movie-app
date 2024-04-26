@@ -19,7 +19,6 @@ class MovieDetailVC: UIViewController, UITextViewDelegate {
     let ticketingPageVC = TicketingPageVC()
     
     var genreName = ""
-    private let wholeViewShield = UIView()
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let backButton = UIButton() // 맨 위 우측
@@ -28,7 +27,8 @@ class MovieDetailVC: UIViewController, UITextViewDelegate {
     let gradientView = UIView()
     let gradientLayer = CAGradientLayer()
     // Mark: progress indicator
-    let spinner = UIActivityIndicatorView()
+    private let wholeViewShield = UIView()
+    private let spinner = UIActivityIndicatorView()
     
     
     let detailStackView = UIStackView() // 개봉일, HD마크, 런타임
@@ -57,7 +57,7 @@ class MovieDetailVC: UIViewController, UITextViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         gradientLayer.frame = gradientView.bounds
-        // Mark: 그라디언트뷰의 바운즈의 인식이 실행단계와 다르게 늦어져서 시간 지연 후 본 뷰를 보여줌.
+        // Mark: 그라디언트뷰의 바운즈의 인식이 실행단계와 다르게 늦어져서 쉬는시간을 주고  시간 지연 후 본 뷰를 보여줌.
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             self.wholeViewShield.removeFromSuperview()
             self.spinner.stopAnimating()
