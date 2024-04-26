@@ -21,7 +21,7 @@ struct UserWish {
 }
 
 struct UserData {
-    static var shared = UserData()
+//    static var shared = UserData()
     
 //    private let userDefaults = UserDefaults.standard
 //    
