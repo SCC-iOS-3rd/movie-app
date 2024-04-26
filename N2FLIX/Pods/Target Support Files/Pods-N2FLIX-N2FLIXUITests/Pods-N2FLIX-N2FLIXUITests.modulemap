@@ -1,0 +1,6 @@
+framework module Pods_N2FLIX_N2FLIXUITests {
+  umbrella header "Pods-N2FLIX-N2FLIXUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

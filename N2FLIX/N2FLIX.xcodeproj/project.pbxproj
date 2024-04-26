@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		53879EF72BD7F20B004B448F /* BookingHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */; };
 		53879EF92BD80BC6004B448F /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF82BD80BC6004B448F /* WishListViewController.swift */; };
+		53A299ED2BDB4CF5009C276F /* WishList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A299EC2BDB4CF5009C276F /* WishList.storyboard */; };
+		53A299EF2BDB56E7009C276F /* ImageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A299EE2BDB56E7009C276F /* ImageSelectionViewController.swift */; };
+		53C834672BDA395E00D77E78 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 53C834662BDA395E00D77E78 /* SnapKit */; };
+		53C834692BDA395E00D77E78 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 53C834682BDA395E00D77E78 /* SnapKit-Dynamic */; };
+		53C8346A2BDA395E00D77E78 /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 53C834682BDA395E00D77E78 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		53C8346C2BDA3C5400D77E78 /* MovieList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */; };
 		53CB159B2BD754590065F157 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB159A2BD754590065F157 /* MyPageViewController.swift */; };
 		53CB159F2BD756D10065F157 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CB159E2BD756D10065F157 /* MyPage.storyboard */; };
 		8E3567662BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */; };
 		8E3567672BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */; };
 		8E3567682BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */; };
-		8EEBB4CD2BD7B604001C59C5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEBB4CC2BD7B604001C59C5 /* SnapKit */; };
-		8EEBB4CF2BD7B604001C59C5 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8EEBB4CE2BD7B604001C59C5 /* SnapKit-Dynamic */; };
 		8EEBB4D12BD7B8B6001C59C5 /* MovieReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D02BD7B8B6001C59C5 /* MovieReservationVC.swift */; };
 		8EEBB4D22BD7B8B6001C59C5 /* MovieReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D02BD7B8B6001C59C5 /* MovieReservationVC.swift */; };
 		8EEBB4D32BD7B8B6001C59C5 /* MovieReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D02BD7B8B6001C59C5 /* MovieReservationVC.swift */; };
@@ -72,9 +76,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		53C8346B2BDA395E00D77E78 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				53C8346A2BDA395E00D77E78 /* SnapKit-Dynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHistoryViewController.swift; sourceTree = "<group>"; };
 		53879EF82BD80BC6004B448F /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		53A299EC2BDB4CF5009C276F /* WishList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WishList.storyboard; sourceTree = "<group>"; };
+		53A299EE2BDB56E7009C276F /* ImageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionViewController.swift; sourceTree = "<group>"; };
 		53CB159A2BD754590065F157 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		53CB159E2BD756D10065F157 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -120,8 +140,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EEBB4CD2BD7B604001C59C5 /* SnapKit in Frameworks */,
-				8EEBB4CF2BD7B604001C59C5 /* SnapKit-Dynamic in Frameworks */,
+				53C834672BDA395E00D77E78 /* SnapKit in Frameworks */,
+				53C834692BDA395E00D77E78 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +162,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53C834652BDA395E00D77E78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE82237F2BD6703F00AFDDE7 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +176,7 @@
 				DE8223A42BD6704100AFDDE7 /* N2FLIXTests */,
 				DE8223AE2BD6704100AFDDE7 /* N2FLIXUITests */,
 				DE8223892BD6703F00AFDDE7 /* Products */,
+				53C834652BDA395E00D77E78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,6 +231,7 @@
 				DE8223CA2BD7940800AFDDE7 /* SignUpVC.swift */,
 				A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */,
 				53CB159A2BD754590065F157 /* MyPageViewController.swift */,
+				53A299EE2BDB56E7009C276F /* ImageSelectionViewController.swift */,
 				53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */,
 				53879EF82BD80BC6004B448F /* WishListViewController.swift */,
 				8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */,
@@ -223,6 +252,7 @@
 				DE8223CC2BD7B50600AFDDE7 /* SignUpView.swift */,
 				A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */,
 				53CB159E2BD756D10065F157 /* MyPage.storyboard */,
+				53A299EC2BDB4CF5009C276F /* WishList.storyboard */,
 				F198764A2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard */,
 				F198763C2BD691FC00F5F7E6 /* SearchStoryboard.storyboard */,
 				A7C93BDA2BD764E1005CDD19 /* MovieCell.xib */,
@@ -254,6 +284,7 @@
 				DE8223842BD6703F00AFDDE7 /* Sources */,
 				DE8223852BD6703F00AFDDE7 /* Frameworks */,
 				DE8223862BD6703F00AFDDE7 /* Resources */,
+				53C8346B2BDA395E00D77E78 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,8 +292,8 @@
 			);
 			name = N2FLIX;
 			packageProductDependencies = (
-				8EEBB4CC2BD7B604001C59C5 /* SnapKit */,
-				8EEBB4CE2BD7B604001C59C5 /* SnapKit-Dynamic */,
+				53C834662BDA395E00D77E78 /* SnapKit */,
+				53C834682BDA395E00D77E78 /* SnapKit-Dynamic */,
 			);
 			productName = N2FLIX;
 			productReference = DE8223882BD6703F00AFDDE7 /* N2FLIX.app */;
@@ -365,6 +396,7 @@
 				F198764B2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard in Resources */,
 				DE82239B2BD6704000AFDDE7 /* Base in Resources */,
 				DE8223932BD6703F00AFDDE7 /* Base in Resources */,
+				53A299ED2BDB4CF5009C276F /* WishList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +432,7 @@
 				DE8223902BD6703F00AFDDE7 /* ViewController.swift in Sources */,
 				A7C93BD22BD6B403005CDD19 /* APIDatamanager.swift in Sources */,
 				8EEBB4D12BD7B8B6001C59C5 /* MovieReservationVC.swift in Sources */,
+				53A299EF2BDB56E7009C276F /* ImageSelectionViewController.swift in Sources */,
 				8E3567662BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */,
 				F19876412BD6926D00F5F7E6 /* SearchViewController.swift in Sources */,
 				F198764D2BD7788300F5F7E6 /* UpcomingViewController.swift in Sources */,
@@ -789,12 +822,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8EEBB4CC2BD7B604001C59C5 /* SnapKit */ = {
+		53C834662BDA395E00D77E78 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8E3567692BD7B520008CBB4E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		8EEBB4CE2BD7B604001C59C5 /* SnapKit-Dynamic */ = {
+		53C834682BDA395E00D77E78 /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8E3567692BD7B520008CBB4E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
