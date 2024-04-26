@@ -23,13 +23,24 @@
                                 <sections/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIv-Ho-yUs">
-                                <rect key="frame" x="16" y="44" width="24" height="24"/>
+                                <rect key="frame" x="16" y="44" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="BRk-IL-bE8"/>
-                                    <constraint firstAttribute="height" constant="24" id="OJu-hE-pFm"/>
+                                    <constraint firstAttribute="width" constant="30" id="BRk-IL-bE8"/>
+                                    <constraint firstAttribute="height" constant="30" id="OJu-hE-pFm"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Icon/user_icon"/>
+                                <connections>
+                                    <action selector="MyPageBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="K6r-Fc-BaZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sG-I9-0vK">
+                                <rect key="frame" x="329" y="39" width="48" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Icon/search_default_icon"/>
+                                <connections>
+                                    <action selector="searchBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DZw-qh-4xu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -39,7 +50,9 @@
                             <constraint firstItem="xIv-Ho-yUs" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="16" id="CGx-W7-8Li"/>
                             <constraint firstItem="gRR-8z-7BK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ksc-LB-Bth"/>
                             <constraint firstItem="gRR-8z-7BK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="84" id="O4t-2F-pIs"/>
+                            <constraint firstAttribute="trailing" secondItem="2sG-I9-0vK" secondAttribute="trailing" constant="16" id="Qpe-ui-DFI"/>
                             <constraint firstItem="xIv-Ho-yUs" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="44" id="SKt-eZ-VsM"/>
+                            <constraint firstItem="2sG-I9-0vK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="39" id="Whi-4i-11E"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gRR-8z-7BK" secondAttribute="trailing" id="Xxe-c8-2hk"/>
                         </constraints>
                     </view>
@@ -52,31 +65,54 @@
             </objects>
             <point key="canvasLocation" x="-735" y="1450"/>
         </scene>
+        <!--WishListViewController-->
+        <scene sceneID="6gZ-ej-ZSo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WishListViewController" id="Kfd-wV-CXR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PCe-Ch-Uye"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEZ-Wp-ZzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="1256"/>
+        </scene>
+        <!--UpcomingStoryboard-->
+        <scene sceneID="q5Y-2X-2eU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UpcomingStoryboard" id="Q7b-iM-fIJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="H8A-FB-cm9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQd-cX-xty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78" y="1257"/>
+        </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="eTI-cq-ziQ">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Bnd-g6-XDi" customClass="TabBarViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="Bnd-g6-XDi" customClass="TabBarViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BeI-JQ-xQz">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="selectedImageTintColor" red="1" green="0.29411764709999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="eRf-c1-93s" kind="relationship" relationship="viewControllers" id="nFH-yl-gkw"/>
+                        <segue destination="jy0-mJ-sOn" kind="relationship" relationship="viewControllers" id="O2i-Yo-xG5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21K-x6-vgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113.74045801526717" y="-28.169014084507044"/>
+            <point key="canvasLocation" x="44" y="-72"/>
         </scene>
-        <!--Item-->
+        <!--메인화면-->
         <scene sceneID="L8m-LM-LfX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eRf-c1-93s" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="square.and.arrow.up" catalog="system" selectedImage="square.and.arrow.up.fill" id="Dah-Zm-rBh"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="eRf-c1-93s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="메인화면" image="TapBar/home_icon" selectedImage="TapBar/home_icon_active" id="Dah-Zm-rBh">
+                        <color key="badgeColor" red="1" green="0.29411764709999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="KeT-96-eGp">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -86,11 +122,71 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEy-m5-mJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-735.1145038167939" y="719.71830985915494"/>
+            <point key="canvasLocation" x="-735" y="720"/>
+        </scene>
+        <!--MyPage-->
+        <scene sceneID="F9A-y6-FIk">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MyPage" storyboardName="MyPage" id="xfQ-8O-OGu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NDp-3H-9fb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1447" y="1246"/>
+        </scene>
+        <!--SearchStoryboard-->
+        <scene sceneID="ZpZ-DZ-JXL">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchStoryboard" storyboardName="SearchStoryboard" id="5dY-LC-ZA5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wth-nK-mXE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1434" y="1316"/>
+        </scene>
+        <!--개봉예정작-->
+        <scene sceneID="CM8-f7-sSc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jy0-mJ-sOn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="개봉예정작" image="TapBar/upcoming_icon" selectedImage="TapBar/upcoming_icon_active" id="atZ-4D-89Y"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="5LT-M7-4Pk">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q7b-iM-fIJ" kind="relationship" relationship="rootViewController" id="S6D-Ai-6ve"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uro-TH-5eI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44" y="720"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ICY-eD-8R3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uxu-Tl-nVF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="TapBar/wish_icon" selectedImage="TapBar/wish_icon_active" id="nfb-8h-pLd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UCq-rD-IM0">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kfd-wV-CXR" kind="relationship" relationship="rootViewController" id="qE6-SY-xUn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRf-a9-F12" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="720"/>
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
-        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <image name="Icon/search_default_icon" width="24" height="24"/>
+        <image name="Icon/user_icon" width="24" height="24"/>
+        <image name="TapBar/home_icon" width="24" height="24"/>
+        <image name="TapBar/home_icon_active" width="24" height="24"/>
+        <image name="TapBar/upcoming_icon" width="24" height="24"/>
+        <image name="TapBar/upcoming_icon_active" width="24" height="24"/>
+        <image name="TapBar/wish_icon" width="24" height="24"/>
+        <image name="TapBar/wish_icon_active" width="24" height="24"/>
     </resources>
 </document>

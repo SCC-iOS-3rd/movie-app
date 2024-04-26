@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "cancel_icon.svg",
+      "filename" : "Increment.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "cancel_icon 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "cancel_icon 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

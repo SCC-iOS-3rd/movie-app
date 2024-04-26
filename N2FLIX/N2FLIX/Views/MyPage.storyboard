@@ -11,7 +11,7 @@
         <!--My Page View Controller-->
         <scene sceneID="nH4-sm-5Tt">
             <objects>
-                <viewController id="TAY-fc-Z0s" customClass="MyPageViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TAY-fc-Z0s" customClass="MyPageViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CBK-hd-Pst">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

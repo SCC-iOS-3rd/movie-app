@@ -10,7 +10,12 @@ import UIKit
 class SignUpView: UIView {
     
     // MARK: - N2FLIX logo image
-    
+    private lazy var logoImageView: UIImageView = {
+        let logoImageView = UIImageView()
+        logoImageView.image = UIImage(named: "LaunchScreen/Logo")
+//        logoImageView.addSubview()
+        return logoImageView
+    }()
     
     // MARK: - email 입력 텍스트 뷰
     private lazy var emailTextFieldView: UIView = {
@@ -22,6 +27,7 @@ class SignUpView: UIView {
         view.clipsToBounds = true
         view.addSubview(emailTextField)
         view.addSubview(emailInfoLabel)
+        view.addSubview(emailClearButton)
         return view
     }()
     
@@ -49,6 +55,14 @@ class SignUpView: UIView {
         return tf
     }()
     
+    // email TextField 일괄 삭제 버튼
+    lazy var emailClearButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "Icon/cancel_icon"), for: .normal)
+        button.addTarget(self, action: #selector(clearTextField(_:)), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - PW 입력 텍스트 뷰
     private lazy var pwTextFieldView: UIView = {
         let view = UIView()
@@ -60,6 +74,7 @@ class SignUpView: UIView {
         view.clipsToBounds = true
         view.addSubview(pwTextField)
         view.addSubview(pwInfoLabel)
+        view.addSubview(pwClearButton)
         view.addSubview(pwSecureButton)
         return view
     }()
@@ -67,7 +82,7 @@ class SignUpView: UIView {
     // pw 입력 안내
     private let pwInfoLabel: UILabel = {
        let label = UILabel()
-        label.text = "비밀번호"
+        label.text = "비밀번호를 입력하세요"
         label.font = UIFont.systemFont(ofSize: 18)
         label.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         return label
@@ -93,10 +108,23 @@ class SignUpView: UIView {
     // pw 표시/가리기 버튼
     lazy var pwSecureButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("표시", for: .normal)
-        button.setTitleColor(#colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
+//        button.setTitle("표시", for: .normal)
+//        button.setTitleColor(#colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1), for: .normal)
+//        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        button.imageColor
+//        button.tintColor = UIColor(named: )
         button.addTarget(self, action: #selector(pwSecureSetting), for: .touchUpInside)
+        return button
+    }()
+    
+    // pw TextField 일괄 삭제 버튼
+    lazy var pwClearButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "Icon/cancel_icon"), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        button.contentMode = .scaleAspectFit
+        button.addTarget(self, action: #selector(clearTextField(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -150,24 +178,33 @@ class SignUpView: UIView {
     }
     
     func addViews() {
-        [stackView].forEach { addSubview($0) }
+        [stackView, logoImageView].forEach { addSubview($0) }
     }
     
     private func setConstraints() {
-//        LogoImageConstraints()
         emailInfoLabelConstraints()
         emailTextFieldContraints()
+        emailClearButtonConstraints()
         pwInfoLabelConstraints()
         pwTextFieldConstraints()
+        pwClearButtonConstraints()
         pwSecureButtonConstraints()
+        LogoImageConstraints()
         stackViewConstraints()
         
     }
     
     // MARK: - AutoLayout
-//    private func LogoImageConstraints() {
-//
-//    }
+    private func LogoImageConstraints() {
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+//            logoImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 80),
+            logoImageView.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -50),
+            logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            logoImageView.widthAnchor.constraint(equalToConstant: 177),
+            logoImageView.heightAnchor.constraint(equalToConstant: 151)
+        ])
+    }
     
     private func emailInfoLabelConstraints() {
         emailInfoLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -185,6 +222,15 @@ class SignUpView: UIView {
             emailTextField.bottomAnchor.constraint(equalTo: emailTextFieldView.bottomAnchor, constant: -2),
             emailTextField.leadingAnchor.constraint(equalTo: emailTextFieldView.leadingAnchor, constant: 8),
             emailTextField.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8)
+        ])
+    }
+    
+    private func emailClearButtonConstraints() {
+        emailClearButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            emailClearButton.topAnchor.constraint(equalTo: emailTextFieldView.topAnchor, constant: 15),
+            emailClearButton.bottomAnchor.constraint(equalTo: emailTextFieldView.bottomAnchor, constant: -15),
+            emailClearButton.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8)
         ])
     }
     
@@ -207,12 +253,21 @@ class SignUpView: UIView {
         ])
     }
     
+    private func pwClearButtonConstraints() {
+        pwClearButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pwClearButton.topAnchor.constraint(equalTo: pwTextFieldView.topAnchor, constant: 15),
+            pwClearButton.bottomAnchor.constraint(equalTo: pwTextFieldView.bottomAnchor, constant: -15),
+            pwClearButton.trailingAnchor.constraint(equalTo: pwTextFieldView.trailingAnchor, constant: -8)
+        ])
+    }
+    
     private func pwSecureButtonConstraints() {
         pwSecureButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             pwSecureButton.topAnchor.constraint(equalTo: pwTextFieldView.topAnchor, constant: 15),
             pwSecureButton.bottomAnchor.constraint(equalTo: pwTextFieldView.bottomAnchor, constant: -15),
-            pwSecureButton.trailingAnchor.constraint(equalTo: pwTextFieldView.trailingAnchor, constant: -8)
+            pwSecureButton.trailingAnchor.constraint(equalTo: pwClearButton.trailingAnchor, constant: -25)
         ])
     }
     
@@ -251,6 +306,16 @@ class SignUpView: UIView {
     @objc private func pwSecureSetting() {
         pwTextField.isSecureTextEntry.toggle()
     }
+    
+    // MARK: - textField 일괄 삭제
+    @objc private func clearTextField(_ sender: UIButton) {
+        if sender == emailClearButton {
+            emailTextField.text = ""
+        } else {
+            pwTextField.text = ""
+        }
+    }
+
     
     // 빈 화면 클릭 시 키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
