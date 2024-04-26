@@ -46,11 +46,16 @@ class APIDatamanager {
         let baseUrl: String = search ? "https://api.themoviedb.org/3/search/movie" : "https://api.themoviedb.org/3/movie/\(keyWord)"
         if let url = URL(string: "\(baseUrl)") {
             var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
-            var queryItems: [URLQueryItem] = [
-              URLQueryItem(name: "language", value: "ko-kr")
-            ]
-            if Int(category) != nil{
-                queryItems.append(URLQueryItem(name: "page", value: "1"))
+            var queryItems: [URLQueryItem] = categories.contains(keyWord) != false ? [
+                URLQueryItem(name: "language", value: "ko-kr"),
+            ] : [URLQueryItem(name: "language", value: "ko-kr"),
+                 URLQueryItem(name: "page", value: "1"),]
+            // Mark: search == true일때 query의 value에 검색할 쿼리 입력.
+            if search {
+                queryItems = [URLQueryItem(name: "query", value: keyWord),
+                              URLQueryItem(name: "include_adult", value: "false"),
+                              URLQueryItem(name: "language", value: "ko-kr"),
+                              URLQueryItem(name: "page", value: "1")]
             }
             components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
             var request = URLRequest(url: components.url!)
@@ -87,15 +92,12 @@ class APIDatamanager {
                                 print("Decode Error: \(error)")
                             }
                         }
-                        
                     }
                 }
             }
             task.resume()
         }
-        
     }
-    
     func readImage(_ image : String,completion: @escaping (Data) -> Void){
         if let url = URL(string: "https://image.tmdb.org/t/p/w500/\(image)") {
             let task = URLSession.shared.dataTask(with: url) {
