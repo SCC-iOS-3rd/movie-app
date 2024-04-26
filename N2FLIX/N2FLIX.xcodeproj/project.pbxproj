@@ -55,6 +55,7 @@
 		DE8223C72BD67D4800AFDDE7 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223C62BD67D4800AFDDE7 /* MovieData.swift */; };
 		DE8223CB2BD7940800AFDDE7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223CA2BD7940800AFDDE7 /* SignUpVC.swift */; };
 		DE8223CD2BD7B50600AFDDE7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8223CC2BD7B50600AFDDE7 /* SignUpView.swift */; };
+		F186B2612BDBCFB80056A887 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F186B2602BDBCFB80056A887 /* CoreDataManager.swift */; };
 		F198763D2BD691FC00F5F7E6 /* SearchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F198763C2BD691FC00F5F7E6 /* SearchStoryboard.storyboard */; };
 		F19876412BD6926D00F5F7E6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19876402BD6926D00F5F7E6 /* SearchViewController.swift */; };
 		F198764B2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F198764A2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard */; };
@@ -132,6 +133,7 @@
 		DE8223C62BD67D4800AFDDE7 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		DE8223CA2BD7940800AFDDE7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		DE8223CC2BD7B50600AFDDE7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		F186B2602BDBCFB80056A887 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F198763C2BD691FC00F5F7E6 /* SearchStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchStoryboard.storyboard; sourceTree = "<group>"; };
 		F19876402BD6926D00F5F7E6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F198764A2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpcomingStoryboard.storyboard; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				DE1725CB2BDA7BA200E20E1E /* ReserveTicket.swift */,
 				DE1725CD2BDAAB8600E20E1E /* UserDataManager.swift */,
 				A7C93BD12BD6B403005CDD19 /* APIDatamanager.swift */,
+				F186B2602BDBCFB80056A887 /* CoreDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				DE82238C2BD6703F00AFDDE7 /* AppDelegate.swift in Sources */,
 				DE8223CD2BD7B50600AFDDE7 /* SignUpView.swift in Sources */,
 				DE8223962BD6703F00AFDDE7 /* N2FLIX.xcdatamodeld in Sources */,
+				F186B2612BDBCFB80056A887 /* CoreDataManager.swift in Sources */,
 				53879EF92BD80BC6004B448F /* WishListViewController.swift in Sources */,
 				53879EF72BD7F20B004B448F /* BookingHistoryViewController.swift in Sources */,
 				DE1725CE2BDAAB8600E20E1E /* UserDataManager.swift in Sources */,

@@ -14,12 +14,10 @@ struct Movie: Codable {
     
 }
 
-struct Booking: Codable {
-    let movieTitle: String
-    let screeningTime: String
-    let numberOfPeople: Int
-    let paymentAmount: Int
-    
+struct UserWish {
+    let title: String
+    let posterPath: String
+    let id: Int
 }
 
 struct UserData {
@@ -32,8 +30,8 @@ struct UserData {
     let userEmail : String
     let userPW : String
     var userNickName : String
-    var ticketList : [ReserveTicket]
-    var wishList : [MovieDetailModel]
+//    var ticketList : [ReserveTicket]
+//    var wishList : [MovieDetailModel]
     
 //    var isLoggedIn: Bool {
 //        return userDefaults.bool(forKey: "isLoggedIn")

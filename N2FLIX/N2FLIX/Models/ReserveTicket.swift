@@ -9,7 +9,7 @@ import Foundation
 
 struct ReserveTicket {
     var dataTime : String
-    var totalPrice : String
+    var totalPrice : Int
     var title : String
     var posterPath : String
 }
