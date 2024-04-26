@@ -20,7 +20,6 @@ class TicketingPageVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addButtonAction()
         fetchDataToView()
         stepperAddTarget()

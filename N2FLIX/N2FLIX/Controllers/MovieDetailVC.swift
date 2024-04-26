@@ -19,12 +19,17 @@ class MovieDetailVC: UIViewController, UITextViewDelegate {
     let ticketingPageVC = TicketingPageVC()
     
     var genreName = ""
-    
+    private let wholeViewShield = UIView()
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let backButton = UIButton() // 맨 위 우측
     let movieImageView = UIImageView()
     let movieNameLabel = UILabel()
+    let gradientView = UIView()
+    let gradientLayer = CAGradientLayer()
+    // Mark: progress indicator
+    let spinner = UIActivityIndicatorView()
+    
     
     let detailStackView = UIStackView() // 개봉일, HD마크, 런타임
     
@@ -41,12 +46,24 @@ class MovieDetailVC: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = #colorLiteral(red: 0.07450980392, green: 0.07450980392, blue: 0.07450980392, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
         setUI()
         textViewDidChange(overViewText)
+        scrollView.updateContentSize()
+        gradientLayer.frame = gradientView.bounds
+        spinner.startAnimating()
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        gradientLayer.frame = gradientView.bounds
+        // Mark: 그라디언트뷰의 바운즈의 인식이 실행단계와 다르게 늦어져서 시간 지연 후 본 뷰를 보여줌.
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            self.wholeViewShield.removeFromSuperview()
+            self.spinner.stopAnimating()
+        }
+     
+    }
 }
 
 extension MovieDetailVC {
@@ -56,8 +73,8 @@ extension MovieDetailVC {
             // Mark: 장르 이름 뽑아오기, 형태 지정
             movieDetail.genres.map{$0.name}.forEach{self.genreName += "\($0) "}
             DispatchQueue.main.async {
-                self.setDetails()
                 self.setLayout()
+                self.setDetails()
             }
         }
     }
@@ -98,13 +115,13 @@ extension MovieDetailVC {
         // Mark: 소수 2번째 자리에서 글자 자름
         starRatingLabel.text = "평점 : \(String(format: "%.2f", self.movieDetailModel[0].voteAverage))"
         starRatingLabel.textColor = .white
-//        self.movieDetailModel[0].voteAverage
+        //        self.movieDetailModel[0].voteAverage
         
         overViewText.text =  self.movieDetailModel[0].overview
         overViewText.font = .systemFont(ofSize: 15)
         overViewText.textColor = .white
         overViewText.textAlignment = NSTextAlignment.left
-        overViewText.backgroundColor = .black
+        overViewText.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
         overViewText.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
         overViewText.delegate = self
         overViewText.isScrollEnabled = false
@@ -116,23 +133,34 @@ extension MovieDetailVC {
         
         ticketingPageVC.modalPresentationStyle = .automatic
         // Mark: addWishListButton은 찜 해두었고, 안해두었고에 따라 생김새가 바뀌어야함.
-//        if true {
-            addWishListButton.setTitle("찜하기", for: .normal)
-//        } else {
-//            addWishListButton.setTitle("찜하기 취소", for: .normal)
-//        }
+        //        if true {
+        addWishListButton.setTitle("찜하기", for: .normal)
+        //        } else {
+        //            addWishListButton.setTitle("찜하기 취소", for: .normal)
+        //        }
         addWishListButton.backgroundColor = #colorLiteral(red: 0.1827788651, green: 0.1880517602, blue: 0.1930513084, alpha: 1)
         addWishListButton.setTitleColor(.white, for: .normal)
-        spacer.backgroundColor = .black
+        spacer.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
         
         
-        scrollView.backgroundColor = .black
-        contentView.backgroundColor = .black
+        scrollView.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
+        contentView.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
+        
+        gradientView.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
+        gradientView.backgroundColor = .clear
+        
+        gradientLayer.colors = [UIColor.clear.cgColor, #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        gradientLayer.locations = [0.0, 0.5 ,1.0]
+      
+        
+        wholeViewShield.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
     }
     
     final private func setLayout() {
         self.view.addSubview(scrollView)
-//        self.view.addSubview(overViewText)
+        //        self.view.addSubview(overViewText)
         // Mark: bookingButton은 예약 가능한 영화라는 조건 필요
         if true {
             self.view.addSubview(bookingButton)
@@ -141,7 +169,7 @@ extension MovieDetailVC {
         }
         self.view.addSubview(addWishListButton)
         self.view.addSubview(backButton)
-        
+        gradientView.layer.addSublayer(gradientLayer)
         
         addWishListButton.snp.makeConstraints { make in
             make.centerX.leading.trailing.equalToSuperview()
@@ -168,8 +196,9 @@ extension MovieDetailVC {
         }
         
         scrollView.addSubview(contentView)
+        scrollView.addSubview(overViewText)
         
-        [movieImageView, movieNameLabel, detailStackView, genresLabel, starRatingLabel,overViewText].forEach {
+        [movieImageView, gradientView, movieNameLabel, detailStackView, genresLabel, starRatingLabel].forEach {
             contentView.addSubview($0)
         }
         
@@ -192,7 +221,7 @@ extension MovieDetailVC {
         
         movieNameLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(movieImageView.snp.bottom).offset(5)
+            make.top.equalTo(gradientView.snp.centerY).offset(5)
             make.width.equalToSuperview().inset(5)
             make.height.equalTo(50) // 수정 필요
         }
@@ -242,18 +271,34 @@ extension MovieDetailVC {
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(10)
             make.leading.equalToSuperview().offset(10)
         }
+        
+        gradientView.snp.makeConstraints{ make in
+            make.trailing.leading.equalToSuperview()
+            make.top.equalTo(self.movieImageView.snp.centerY)
+            make.bottom.equalTo(movieImageView.snp.bottom)
+        }
+        
+        self.view.addSubview(wholeViewShield)
+        wholeViewShield.addSubview(spinner)
+        wholeViewShield.snp.makeConstraints{ make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        spinner.snp.makeConstraints{ make in
+            make.centerY.centerX.equalToSuperview()
+            make.height.width.equalTo(200)
+        }
     }
     
     func textViewDidChange(_ textView: UITextView) {
         print(textView.text ?? "")
-            let size = CGSize(width: view.frame.width, height: .infinity)
-            let estimatedSize = textView.sizeThatFits(size)
-            textView.constraints.forEach { (constraint) in
-                if constraint.firstAttribute == .height {
-                    constraint.constant = estimatedSize.height
-                }
+        let size = CGSize(width: view.frame.width, height: .infinity)
+        let estimatedSize = textView.sizeThatFits(size)
+        textView.constraints.forEach { (constraint) in
+            if constraint.firstAttribute == .height {
+                constraint.constant = estimatedSize.height
             }
         }
+    }
     
     @objc func pushTicketingPage() {
         ticketingPageVC.ticketingModel = self.movieDetailModel
@@ -261,8 +306,30 @@ extension MovieDetailVC {
     }
     
     @objc
-        private func touchupBackButton() {
-            self.dismiss(animated: true, completion: nil)
-        }
+    private func touchupBackButton() {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }
+
+extension UIScrollView {
+    func updateContentSize() {
+        let unionCalculatedTotalRect = recursiveUnionInDepthFor(view: self)
+        
+        // 계산된 크기로 컨텐츠 사이즈 설정
+        self.contentSize = CGSize(width: self.frame.width, height: unionCalculatedTotalRect.height+50)
+    }
+    
+    private func recursiveUnionInDepthFor(view: UIView) -> CGRect {
+        var totalRect: CGRect = .zero
+        
+        // 모든 자식 View의 컨트롤의 크기를 재귀적으로 호출하며 최종 영역의 크기를 설정
+        for subView in view.subviews {
+            totalRect = totalRect.union(recursiveUnionInDepthFor(view: subView))
+        }
+        
+        // 최종 계산 영역의 크기를 반환
+        return totalRect.union(view.frame)
+    }
+}
+

@@ -52,8 +52,8 @@ class TicketingPageView: UIView {
         datePicker.preferredDatePickerStyle = .automatic
         datePicker.datePickerMode = .dateAndTime
         datePicker.locale = Locale(identifier: "ko-KR")
-        datePicker.backgroundColor = .clear
-        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        datePicker.tintColor = .white
+        datePicker.overrideUserInterfaceStyle = .dark
         datePicker.minimumDate = .now
         return datePicker
     }()
@@ -84,9 +84,8 @@ class TicketingPageView: UIView {
         stepper.maximumValue = 8
         stepper.minimumValue = 0
         stepper.value = 0
-        //        stepper.set
-        //        stepper.setDecrementImage(stepper.decrementImage(for: .normal), for: .normal)
-        //        stepper.setIncrementImage(UIImage(named: "increment_icon"), for: .normal)
+        stepper.tintColor = .white
+        stepper.overrideUserInterfaceStyle = .dark
         return stepper
     }()
     
@@ -173,8 +172,6 @@ class TicketingPageView: UIView {
         [priceNameLabel, priceLabel, currencyLabel].forEach{
             priceSV.addSubview($0)
         }
-        
-        
     }
     
     private func setConstraints() {
@@ -302,9 +299,4 @@ class TicketingPageView: UIView {
             make.height.equalTo(44)
         }
     }
-    
-    
-    
-    
-    
 }
