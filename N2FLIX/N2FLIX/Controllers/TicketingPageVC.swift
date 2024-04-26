@@ -113,7 +113,7 @@ extension TicketingPageVC {
         self.myTicketModel.append(ReserveTicket(dataTime: self.myTicketDate, totalPrice: myTicketPrice, title: "\(ticketingModel[0].title)", posterPath: "\(ticketingModel[0].posterPath) "))
         
         
-        print(myTicketModel)
+//        print(myTicketModel)
     }
     
     @objc func paymentAlert() {
