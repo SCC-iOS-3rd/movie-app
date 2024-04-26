@@ -11,6 +11,7 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: true)
         setupTabBar()
         tabBar.isTranslucent = true
         tabBar.backgroundImage = UIImage()

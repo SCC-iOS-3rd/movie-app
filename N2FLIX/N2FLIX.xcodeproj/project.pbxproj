@@ -14,7 +14,6 @@
 		53C834672BDA395E00D77E78 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 53C834662BDA395E00D77E78 /* SnapKit */; };
 		53C834692BDA395E00D77E78 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 53C834682BDA395E00D77E78 /* SnapKit-Dynamic */; };
 		53C8346A2BDA395E00D77E78 /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 53C834682BDA395E00D77E78 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		53C8346C2BDA3C5400D77E78 /* MovieList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */; };
 		53CB159B2BD754590065F157 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB159A2BD754590065F157 /* MyPageViewController.swift */; };
 		53CB159F2BD756D10065F157 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53CB159E2BD756D10065F157 /* MyPage.storyboard */; };
 		8E3567662BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */; };
@@ -35,8 +34,6 @@
 		A7C93BD22BD6B403005CDD19 /* APIDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD12BD6B403005CDD19 /* APIDatamanager.swift */; };
 		A7C93BDB2BD764E1005CDD19 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD92BD764E1005CDD19 /* MovieCell.swift */; };
 		A7C93BDC2BD764E1005CDD19 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7C93BDA2BD764E1005CDD19 /* MovieCell.xib */; };
-		A7C93BDF2BD77CE6005CDD19 /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BDD2BD77CE6005CDD19 /* MovieCollectionCell.swift */; };
-		A7C93BE02BD77CE6005CDD19 /* MovieCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7C93BDE2BD77CE6005CDD19 /* MovieCollectionCell.xib */; };
 		DE1725CC2BDA7BA200E20E1E /* ReserveTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1725CB2BDA7BA200E20E1E /* ReserveTicket.swift */; };
 		DE1725CE2BDAAB8600E20E1E /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1725CD2BDAAB8600E20E1E /* UserDataManager.swift */; };
 		DE82238C2BD6703F00AFDDE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE82238B2BD6703F00AFDDE7 /* AppDelegate.swift */; };

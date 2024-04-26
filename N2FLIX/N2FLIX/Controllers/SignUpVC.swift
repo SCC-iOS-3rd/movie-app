@@ -77,8 +77,8 @@ final class SignUpVC: UIViewController {
                 
                 
                 let mainStoryboard = UIStoryboard(name: "MovieList", bundle: nil)
-                let mainTableVC = mainStoryboard.instantiateViewController(withIdentifier: "MovieList") as? MovieListVC
-                view.window?.rootViewController = TabBarViewController()
+                let mainTableVC = mainStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController
+                view.window?.rootViewController = mainTableVC
                 
                 
 //                mainTableVC?.modalPresentationStyle = .fullScreen

@@ -1,9 +1,9 @@
-////
-////  MovieListVC.swift
-////  N2FLIX
-////
-////  Created by 송정훈 on 4/23/24.
-////
+///
+/// MovieListVC.swift
+///N2FLIX
+///
+///Created by 송정훈 on 4/23/24.
+///
 
 import UIKit
 
@@ -14,12 +14,12 @@ class MovieListVC: UIViewController {
         let searchVC = UIStoryboard(name: "SearchStoryboard", bundle: nil)
             .instantiateViewController(withIdentifier: "SearchStoryboard") as? SearchViewController
         present(searchVC!,animated: true)
-//        self.navigationController?.pushViewController(searchVC!, animated: true)
+        //        self.navigationController?.pushViewController(searchVC!, animated: true)
     }
     @IBAction func MyPageBtn(_ sender: Any) {
-//        let myPageVC = UIStoryboard(name: "MyPage", bundle: nil)
-//            .instantiateViewController(withIdentifier: "MyPage") as? MyPageViewController
-//        present(myPageVC!,animated: true)
+        //        let myPageVC = UIStoryboard(name: "MyPage", bundle: nil)
+        //            .instantiateViewController(withIdentifier: "MyPage") as? MyPageViewController
+        //        present(myPageVC!,animated: true)
     }
     let categories: [String] = ["popular", "now_playing", "top_rated", "adults"]
     var movieList: [String : [Result]] = ["now_playing" : [], "popular" : [], "top_rated" : [], "upcoming" : []]
@@ -32,6 +32,7 @@ class MovieListVC: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "MovieCell")
         tableView.separatorStyle = .none
+        
     }
     //타이틀 이름 한국어로 바꾸기
     func koName(_ name : String) -> String {
@@ -74,20 +75,20 @@ extension MovieListVC : UITableViewDataSource,UITableViewDelegate {
             }
         }else {
             
-                if indexPath.row == 0 {
-                    cell.popularchk = true
+            if indexPath.row == 0 {
+                cell.popularchk = true
+            }
+            movieAPI.readAPI(word: categories[indexPath.row], forSearch: false, type: [Result].self) {Movies in
+                self.movieList[self.categories[indexPath.row]] = Movies
+                for i in Movies {
+                    cell.image.append(i.posterPath)
+                    cell.id.append(i.id)
                 }
-                movieAPI.readAPI(word: categories[indexPath.row], forSearch: false, type: [Result].self) {Movies in
-                    self.movieList[self.categories[indexPath.row]] = Movies
-                    for i in Movies {
-                        cell.image.append(i.posterPath)
-                        cell.id.append(i.id)
-                    }
-                    DispatchQueue.main.async {
-                        cell.collectionView.reloadData()
-                    }
+                DispatchQueue.main.async {
+                    cell.collectionView.reloadData()
                 }
-        
+            }
+            
         }
         
         return cell

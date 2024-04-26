@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bnd-g6-XDi">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -23,10 +23,10 @@
                                 <sections/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIv-Ho-yUs">
-                                <rect key="frame" x="16" y="44" width="24" height="24"/>
+                                <rect key="frame" x="16" y="44" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="BRk-IL-bE8"/>
-                                    <constraint firstAttribute="height" constant="24" id="OJu-hE-pFm"/>
+                                    <constraint firstAttribute="width" constant="30" id="BRk-IL-bE8"/>
+                                    <constraint firstAttribute="height" constant="30" id="OJu-hE-pFm"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Icon/user_icon"/>
@@ -37,7 +37,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sG-I9-0vK">
                                 <rect key="frame" x="329" y="39" width="48" height="38"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Icon/search_light_icon"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Icon/search_default_icon"/>
                                 <connections>
                                     <action selector="searchBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DZw-qh-4xu"/>
                                 </connections>
@@ -64,6 +64,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-735" y="1450"/>
+        </scene>
+        <!--WishListViewController-->
+        <scene sceneID="6gZ-ej-ZSo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WishListViewController" id="Kfd-wV-CXR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PCe-Ch-Uye"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEZ-Wp-ZzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="1256"/>
         </scene>
         <!--UpcomingStoryboard-->
         <scene sceneID="q5Y-2X-2eU">
@@ -97,13 +107,12 @@
         <!--메인화면-->
         <scene sceneID="L8m-LM-LfX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eRf-c1-93s" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="eRf-c1-93s" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="메인화면" image="TapBar/home_icon" selectedImage="TapBar/home_icon_active" id="Dah-Zm-rBh">
                         <color key="badgeColor" red="1" green="0.29411764709999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="KeT-96-eGp">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -113,7 +122,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEy-m5-mJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-735.1145038167939" y="719.71830985915494"/>
+            <point key="canvasLocation" x="-735" y="720"/>
         </scene>
         <!--MyPage-->
         <scene sceneID="F9A-y6-FIk">
@@ -137,7 +146,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jy0-mJ-sOn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="개봉예정작" image="TapBar/upcoming_icon" selectedImage="TapBar/upcoming_icon_active" id="atZ-4D-89Y"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5LT-M7-4Pk">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="5LT-M7-4Pk">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -150,13 +159,34 @@
             </objects>
             <point key="canvasLocation" x="44" y="720"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="ICY-eD-8R3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uxu-Tl-nVF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="TapBar/wish_icon" selectedImage="TapBar/wish_icon_active" id="nfb-8h-pLd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UCq-rD-IM0">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kfd-wV-CXR" kind="relationship" relationship="rootViewController" id="qE6-SY-xUn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRf-a9-F12" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="720"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Icon/search_light_icon" width="24" height="24"/>
+        <image name="Icon/search_default_icon" width="24" height="24"/>
         <image name="Icon/user_icon" width="24" height="24"/>
         <image name="TapBar/home_icon" width="24" height="24"/>
         <image name="TapBar/home_icon_active" width="24" height="24"/>
         <image name="TapBar/upcoming_icon" width="24" height="24"/>
         <image name="TapBar/upcoming_icon_active" width="24" height="24"/>
+        <image name="TapBar/wish_icon" width="24" height="24"/>
+        <image name="TapBar/wish_icon_active" width="24" height="24"/>
     </resources>
 </document>
