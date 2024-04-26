@@ -112,7 +112,7 @@ class SignUpView: UIView {
 //        button.setTitleColor(#colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1), for: .normal)
 //        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
         button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-        button.imageColor
+//        button.imageColor
 //        button.tintColor = UIColor(named: )
         button.addTarget(self, action: #selector(pwSecureSetting), for: .touchUpInside)
         return button

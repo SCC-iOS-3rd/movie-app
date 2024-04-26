@@ -52,6 +52,9 @@ class MovieDetailVC: UIViewController, UITextViewDelegate {
         scrollView.updateContentSize()
         gradientLayer.frame = gradientView.bounds
         spinner.startAnimating()
+        
+        // Mark: 뷰 로드될 때 코어데이터 읽어와서 찜 되어있는 목록인지 확인 -> 결과에 따라
+        // 찜하기 Or 
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,7 +94,7 @@ extension MovieDetailVC {
         hdMarkImageView.image = UIImage(named: "hdLogo")
         hdMarkImageView.contentMode = .scaleAspectFit
         
-        backButton.setImage(UIImage(named: "cancel_icon"), for: .normal)
+        backButton.setImage(UIImage(named: "icon/cancel_icon"), for: .normal)
         backButton.addTarget(self, action: #selector(touchupBackButton), for: .touchUpInside)
         // Mark: 제목이 길면 (부제 포함 ":" 을 통해 앞 뒤 구분해서 줄바꿈 추가...?
         movieNameLabel.text =  self.movieDetailModel[0].title
@@ -309,7 +312,6 @@ extension MovieDetailVC {
     private func touchupBackButton() {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension UIScrollView {

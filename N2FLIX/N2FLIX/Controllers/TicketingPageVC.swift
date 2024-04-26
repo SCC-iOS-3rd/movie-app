@@ -13,6 +13,9 @@ class TicketingPageVC: UIViewController {
     let tickectingView = TicketingPageView()
     
     var ticketingModel = [MovieDetailModel]()
+    var myTicketDate = ""
+    var myTicketPrice = 0
+    var myTicketModel: [ReserveTicket] = []
     
     override func loadView() {
         view = tickectingView
@@ -52,6 +55,7 @@ extension TicketingPageVC {
     private func addButtonAction() {
         tickectingView.backButton.addTarget(self, action: #selector(goBackPage), for: .touchUpInside)
         tickectingView.cancelButton.addTarget(self, action: #selector(goBackPage), for: .touchUpInside)
+        tickectingView.payButton.addTarget(self, action: #selector(checkTicketting), for: .touchUpInside)
     }
     
     func stepperAddTarget() {
@@ -67,6 +71,7 @@ extension TicketingPageVC {
         if let totalPrice = numberFormatter.string(for: Int(sender.value) * 14000 ) {
             tickectingView.priceLabel.text = "\(totalPrice)"
         }
+        myTicketPrice = Int(sender.value) * 14000
     }
     
     func setMaximumDate() {
@@ -85,14 +90,68 @@ extension TicketingPageVC {
     
     @objc
     private func handleDatePicker(_ sender: UIDatePicker) {
-        print(sender.date)
+//        print(sender.date)
+        self.myTicketDate = sender.date.description
     }
     
     @objc func goBackPage() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc func DoTicketing() {
+    @objc func checkTicketting() {
+        if myTicketDate == "" {
+            self.ticketTimeErrorAlert()
+        } else if myTicketPrice == 0 {
+            self.ticketAmountErrorAlert()
+        } else {
+            self.paymentAlert()
+        }
         
     }
+    
+    @objc func DoTicketing() {
+        self.myTicketModel.append(ReserveTicket(dataTime: self.myTicketDate, totalPrice: myTicketPrice, title: "\(ticketingModel[0].title)", posterPath: "\(ticketingModel[0].posterPath) "))
+        
+        
+        print(myTicketModel)
+    }
+    
+    @objc func paymentAlert() {
+            let controller = UIAlertController(title: "예매하시겠습니까?", message: nil, preferredStyle: UIAlertController.Style.alert)
+        controller.message =  "총 구매가격 \(self.myTicketPrice)입니다. "
+
+            
+            let okAction = UIAlertAction(title: "OK", style: .default){ (action) in
+                self.DoTicketing()
+                }
+            
+            let cancel = UIAlertAction(title: "cancel", style: .destructive, handler : nil)
+           
+            controller.addAction(cancel)
+            controller.addAction(okAction)
+            present(controller, animated: true, completion: nil)
+        }
+    
+    @objc func ticketAmountErrorAlert() {
+            let controller = UIAlertController(title: "예매 내용을 확인해주세요.", message: nil, preferredStyle: UIAlertController.Style.alert)
+        controller.message =  "예매하실 티켓 수를 선택해주세요"
+
+            
+            let okAction = UIAlertAction(title: "OK", style: .default){ (action) in
+                self.DoTicketing()
+                }
+            controller.addAction(okAction)
+            present(controller, animated: true, completion: nil)
+        }
+    
+    @objc func ticketTimeErrorAlert() {
+            let controller = UIAlertController(title: "예매 내용을 확인해주세요.", message: nil, preferredStyle: UIAlertController.Style.alert)
+        controller.message =  "상영일자와 시간을 선택해주세요."
+            
+            let okAction = UIAlertAction(title: "OK", style: .default){ (action) in
+                }
+            
+            controller.addAction(okAction)
+            present(controller, animated: true, completion: nil)
+        }
 }
