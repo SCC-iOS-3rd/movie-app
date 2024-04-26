@@ -99,7 +99,7 @@ extension MovieDetailVC {
         if true {
             addWishListButton.setTitle("찜하기", for: .normal)
         } else {
-            addWishListButton.setTitle("찜하기 취소", for: .normal)
+            //            addWishListButton.setTitle("찜하기 취소", for: .normal)
         }
         addWishListButton.backgroundColor = .gray
         addWishListButton.setTitleColor(.white, for: .normal)

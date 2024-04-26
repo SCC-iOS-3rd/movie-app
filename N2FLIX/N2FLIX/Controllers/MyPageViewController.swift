@@ -20,8 +20,7 @@ class MyPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // 프로필 이미지뷰를 원형으로 만들기
+//         프로필 이미지뷰를 원형으로 만들기
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
         profileImageView.clipsToBounds = true
         profileImageView.layer.borderWidth = 2.0
@@ -66,7 +65,7 @@ class MyPageViewController: UIViewController {
     
     // 뒤로가기 버튼 액션
     @objc func backButtonTapped() {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     // 닉네임 업데이트 메서드

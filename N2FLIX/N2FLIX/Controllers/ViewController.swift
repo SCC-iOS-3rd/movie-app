@@ -5,6 +5,8 @@
 //  Created by /Chynmn/M1 pro—̳͟͞͞♡ on 4/22/24.
 //
 
+import UIKit
+
 //import UIKit
 //
 //class ViewController: UIViewController {
@@ -31,6 +33,6 @@ class ViewController: UIViewController {
     
     
     @objc func pushMovieDetailPage() {
-        self.present(movieDetailVC, animated: true)
+//        self.present(movieDetailVC, animated: true)
     }
 }

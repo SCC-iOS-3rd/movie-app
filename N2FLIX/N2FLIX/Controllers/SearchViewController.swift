@@ -61,7 +61,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
     
     //뒤로가기 버튼
     @IBAction func tappedBack(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
 }
 

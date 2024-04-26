@@ -31,11 +31,14 @@ class UpcomingViewController: UIViewController, UICollectionViewDataSource {
     //upcomin정보만 받아오기
     func fetchUpcomingMovies() {
         print("연결")
-        dataManager.readAPI(word: "upcoming", forSearch: true)
-        DispatchQueue.main.async {
-            self.results = self.dataManager.Movie
-            self.upcomingCollectionView.reloadData()
+        dataManager.readAPI(word: "upcoming", forSearch: true,type: [Result].self) {Movie in
+            self.results = Movie
+            DispatchQueue.main.async {
+                
+                self.upcomingCollectionView.reloadData()
+            }
         }
+        
     }
     
     override func viewDidLoad() {
@@ -80,5 +83,8 @@ class UpcomingCell: UICollectionViewCell {
                 self.upcomingDetailLabel.text = "\(movie.overview)"
             }
         }
+    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 }

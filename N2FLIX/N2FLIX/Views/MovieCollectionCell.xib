@@ -18,20 +18,30 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RDa-2Z-meY">
-                        <rect key="frame" x="0.0" y="0.0" width="128" height="225"/>
+                        <rect key="frame" x="0.0" y="5" width="128" height="215"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f0o-yg-Nbz">
+                        <rect key="frame" x="6" y="11" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="L7e-yH-xAg"/>
+                            <constraint firstAttribute="width" constant="44" id="O0r-6A-D06"/>
+                        </constraints>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="RDa-2Z-meY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="X2u-V8-Y8e"/>
-                <constraint firstAttribute="bottom" secondItem="RDa-2Z-meY" secondAttribute="bottom" id="b5w-ZS-NDW"/>
+                <constraint firstItem="f0o-yg-Nbz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="11" id="QxJ-wg-HSw"/>
+                <constraint firstItem="f0o-yg-Nbz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="Vgz-lj-gBa"/>
+                <constraint firstItem="RDa-2Z-meY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="X2u-V8-Y8e"/>
+                <constraint firstAttribute="bottom" secondItem="RDa-2Z-meY" secondAttribute="bottom" constant="5" id="b5w-ZS-NDW"/>
                 <constraint firstItem="RDa-2Z-meY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="d1n-X7-zWT"/>
                 <constraint firstAttribute="trailing" secondItem="RDa-2Z-meY" secondAttribute="trailing" id="rmi-ls-ker"/>
             </constraints>
             <size key="customSize" width="102" height="262"/>
             <connections>
                 <outlet property="poster" destination="RDa-2Z-meY" id="Kma-53-Fx2"/>
+                <outlet property="rankimg" destination="f0o-yg-Nbz" id="IFr-uG-cOY"/>
             </connections>
             <point key="canvasLocation" x="-166.41221374045801" y="24.295774647887324"/>
         </collectionViewCell>
