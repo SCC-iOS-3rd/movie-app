@@ -24,6 +24,7 @@ class TicketingPageVC: UIViewController {
         fetchDataToView()
         stepperAddTarget()
         setMaximumDate()
+        datePickerAddTarget()
     }
     
 }
@@ -76,6 +77,15 @@ extension TicketingPageVC {
         components.day = +14
         let maxDate = calender.date(byAdding: components, to: currentDate)
         self.tickectingView.datePicker.maximumDate = maxDate
+    }
+    
+    func datePickerAddTarget() {
+        self.tickectingView.datePicker.addTarget(self, action: #selector(handleDatePicker(_: )), for: .valueChanged)
+    }
+    
+    @objc
+    private func handleDatePicker(_ sender: UIDatePicker) {
+        print(sender.date)
     }
     
     @objc func goBackPage() {

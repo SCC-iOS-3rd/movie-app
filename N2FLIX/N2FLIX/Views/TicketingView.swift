@@ -52,9 +52,11 @@ class TicketingPageView: UIView {
         datePicker.preferredDatePickerStyle = .automatic
         datePicker.datePickerMode = .dateAndTime
         datePicker.locale = Locale(identifier: "ko-KR")
+        datePicker.minuteInterval = 30
         datePicker.tintColor = .white
         datePicker.overrideUserInterfaceStyle = .dark
         datePicker.minimumDate = .now
+        datePicker.setDate(Date(), animated: true)
         return datePicker
     }()
     
