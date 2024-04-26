@@ -19,12 +19,15 @@
 		8E3567662BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */; };
 		8E3567672BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */; };
 		8E3567682BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */; };
-		8EEBB4D12BD7B8B6001C59C5 /* MovieReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D02BD7B8B6001C59C5 /* MovieReservationVC.swift */; };
-		8EEBB4D22BD7B8B6001C59C5 /* MovieReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D02BD7B8B6001C59C5 /* MovieReservationVC.swift */; };
-		8EEBB4D32BD7B8B6001C59C5 /* MovieReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D02BD7B8B6001C59C5 /* MovieReservationVC.swift */; };
+		8EEBB4D12BD7B8B6001C59C5 /* TicketingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D02BD7B8B6001C59C5 /* TicketingPageVC.swift */; };
+		8EEBB4D22BD7B8B6001C59C5 /* TicketingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D02BD7B8B6001C59C5 /* TicketingPageVC.swift */; };
+		8EEBB4D32BD7B8B6001C59C5 /* TicketingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D02BD7B8B6001C59C5 /* TicketingPageVC.swift */; };
 		8EEBB4D52BD7C087001C59C5 /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D42BD7C086001C59C5 /* MovieDetailModel.swift */; };
 		8EEBB4D62BD7C087001C59C5 /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D42BD7C086001C59C5 /* MovieDetailModel.swift */; };
 		8EEBB4D72BD7C087001C59C5 /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEBB4D42BD7C086001C59C5 /* MovieDetailModel.swift */; };
+		8EF26A402BDA74A3006DAD2D /* TicketingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF26A3F2BDA74A3006DAD2D /* TicketingView.swift */; };
+		8EF26A412BDA74A3006DAD2D /* TicketingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF26A3F2BDA74A3006DAD2D /* TicketingView.swift */; };
+		8EF26A422BDA74A3006DAD2D /* TicketingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF26A3F2BDA74A3006DAD2D /* TicketingView.swift */; };
 		A7318E4F2BDA3885009A700A /* MovieCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BDD2BD77CE6005CDD19 /* MovieCollectionCell.swift */; };
 		A7318E502BDA3887009A700A /* MovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */; };
 		A7318E522BDA3A6E009A700A /* MovieList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */; };
@@ -32,6 +35,8 @@
 		A7B99BC32BD8929000CBEFB3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B99BC22BD8929000CBEFB3 /* TabBarViewController.swift */; };
 		A7BD73B02BD689680059402F /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7BD73AF2BD689680059402F /* Config.xcconfig */; };
 		A7C93BD22BD6B403005CDD19 /* APIDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD12BD6B403005CDD19 /* APIDatamanager.swift */; };
+		A7C93BD42BD748E3005CDD19 /* MovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */; };
+		A7C93BD62BD748F8005CDD19 /* MovieList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */; };
 		A7C93BDB2BD764E1005CDD19 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD92BD764E1005CDD19 /* MovieCell.swift */; };
 		A7C93BDC2BD764E1005CDD19 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7C93BDA2BD764E1005CDD19 /* MovieCell.xib */; };
 		DE1725CC2BDA7BA200E20E1E /* ReserveTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1725CB2BDA7BA200E20E1E /* ReserveTicket.swift */; };
@@ -94,9 +99,10 @@
 		53A299EE2BDB56E7009C276F /* ImageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionViewController.swift; sourceTree = "<group>"; };
 		53CB159A2BD754590065F157 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		53CB159E2BD756D10065F157 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
-		8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		8EEBB4D02BD7B8B6001C59C5 /* MovieReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReservationVC.swift; sourceTree = "<group>"; };
+		8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
+		8EEBB4D02BD7B8B6001C59C5 /* TicketingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketingPageVC.swift; sourceTree = "<group>"; };
 		8EEBB4D42BD7C086001C59C5 /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
+		8EF26A3F2BDA74A3006DAD2D /* TicketingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketingView.swift; sourceTree = "<group>"; };
 		A7B99BC22BD8929000CBEFB3 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A7BD73AF2BD689680059402F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A7C93BD12BD6B403005CDD19 /* APIDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDatamanager.swift; sourceTree = "<group>"; };
@@ -232,7 +238,7 @@
 				53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */,
 				53879EF82BD80BC6004B448F /* WishListViewController.swift */,
 				8E3567652BD7B3D8008CBB4E /* MovieDetailVC.swift */,
-				8EEBB4D02BD7B8B6001C59C5 /* MovieReservationVC.swift */,
+				8EEBB4D02BD7B8B6001C59C5 /* TicketingPageVC.swift */,
 				F198764C2BD7788300F5F7E6 /* UpcomingViewController.swift */,
 				F19876402BD6926D00F5F7E6 /* SearchViewController.swift */,
 				A7C93BD92BD764E1005CDD19 /* MovieCell.swift */,
@@ -254,6 +260,7 @@
 				F198763C2BD691FC00F5F7E6 /* SearchStoryboard.storyboard */,
 				A7C93BDA2BD764E1005CDD19 /* MovieCell.xib */,
 				A7C93BDE2BD77CE6005CDD19 /* MovieCollectionCell.xib */,
+				8EF26A3F2BDA74A3006DAD2D /* TicketingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -425,10 +432,11 @@
 				DE1725CC2BDA7BA200E20E1E /* ReserveTicket.swift in Sources */,
 				53CB159B2BD754590065F157 /* MyPageViewController.swift in Sources */,
 				A7B99BC32BD8929000CBEFB3 /* TabBarViewController.swift in Sources */,
+				8EF26A402BDA74A3006DAD2D /* TicketingView.swift in Sources */,
 				A7C93BDB2BD764E1005CDD19 /* MovieCell.swift in Sources */,
 				DE8223902BD6703F00AFDDE7 /* ViewController.swift in Sources */,
 				A7C93BD22BD6B403005CDD19 /* APIDatamanager.swift in Sources */,
-				8EEBB4D12BD7B8B6001C59C5 /* MovieReservationVC.swift in Sources */,
+				8EEBB4D12BD7B8B6001C59C5 /* TicketingPageVC.swift in Sources */,
 				53A299EF2BDB56E7009C276F /* ImageSelectionViewController.swift in Sources */,
 				8E3567662BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */,
 				F19876412BD6926D00F5F7E6 /* SearchViewController.swift in Sources */,
@@ -450,9 +458,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E3567672BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */,
+				8EF26A412BDA74A3006DAD2D /* TicketingView.swift in Sources */,
 				8EEBB4D62BD7C087001C59C5 /* MovieDetailModel.swift in Sources */,
 				DE8223A62BD6704100AFDDE7 /* N2FLIXTests.swift in Sources */,
-				8EEBB4D22BD7B8B6001C59C5 /* MovieReservationVC.swift in Sources */,
+				8EEBB4D22BD7B8B6001C59C5 /* TicketingPageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,8 +470,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8223B02BD6704100AFDDE7 /* N2FLIXUITests.swift in Sources */,
+				8EF26A422BDA74A3006DAD2D /* TicketingView.swift in Sources */,
 				8E3567682BD7B3D8008CBB4E /* MovieDetailVC.swift in Sources */,
-				8EEBB4D32BD7B8B6001C59C5 /* MovieReservationVC.swift in Sources */,
+				8EEBB4D32BD7B8B6001C59C5 /* TicketingPageVC.swift in Sources */,
 				DE8223B22BD6704100AFDDE7 /* N2FLIXUITestsLaunchTests.swift in Sources */,
 				8EEBB4D72BD7C087001C59C5 /* MovieDetailModel.swift in Sources */,
 			);
