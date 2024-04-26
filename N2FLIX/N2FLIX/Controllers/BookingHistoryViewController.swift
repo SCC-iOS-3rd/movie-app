@@ -28,27 +28,20 @@ class BookingCell: UITableViewCell {
           containerView.layer.shadowRadius = 4
       }
       
-    func configure(with booking: Booking) {
-        movieTitleLabel.text = booking.movieTitle
-        screeningTimeLabel.text = booking.screeningTime
-        numberOfPeopleLabel.text = "\(booking.numberOfPeople)명"
-        paymentAmountLabel.text = "\(booking.paymentAmount)원"
+    func configure(with booking: ReserveTicket) {
+        movieTitleLabel.text = booking.title
+        screeningTimeLabel.text = booking.dataTime
+        numberOfPeopleLabel.text = "\(booking.totalPrice / 14000)명"
+        paymentAmountLabel.text = "\(booking.totalPrice)원"
     }
 }
 
 class BookingHistoryViewController: UITableViewController {
     
-    var bookingHistory: [Booking] = []
+    let CDM = CoreDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 예시로 예매 내역 데이터 추가
-        let booking1 = Booking(movieTitle: "범죄도시4 (2024) THE ROUNDUP : PUNISHMENT", screeningTime: "2024-04-23", numberOfPeople: 2, paymentAmount: 24000)
-        let booking2 = Booking(movieTitle: "범죄도시4 (2024) THE ROUNDUP : PUNISHMENT", screeningTime: "2024-04-24", numberOfPeople: 3, paymentAmount: 36000)
-        
-        // 예매 내역 배열에 추가
-        bookingHistory = [booking1, booking2]
         
         // 상단 여백 추가
         tableView.contentInset = UIEdgeInsets(top: 16.0, left: 0, bottom: 0, right: 0)
@@ -57,14 +50,14 @@ class BookingHistoryViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookingHistory.count
+        return CDM.readReservation().count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookingCell", for: indexPath) as! BookingCell
         
         // 예매 내역 데이터를 셀에 표시
-        let booking = bookingHistory[indexPath.row]
+        let booking = CDM.readReservation()[indexPath.row]
         cell.configure(with: booking)
         
         return cell
@@ -97,7 +90,7 @@ class BookingHistoryViewController: UITableViewController {
             }
             let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
                 // 예매 내역 배열에서 해당 항목 삭제
-                self?.bookingHistory.remove(at: indexPath.row)
+                self!.CDM.deleteReservation(num: indexPath.row)
                 // 테이블 뷰에서 해당 셀 삭제
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 completionHandler(true) // 삭제 완료

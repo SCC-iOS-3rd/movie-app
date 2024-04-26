@@ -11,8 +11,8 @@ class UserDataManager {
 //    static let user = UserDataManager()
     
     var users: [UserData] = [
-        UserData(userEmail: "admin@gmail.com", userPW: "admin1234", userNickName: "Guest", ticketList: [], wishList: []),
-        UserData(userEmail: "chynmn@gmail.com", userPW: "admin1234", userNickName: "Guest", ticketList: [], wishList: [])
+        UserData(userEmail: "admin@gmail.com", userPW: "admin1234", userNickName: "Guest"),
+        UserData(userEmail: "chynmn@gmail.com", userPW: "admin1234", userNickName: "Guest")
     ]
     
     // id validation : @ 앞에 알파벳, 숫자, 특수문자가 포함될 수 있고 @ 뒤에는 알파벳, 숫자, 그리고 . 뒤에는 알파벳 2자리 이상
