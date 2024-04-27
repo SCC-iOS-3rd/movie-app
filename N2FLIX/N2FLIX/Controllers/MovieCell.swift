@@ -31,8 +31,13 @@ class MovieCell: UITableViewCell{
 extension MovieCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //컬렉션 뷰 셀의 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return image.count
+        if titleLbl.text == "오늘의 TOP 5 영화" {
+            return image.count - 15
+        }else {
+            return image.count
+        }
     }
+    
     //컬렉션뷰 cell 설정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionCell", for: indexPath) as! MovieCollectionCell
@@ -51,7 +56,7 @@ extension MovieCell : UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     //컬렉션뷰 레이아웃
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if titleLbl.text == "인기순" {
+        if titleLbl.text == "오늘의 TOP 5 영화" {
             return CGSize(width: 160, height: 264)
         }else {
             return CGSize(width: 96, height: 140)

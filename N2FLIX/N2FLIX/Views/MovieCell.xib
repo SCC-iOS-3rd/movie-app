@@ -18,14 +18,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5U-cI-YjE">
-                        <rect key="frame" x="16" y="0.0" width="47" height="21.666666666666668"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <rect key="frame" x="16" y="0.0" width="56" height="26.333333333333332"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Xwj-ug-Cfg">
-                        <rect key="frame" x="0.0" y="29.666666666666671" width="393" height="234.33333333333331"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="0.0" y="34.333333333333329" width="393" height="229.66666666666669"/>
+                        <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="12" id="vi0-ur-rr1">
                             <size key="itemSize" width="160" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -34,7 +34,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Xwj-ug-Cfg" secondAttribute="trailing" id="4V2-lp-oV5"/>
                     <constraint firstAttribute="bottom" secondItem="Xwj-ug-Cfg" secondAttribute="bottom" constant="24" id="B4B-wY-FDs"/>

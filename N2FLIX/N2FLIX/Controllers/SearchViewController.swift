@@ -84,6 +84,8 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
 
 //검색바에 관련한 동작
 extension SearchViewController: UISearchBarDelegate {
+ 
+    
     private func dismissKeyboard() {
         searchBar.resignFirstResponder()
     }
@@ -92,6 +94,7 @@ extension SearchViewController: UISearchBarDelegate {
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
         fetchSearchedMovies(for: searchTerm)
     }
+ 
     //검색시 문구 사라짐
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchActive = !searchText.isEmpty

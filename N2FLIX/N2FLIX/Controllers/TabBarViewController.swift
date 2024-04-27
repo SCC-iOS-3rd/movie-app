@@ -20,6 +20,7 @@ class TabBarViewController: UITabBarController {
         tabBar.backgroundColor = .black // here is your tabBar color
         tabBar.layer.backgroundColor = UIColor.clear.cgColor
 
+
         let blurEffect = UIBlurEffect(style: .dark) // here you can change blur style
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = tabBar.bounds
@@ -31,10 +32,10 @@ class TabBarViewController: UITabBarController {
         tabBar.backgroundColor =  UIColor(red: 0.129, green: 0.129, blue: 0.133, alpha: 0.6)
         tabBar.frame = CGRect(x: 0, y: 0, width: 375, height: 90)
         tabBar.layer.masksToBounds =  true
-        tabBar.layer.cornerRadius = tabBar.frame.height * 0.41
+        tabBar.layer.cornerRadius = tabBar.frame.height * 0.4
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
     }
+    
     /*
     // MARK: - Navigation
 

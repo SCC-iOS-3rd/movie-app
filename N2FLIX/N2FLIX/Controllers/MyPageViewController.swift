@@ -88,7 +88,7 @@ class MyPageViewController: UIViewController {
     
     // 뒤로가기 버튼 액션
     @objc func backButtonTapped() {
-        self.dismiss(animated: true)
+        self.dismiss(animated: false)
     }
     
     // 이미지 선택 알림 처리
@@ -100,10 +100,10 @@ class MyPageViewController: UIViewController {
     // 프로필 이미지 변경 버튼 액션
     @IBAction func profileButtonTapped(_ sender: UIButton) {
         let imageSelectionVC = ImageSelectionViewController()
-         imageSelectionVC.modalPresentationStyle = .overCurrentContext
-         present(imageSelectionVC, animated: true) {
+           imageSelectionVC.modalPresentationStyle = .overCurrentContext
+           present(imageSelectionVC, animated: true) {
+           }
          }
-     }
 
     // 닉네임 변경 버튼 액션
     @IBAction func changeNicknameButtonTapped(_ sender: UIButton) {
@@ -148,7 +148,7 @@ class MyPageViewController: UIViewController {
     // 찜한 영화 리스트 버튼 액션
     @IBAction func wishListButtonTapped(_ sender: UIButton) {
         let wishListVC = UIStoryboard(name: "WishList", bundle: nil).instantiateViewController(withIdentifier: "WishList") as! WishListViewController
-            present(wishListVC, animated: false)
+            present(wishListVC, animated: true)
     }
     
     // 로그아웃 버튼 액션

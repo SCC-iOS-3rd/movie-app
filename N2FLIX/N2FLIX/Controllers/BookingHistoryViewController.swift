@@ -15,7 +15,7 @@ class BookingCell: UITableViewCell {
     @IBOutlet weak var screeningTimeLabel: UILabel!
     @IBOutlet weak var numberOfPeopleLabel: UILabel!
     @IBOutlet weak var paymentAmountLabel: UILabel!
-    @IBOutlet weak var containerView: UIView! // 셀의 컨텐트 뷰
+    @IBOutlet weak var containerView: UIView!
       
       override func layoutSubviews() {
           super.layoutSubviews()
@@ -66,6 +66,7 @@ class BookingHistoryViewController: UITableViewController {
         
         return cell
     }
+  
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true) // 선택한 행 해제
