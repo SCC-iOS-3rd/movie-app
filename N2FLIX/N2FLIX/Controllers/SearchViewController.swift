@@ -11,7 +11,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
     
     //검색 완료버튼
     @IBAction func searchButton(_ sender: Any) {
-        SearchButtontapped(searchBar)
+        searchBarSearchButtonClicked(searchBar)
     }
     
     let apiDataManager = APIDatamanager()
@@ -89,10 +89,16 @@ extension SearchViewController: UISearchBarDelegate {
     private func dismissKeyboard() {
         searchBar.resignFirstResponder()
     }
-    func SearchButtontapped(_ searchBar: UISearchBar) {
-        dismissKeyboard()
-        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
-        fetchSearchedMovies(for: searchTerm)
+    
+    
+    // Enter 키 입력으로 검색
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text {
+            print("검색어: \(searchText)")
+            dismissKeyboard()
+            guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+            fetchSearchedMovies(for: searchTerm)
+        }
     }
  
     //검색시 문구 사라짐
