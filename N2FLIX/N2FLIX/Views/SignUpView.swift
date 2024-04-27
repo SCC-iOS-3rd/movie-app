@@ -22,7 +22,7 @@ class SignUpView: UIView {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         view.layer.borderWidth = 2
-        view.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        view.layer.borderColor = #colorLiteral(red: 0.2757139802, green: 0.2757139802, blue: 0.2757139802, alpha: 1)
         view.layer.cornerRadius = 5
         view.clipsToBounds = true
         view.addSubview(emailTextField)
@@ -35,7 +35,7 @@ class SignUpView: UIView {
     private let emailInfoLabel: UILabel = {
         let label = UILabel()
         label.text = "이메일을 입력하세요"
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         return label
     }()
@@ -69,7 +69,7 @@ class SignUpView: UIView {
         view.frame.size.height = 48
         view.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         view.layer.borderWidth = 2
-        view.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        view.layer.borderColor = #colorLiteral(red: 0.2757139802, green: 0.2757139802, blue: 0.2757139802, alpha: 1)
         view.layer.cornerRadius = 5
         view.clipsToBounds = true
         view.addSubview(pwTextField)
@@ -83,7 +83,7 @@ class SignUpView: UIView {
     private let pwInfoLabel: UILabel = {
        let label = UILabel()
         label.text = "비밀번호를 입력하세요"
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         return label
     }()
@@ -108,12 +108,7 @@ class SignUpView: UIView {
     // pw 표시/가리기 버튼
     lazy var pwSecureButton: UIButton = {
         let button = UIButton(type: .custom)
-//        button.setTitle("표시", for: .normal)
-//        button.setTitleColor(#colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1), for: .normal)
-//        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
-        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-//        button.imageColor
-//        button.tintColor = UIColor(named: )
+        button.setImage(UIImage(systemName: "eye.slash")?.withTintColor(.gray, renderingMode: .alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(pwSecureSetting), for: .touchUpInside)
         return button
     }()
@@ -145,7 +140,7 @@ class SignUpView: UIView {
     // stack view
     private lazy var stackView: UIStackView = {
         let stview = UIStackView(arrangedSubviews: [emailTextFieldView, pwTextFieldView, loginButton])
-        stview.spacing = 18
+        stview.spacing = 20
         stview.axis = .vertical
         stview.distribution = .fillEqually
         stview.alignment = .fill
@@ -230,7 +225,9 @@ class SignUpView: UIView {
         NSLayoutConstraint.activate([
             emailClearButton.topAnchor.constraint(equalTo: emailTextFieldView.topAnchor, constant: 15),
             emailClearButton.bottomAnchor.constraint(equalTo: emailTextFieldView.bottomAnchor, constant: -15),
-            emailClearButton.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8)
+            emailClearButton.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8),
+            emailClearButton.widthAnchor.constraint(equalToConstant: 16),
+            emailClearButton.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
@@ -258,7 +255,9 @@ class SignUpView: UIView {
         NSLayoutConstraint.activate([
             pwClearButton.topAnchor.constraint(equalTo: pwTextFieldView.topAnchor, constant: 15),
             pwClearButton.bottomAnchor.constraint(equalTo: pwTextFieldView.bottomAnchor, constant: -15),
-            pwClearButton.trailingAnchor.constraint(equalTo: pwTextFieldView.trailingAnchor, constant: -8)
+            pwClearButton.trailingAnchor.constraint(equalTo: pwTextFieldView.trailingAnchor, constant: -8),
+            pwClearButton.widthAnchor.constraint(equalToConstant: 16),
+            pwClearButton.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
@@ -278,7 +277,7 @@ class SignUpView: UIView {
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            stackView.heightAnchor.constraint(equalToConstant: textViewHeight*3 + 36)
+            stackView.heightAnchor.constraint(equalToConstant: textViewHeight*3 + 40)
         ])     
     }
     
@@ -305,6 +304,7 @@ class SignUpView: UIView {
     // MARK: - 비밀번호 가리기
     @objc private func pwSecureSetting() {
         pwTextField.isSecureTextEntry.toggle()
+        pwTextField.textContentType = .oneTimeCode
     }
     
     // MARK: - textField 일괄 삭제
@@ -354,8 +354,8 @@ extension SignUpView: UITextFieldDelegate {
         if textField == emailTextField {
             emailTextFieldView.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
             if emailTextField.text == "" {
-                emailTextFieldView.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-                emailInfoLabel.font = UIFont.systemFont(ofSize: 18)
+                emailTextFieldView.layer.borderColor = #colorLiteral(red: 0.2757139802, green: 0.2757139802, blue: 0.2757139802, alpha: 1)
+                emailInfoLabel.font = UIFont.systemFont(ofSize: 16)
                 emailInfoLabelCenterYConstraint.constant = 0
             }
         }
@@ -363,8 +363,8 @@ extension SignUpView: UITextFieldDelegate {
         if textField == pwTextField {
             pwTextFieldView.backgroundColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
             if pwTextField.text == "" {
-                pwTextFieldView.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-                pwInfoLabel.font = UIFont.systemFont(ofSize: 18)
+                pwTextFieldView.layer.borderColor = #colorLiteral(red: 0.2757139802, green: 0.2757139802, blue: 0.2757139802, alpha: 1)
+                pwInfoLabel.font = UIFont.systemFont(ofSize: 16)
                 pwInfoLabelCenterYConstraint.constant = 0
             }
         }
