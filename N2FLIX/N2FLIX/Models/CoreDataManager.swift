@@ -21,7 +21,7 @@ class CoreDataManager {
         let newPd = User(context: context)
         newPd.userEmail = userData.userEmail
         newPd.userPW = userData.userPW
-        newPd.userNickName = userData.userNickName
+        newPd.userNickName = "Guest"
         try? context.save()
     }
     

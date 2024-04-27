@@ -17,9 +17,9 @@ class MovieListVC: UIViewController {
         //        self.navigationController?.pushViewController(searchVC!, animated: true)
     }
     @IBAction func MyPageBtn(_ sender: Any) {
-        //        let myPageVC = UIStoryboard(name: "MyPage", bundle: nil)
-        //            .instantiateViewController(withIdentifier: "MyPage") as? MyPageViewController
-        //        present(myPageVC!,animated: true)
+                let myPageVC = UIStoryboard(name: "MyPage", bundle: nil)
+                    .instantiateViewController(withIdentifier: "MyPage") as? MyPageViewController
+                present(myPageVC!,animated: true)
     }
     let categories: [String] = ["popular", "now_playing", "top_rated", "adults"]
     var movieList: [String : [Result]] = ["now_playing" : [], "popular" : [], "top_rated" : [], "upcoming" : []]

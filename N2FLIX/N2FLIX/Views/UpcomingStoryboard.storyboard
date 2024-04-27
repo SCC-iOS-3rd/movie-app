@@ -125,25 +125,13 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="bWl-mK-67c"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNa-JQ-qcV">
-                                <rect key="frame" x="19" y="69" width="24" height="24"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="Icon/cancel_icon"/>
-                                <connections>
-                                    <action selector="cancelButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="b97-nD-yj3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Phz-3j-TOb" secondAttribute="trailing" id="2ej-yz-Mq5"/>
                             <constraint firstAttribute="bottom" secondItem="Phz-3j-TOb" secondAttribute="bottom" id="6c6-EP-fAc"/>
-                            <constraint firstItem="aNa-JQ-qcV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="8Qo-cY-s6r"/>
-                            <constraint firstItem="aNa-JQ-qcV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="19" id="O7Q-fZ-IXB"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="aNa-JQ-qcV" secondAttribute="bottom" constant="725" id="ZgS-KM-PEf"/>
                             <constraint firstItem="Phz-3j-TOb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="qRX-U4-cEF"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aNa-JQ-qcV" secondAttribute="trailing" constant="350" id="rBB-WC-n6Q"/>
                             <constraint firstItem="Phz-3j-TOb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="twX-HR-kar"/>
                         </constraints>
                     </view>
@@ -156,7 +144,4 @@
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Icon/cancel_icon" width="24" height="24"/>
-    </resources>
 </document>

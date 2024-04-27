@@ -79,6 +79,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DkO-wI-r01">
+                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                                 <connections>
@@ -93,13 +94,13 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="Icon/chevronBack_icon"/>
+                                <state key="normal" image="chevronBack_icon"/>
                                 <connections>
                                     <action selector="tappedBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KuP-lW-At0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색결과가 없습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U9-sK-RCO">
-                                <rect key="frame" x="114" y="260" width="155" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색결과가 없습니다" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U9-sK-RCO">
+                                <rect key="frame" x="114" y="260" width="155" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -124,11 +125,10 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3U9-sK-RCO" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" constant="201" id="024-de-MId"/>
-                            <constraint firstItem="RMp-vc-gmH" firstAttribute="trailing" secondItem="NPy-1O-fyd" secondAttribute="trailing" constant="227" id="1VE-vh-Ed6"/>
                             <constraint firstItem="RMp-vc-gmH" firstAttribute="bottom" secondItem="0GG-2d-Ble" secondAttribute="bottom" id="2h8-Uh-C5Y"/>
                             <constraint firstItem="RMp-vc-gmH" firstAttribute="trailing" secondItem="3U9-sK-RCO" secondAttribute="trailing" constant="124" id="6pb-I1-ach"/>
                             <constraint firstItem="iLP-Vp-ybb" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" id="82E-bR-a5h"/>
-                            <constraint firstItem="RMp-vc-gmH" firstAttribute="bottom" secondItem="3U9-sK-RCO" secondAttribute="bottom" constant="537" id="BAF-1v-jCz"/>
+                            <constraint firstItem="3AG-M0-bAk" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" constant="3" id="AL4-Ka-cea"/>
                             <constraint firstItem="iLP-Vp-ybb" firstAttribute="trailing" secondItem="0GG-2d-Ble" secondAttribute="trailing" constant="-60" id="C3S-mk-m9T"/>
                             <constraint firstItem="RMp-vc-gmH" firstAttribute="trailing" secondItem="e6o-gQ-F2M" secondAttribute="trailing" constant="7" id="DR1-pZ-7M1"/>
                             <constraint firstItem="0GG-2d-Ble" firstAttribute="top" secondItem="NPy-1O-fyd" secondAttribute="bottom" constant="14" id="Gf9-Td-zgo"/>
@@ -143,6 +143,7 @@
                             <constraint firstItem="0GG-2d-Ble" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" constant="94" id="cm4-ts-O4P"/>
                             <constraint firstItem="3AG-M0-bAk" firstAttribute="leading" secondItem="RMp-vc-gmH" secondAttribute="leading" constant="7" id="eSM-57-TcD"/>
                             <constraint firstItem="iLP-Vp-ybb" firstAttribute="leading" secondItem="0GG-2d-Ble" secondAttribute="leading" constant="40" id="fRl-35-QCO"/>
+                            <constraint firstItem="RMp-vc-gmH" firstAttribute="trailing" secondItem="3AG-M0-bAk" secondAttribute="trailing" constant="347" id="iXV-w2-mKt"/>
                             <constraint firstItem="NPy-1O-fyd" firstAttribute="top" secondItem="iLP-Vp-ybb" secondAttribute="bottom" constant="12" id="mP5-h5-3tG"/>
                             <constraint firstItem="e6o-gQ-F2M" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" constant="4" id="oPR-oJ-Ph1"/>
                             <constraint firstItem="NPy-1O-fyd" firstAttribute="top" secondItem="RMp-vc-gmH" secondAttribute="top" constant="56" id="tQD-5C-tG0"/>
@@ -163,6 +164,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon/chevronBack_icon" width="24" height="24"/>
+        <image name="chevronBack_icon" width="24" height="24"/>
     </resources>
 </document>

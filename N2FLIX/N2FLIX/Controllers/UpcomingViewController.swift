@@ -45,12 +45,6 @@ class UpcomingViewController: UIViewController, UICollectionViewDataSource {
         
     }
     
-    //취소버튼, 이전 페이지(메인페이지)로 돌아감
-    @IBAction func cancelButton(_ sender: Any) {
-//        navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUpcomingMovies()
