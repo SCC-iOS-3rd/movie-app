@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		531C054D2BDBC59F00918403 /* WishListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C054C2BDBC59F00918403 /* WishListCollectionViewCell.swift */; };
-		531C054F2BDBDC9D00918403 /* WishListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531C054E2BDBDC9D00918403 /* WishListCell.xib */; };
 		53879EF72BD7F20B004B448F /* BookingHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */; };
 		53879EF92BD80BC6004B448F /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53879EF82BD80BC6004B448F /* WishListViewController.swift */; };
 		53A299ED2BDB4CF5009C276F /* WishList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A299EC2BDB4CF5009C276F /* WishList.storyboard */; };
@@ -34,10 +33,10 @@
 		A7318E502BDA3887009A700A /* MovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */; };
 		A7318E522BDA3A6E009A700A /* MovieList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */; };
 		A7318E532BDA3A74009A700A /* MovieCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7C93BDE2BD77CE6005CDD19 /* MovieCollectionCell.xib */; };
+		A732CCAB2BDCE0A800302240 /* WishListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A732CCAA2BDCE0A800302240 /* WishListCell.xib */; };
 		A7B99BC32BD8929000CBEFB3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B99BC22BD8929000CBEFB3 /* TabBarViewController.swift */; };
 		A7BD73B02BD689680059402F /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7BD73AF2BD689680059402F /* Config.xcconfig */; };
 		A7C93BD22BD6B403005CDD19 /* APIDatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD12BD6B403005CDD19 /* APIDatamanager.swift */; };
-		A7C93BD42BD748E3005CDD19 /* MovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD32BD748E3005CDD19 /* MovieListVC.swift */; };
 		A7C93BDB2BD764E1005CDD19 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C93BD92BD764E1005CDD19 /* MovieCell.swift */; };
 		A7C93BDC2BD764E1005CDD19 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7C93BDA2BD764E1005CDD19 /* MovieCell.xib */; };
 		DE1725CC2BDA7BA200E20E1E /* ReserveTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1725CB2BDA7BA200E20E1E /* ReserveTicket.swift */; };
@@ -96,7 +95,6 @@
 
 /* Begin PBXFileReference section */
 		531C054C2BDBC59F00918403 /* WishListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListCollectionViewCell.swift; sourceTree = "<group>"; };
-		531C054E2BDBDC9D00918403 /* WishListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListCell.xib; sourceTree = "<group>"; };
 		53879EF62BD7F20B004B448F /* BookingHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHistoryViewController.swift; sourceTree = "<group>"; };
 		53879EF82BD80BC6004B448F /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		53A299EC2BDB4CF5009C276F /* WishList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WishList.storyboard; sourceTree = "<group>"; };
@@ -107,6 +105,7 @@
 		8EEBB4D02BD7B8B6001C59C5 /* TicketingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketingPageVC.swift; sourceTree = "<group>"; };
 		8EEBB4D42BD7C086001C59C5 /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
 		8EF26A3F2BDA74A3006DAD2D /* TicketingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketingView.swift; sourceTree = "<group>"; };
+		A732CCAA2BDCE0A800302240 /* WishListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WishListCell.xib; path = ../../../../../../Downloads/WishListCell.xib; sourceTree = "<group>"; };
 		A7B99BC22BD8929000CBEFB3 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A7BD73AF2BD689680059402F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A7C93BD12BD6B403005CDD19 /* APIDatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDatamanager.swift; sourceTree = "<group>"; };
@@ -262,6 +261,7 @@
 				A7C93BD52BD748F8005CDD19 /* MovieList.storyboard */,
 				53CB159E2BD756D10065F157 /* MyPage.storyboard */,
 				53A299EC2BDB4CF5009C276F /* WishList.storyboard */,
+				A732CCAA2BDCE0A800302240 /* WishListCell.xib */,
 				F198764A2BD7783800F5F7E6 /* UpcomingStoryboard.storyboard */,
 				F198763C2BD691FC00F5F7E6 /* SearchStoryboard.storyboard */,
 				A7C93BDA2BD764E1005CDD19 /* MovieCell.xib */,
@@ -401,6 +401,7 @@
 				A7318E522BDA3A6E009A700A /* MovieList.storyboard in Resources */,
 				A7C93BDC2BD764E1005CDD19 /* MovieCell.xib in Resources */,
 				A7BD73B02BD689680059402F /* Config.xcconfig in Resources */,
+				A732CCAB2BDCE0A800302240 /* WishListCell.xib in Resources */,
 				53CB159F2BD756D10065F157 /* MyPage.storyboard in Resources */,
 				F198763D2BD691FC00F5F7E6 /* SearchStoryboard.storyboard in Resources */,
 				DE8223982BD6704000AFDDE7 /* Assets.xcassets in Resources */,

@@ -11,11 +11,10 @@ class TicketingPageVC: UIViewController {
     
     let api = APIDatamanager()
     let tickectingView = TicketingPageView()
-    
+    var CDM = CoreDataManager()
     var ticketingModel = [MovieDetailModel]()
     var myTicketDate = ""
     var myTicketPrice = 0
-    var myTicketModel: [ReserveTicket] = []
     
     override func loadView() {
         view = tickectingView
@@ -110,8 +109,7 @@ extension TicketingPageVC {
     }
     
     @objc func DoTicketing() {
-        self.myTicketModel.append(ReserveTicket(dataTime: self.myTicketDate, totalPrice: myTicketPrice, title: "\(ticketingModel[0].title)", posterPath: "\(ticketingModel[0].posterPath) "))
-        
+        CDM.saveReservation(reservationData: ReserveTicket(dataTime: self.myTicketDate, totalPrice: myTicketPrice, title: "\(ticketingModel[0].title)", posterPath: "\(ticketingModel[0].posterPath) "))
         
 //        print(myTicketModel)
     }
@@ -122,6 +120,7 @@ extension TicketingPageVC {
 
             
             let okAction = UIAlertAction(title: "OK", style: .default){ (action) in
+                
                 self.DoTicketing()
                 }
             

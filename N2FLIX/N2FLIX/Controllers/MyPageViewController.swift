@@ -157,7 +157,8 @@ class MyPageViewController: UIViewController {
         let alertController = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
         let logoutAction = UIAlertAction(title: "로그아웃", style: .destructive) { _ in
             self.currentUser = UserData(userEmail: "", userPW: "", userNickName: "")
-            self.navigationController?.popToRootViewController(animated: true)
+            let mainTableVC = SignUpVC()
+            self.view.window?.rootViewController = mainTableVC
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alertController.addAction(logoutAction)

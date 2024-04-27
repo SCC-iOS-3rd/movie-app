@@ -11,7 +11,6 @@ class WishListViewController: UIViewController, UICollectionViewDataSource, UICo
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var wishListMovies: [ReserveTicket] = [] // 사용자의 위시리스트 영화를 저장할 배열
     var CDM = CoreDataManager()
     var APIData = APIDatamanager()
     
@@ -47,13 +46,20 @@ class WishListViewController: UIViewController, UICollectionViewDataSource, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WishListCell", for: indexPath) as! WishListCollectionViewCell
         let movie = CDM.readWish()[indexPath.item]
         APIData.readImage(movie.posterPath) { image in
-            cell.movieTitleLabel.text = movie.title
-            cell.movieImageView.image = UIImage(data: image)
+            DispatchQueue.main.async {
+                cell.movieTitleLabel.text = movie.title
+                cell.movieImageView.image = UIImage(data: image)
+            }
         }
         
         return cell
     }
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let Detail = MovieDetailVC()
+        Detail.id = CDM.readWish()[indexPath.row].id
+        present(Detail, animated: true)
+        }
+    
     
     // MARK: - UICollectionViewDelegateFlowLayout
     
@@ -68,7 +74,7 @@ class WishListViewController: UIViewController, UICollectionViewDataSource, UICo
         case .ended:
             let point = gesture.location(in: collectionView)
             if let indexPath = collectionView.indexPathForItem(at: point) {
-                wishListMovies.remove(at: indexPath.item)
+                CDM.deleteWish(num: indexPath.row)
                 collectionView.performBatchUpdates({
                     collectionView.deleteItems(at: [indexPath])
                 }, completion: nil)

@@ -12,7 +12,7 @@ import SnapKit
 
 class MovieDetailVC: UIViewController, UITextViewDelegate {
     let api = APIDatamanager()
-    
+    var CDM = CoreDataManager()
     var movieDetailModel: [MovieDetailModel] = []
     var id = 0
     
@@ -317,9 +317,8 @@ extension MovieDetailVC {
     }
     // Mark: 이곳에서 myWish를 CoreData에 추가.
     @objc private func touchupAddMyWishButton() {
-        
-        myWish.append(UserWish(title: movieDetailModel[0].title, posterPath: movieDetailModel[0].posterPath, id: movieDetailModel[0].id))
-        print(myWish)
+        CDM.saveWish(myWish: UserWish(title: movieDetailModel[0].title, posterPath: movieDetailModel[0].posterPath, id: movieDetailModel[0].id))
+        print(CDM.readWish())
     }
     // Mark: 코어데이터 읽어오기.
     private func checkMyWishCoreData() {

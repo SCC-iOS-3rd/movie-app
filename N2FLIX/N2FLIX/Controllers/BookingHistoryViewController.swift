@@ -6,10 +6,11 @@
 //
 
 import UIKit
-
+let APIimage = APIDatamanager()
 
 class BookingCell: UITableViewCell {
     
+    @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var screeningTimeLabel: UILabel!
     @IBOutlet weak var numberOfPeopleLabel: UILabel!
@@ -33,6 +34,11 @@ class BookingCell: UITableViewCell {
         screeningTimeLabel.text = booking.dataTime
         numberOfPeopleLabel.text = "\(booking.totalPrice / 14000)명"
         paymentAmountLabel.text = "\(booking.totalPrice)원"
+        APIimage.readImage(booking.posterPath) { image in
+            DispatchQueue.main.async {
+                self.posterImage.image = UIImage(data: image)
+            }
+        }
     }
 }
 
