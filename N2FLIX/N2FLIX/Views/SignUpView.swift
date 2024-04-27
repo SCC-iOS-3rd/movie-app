@@ -140,7 +140,7 @@ class SignUpView: UIView {
     // stack view
     private lazy var stackView: UIStackView = {
         let stview = UIStackView(arrangedSubviews: [emailTextFieldView, pwTextFieldView, loginButton])
-        stview.spacing = 18
+        stview.spacing = 20
         stview.axis = .vertical
         stview.distribution = .fillEqually
         stview.alignment = .fill
@@ -277,7 +277,7 @@ class SignUpView: UIView {
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            stackView.heightAnchor.constraint(equalToConstant: textViewHeight*3 + 36)
+            stackView.heightAnchor.constraint(equalToConstant: textViewHeight*3 + 40)
         ])     
     }
     
