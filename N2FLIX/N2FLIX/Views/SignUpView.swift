@@ -304,6 +304,7 @@ class SignUpView: UIView {
     // MARK: - 비밀번호 가리기
     @objc private func pwSecureSetting() {
         pwTextField.isSecureTextEntry.toggle()
+        pwTextField.textContentType = .oneTimeCode
     }
     
     // MARK: - textField 일괄 삭제

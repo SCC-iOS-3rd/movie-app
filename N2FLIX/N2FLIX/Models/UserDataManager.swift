@@ -16,10 +16,10 @@ class UserDataManager {
     ]
     
     // id validation : @ 앞에 알파벳, 숫자, 특수문자가 포함될 수 있고 @ 뒤에는 알파벳, 숫자, 그리고 . 뒤에는 알파벳 2자리 이상
-    func isValidEmail(id: String) -> Bool {
+    func isValidEmail(email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: id)
+        return emailTest.evaluate(with: email)
     }
     // pw validation : 소문자, 대문자, 숫자 8자리 이상
     func isValidPassword(pwd: String) -> Bool {

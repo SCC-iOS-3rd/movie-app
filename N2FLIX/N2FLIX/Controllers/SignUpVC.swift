@@ -37,10 +37,11 @@ final class SignUpVC: UIViewController {
     @objc func loginButtonTapped() {
         // TODO: 로그인 과정 구현
 //        let vc = MovieListVC()
+        
         guard let email = signUpView.emailTextField.text, !email.isEmpty else { return }
         guard let pw = signUpView.pwTextField.text, !pw.isEmpty else { return }
         
-        if userData.isValidEmail(id: email) {
+        if userData.isValidEmail(email: email) {
             if let removable = self.view.viewWithTag(100) {
                 removable.removeFromSuperview()
             }
@@ -67,8 +68,8 @@ final class SignUpVC: UIViewController {
                     self.view.addSubview(passwordLabel)
         }
     
-        if userData.isValidEmail(id: email) && userData.isValidPassword(pwd: pw) {
-            let loginSuccess: Bool = loginCheck(id: email, pw: pw)
+        if userData.isValidEmail(email: email) && userData.isValidPassword(pwd: pw) {
+            let loginSuccess: Bool = loginCheck(email: email, pw: pw)
             if loginSuccess {
                 print("로그인 성공")
                 if let removable = self.view.viewWithTag(102) {
@@ -89,20 +90,29 @@ final class SignUpVC: UIViewController {
             }
             else {
                 print("로그인 실패")
-                let loginFailLabel = UILabel(frame: CGRect(x: 68, y: 510, width: 279, height: 45))
-                loginFailLabel.text = "아이디나 비밀번호가 다릅니다."
-                loginFailLabel.textColor = UIColor.red
-                loginFailLabel.tag = 102
-                
-                self.view.addSubview(loginFailLabel)
+                userData.users.append(UserData(userEmail: email, userPW: pw, userNickName: "Guset"))
+                let signUpMassage = "회원가입이 완료 되었습니다"
+                let signUpGuide = "'다음' 버튼을 눌러 로그인 과정을 진행해 주세요"
+
+                let alert = UIAlertController(title: signUpMassage, message: signUpGuide, preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .default)
+
+                alert.addAction(action)
+                present(alert, animated: true, completion: nil)
+//                let loginFailLabel = UILabel(frame: CGRect(x: 68, y: 510, width: 279, height: 45))
+//                loginFailLabel.text = "아이디나 비밀번호가 다릅니다."
+//                loginFailLabel.textColor = UIColor.red
+//                loginFailLabel.tag = 102
+//                
+//                self.view.addSubview(loginFailLabel)
             }
         }
         
     }
     
-    func loginCheck(id: String, pw: String) -> Bool {
+    func loginCheck(email: String, pw: String) -> Bool {
         for user in userData.users {
-            if user.userEmail == id && user.userPW == pw {
+            if user.userEmail == email && user.userPW == pw {
                 print("로그인 성공")
                 return true
             }
@@ -113,8 +123,8 @@ final class SignUpVC: UIViewController {
     
     
     func saveIdAndPwInUserDefaults() {
-        guard let id = signUpView.emailTextField.text, let pw = signUpView.pwTextField.text else { return }
-        UserDefaults.standard.setValue(id, forKey: "id")
+        guard let email = signUpView.emailTextField.text, let pw = signUpView.pwTextField.text else { return }
+        UserDefaults.standard.setValue(email, forKey: "email")
         UserDefaults.standard.setValue(pw, forKey: "pw")
     }
     
