@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="-735" y="1450"/>
         </scene>
-        <!--WishListViewController-->
+        <!--WishList-->
         <scene sceneID="6gZ-ej-ZSo">
             <objects>
-                <viewControllerPlaceholder storyboardName="WishListViewController" id="Kfd-wV-CXR" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="WishList" id="Kfd-wV-CXR" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="PCe-Ch-Uye"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEZ-Wp-ZzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -98,6 +98,7 @@
                     <connections>
                         <segue destination="eRf-c1-93s" kind="relationship" relationship="viewControllers" id="nFH-yl-gkw"/>
                         <segue destination="jy0-mJ-sOn" kind="relationship" relationship="viewControllers" id="O2i-Yo-xG5"/>
+                        <segue destination="uxu-Tl-nVF" kind="relationship" relationship="viewControllers" id="JkW-oP-xhW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21K-x6-vgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

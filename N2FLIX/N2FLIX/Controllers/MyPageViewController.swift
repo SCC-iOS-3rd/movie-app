@@ -5,12 +5,7 @@
 //  Created by Jeong-bok Lee on 4/23/24.
 //
 
-    @IBAction func profileButtonTapped(_ sender: UIButton) {
-        let imageSelectionVC = ImageSelectionViewController()
-         imageSelectionVC.modalPresentationStyle = .overCurrentContext
-         present(imageSelectionVC, animated: true) {
-         }
-     }
+    
 import UIKit
 
 class MyPageViewController: UIViewController {
@@ -105,10 +100,10 @@ class MyPageViewController: UIViewController {
     // 프로필 이미지 변경 버튼 액션
     @IBAction func profileButtonTapped(_ sender: UIButton) {
         let imageSelectionVC = ImageSelectionViewController()
-            imageSelectionVC.modalPresentationStyle = .overCurrentContext
-            imageSelectionVC.preferredContentSize = CGSize(width: 320, height: 320)
-            present(imageSelectionVC, animated: true, completion: nil)
-        }
+         imageSelectionVC.modalPresentationStyle = .overCurrentContext
+         present(imageSelectionVC, animated: true) {
+         }
+     }
 
     // 닉네임 변경 버튼 액션
     @IBAction func changeNicknameButtonTapped(_ sender: UIButton) {
@@ -152,8 +147,8 @@ class MyPageViewController: UIViewController {
     
     // 찜한 영화 리스트 버튼 액션
     @IBAction func wishListButtonTapped(_ sender: UIButton) {
-//                let wishListVC = WishListViewController()
-//                navigationController?.pushViewController(wishListVC, animated: true)
+        let wishListVC = UIStoryboard(name: "WishList", bundle: nil).instantiateViewController(withIdentifier: "WishList") as! WishListViewController
+            present(wishListVC, animated: false)
     }
     
     // 로그아웃 버튼 액션

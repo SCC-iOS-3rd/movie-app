@@ -12,7 +12,7 @@
         <!--WishListViewController-->
         <scene sceneID="fg9-P3-RsN">
             <objects>
-                <viewController storyboardIdentifier="WishListViewController" title="WishListViewController" interactionActivityTrackingBaseName="WishListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="apl-RD-WwD" customClass="WishListViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WishList" title="WishListViewController" interactionActivityTrackingBaseName="WishListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="apl-RD-WwD" customClass="WishListViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="center" id="JMX-z1-k4h" customClass="WishListCollectionViewCell" customModule="N2FLIX" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

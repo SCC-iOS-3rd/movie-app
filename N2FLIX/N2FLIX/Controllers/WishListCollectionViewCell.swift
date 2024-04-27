@@ -10,8 +10,8 @@ import UIKit
 
 class WishListCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet private weak var movieTitleLabel: UILabel!
-    @IBOutlet private weak var movieImageView: UIImageView!
+    @IBOutlet weak var movieTitleLabel: UILabel!
+    @IBOutlet weak var movieImageView: UIImageView!
     
     override func awakeFromNib() {
            super.awakeFromNib()
@@ -26,10 +26,4 @@ class WishListCollectionViewCell: UICollectionViewCell {
            // 셀의 모서리 둥글게
            layer.cornerRadius = 30
        }
-    
-    func configure(with movie: Movie) {
-        movieTitleLabel.text = movie.title
-        movieImageView.image = UIImage(named: "defaultImage_M") // defaultImage_M을 사용하여 이미지 설정
-        
-    }
 }

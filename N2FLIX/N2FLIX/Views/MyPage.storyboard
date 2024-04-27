@@ -24,7 +24,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="edit"/>
                                         <connections>
-                                            <action selector="profileButtonTapped:" destination="TAY-fc-Z0s" eventType="touchUpInside" id="DgY-NH-Qr3"/>
+                                            <action selector="profileButtonTapped:" destination="TAY-fc-Z0s" eventType="touchUpInside" id="YyG-Mv-1Le"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImage/profileImage01" translatesAutoresizingMaskIntoConstraints="NO" id="5ed-hG-PnU">
