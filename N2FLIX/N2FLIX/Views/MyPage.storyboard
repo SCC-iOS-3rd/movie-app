@@ -247,7 +247,7 @@
                                         <constraint firstItem="Kto-b7-cEY" firstAttribute="leading" secondItem="iHu-Ya-1cV" secondAttribute="leadingMargin" id="yzE-aq-FFA"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.12" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.12" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="containerView" destination="iHu-Ya-1cV" id="6mI-1j-5Yg"/>

@@ -5,6 +5,12 @@
 //  Created by Jeong-bok Lee on 4/23/24.
 //
 
+    @IBAction func profileButtonTapped(_ sender: UIButton) {
+        let imageSelectionVC = ImageSelectionViewController()
+         imageSelectionVC.modalPresentationStyle = .overCurrentContext
+         present(imageSelectionVC, animated: true) {
+         }
+     }
 import UIKit
 
 class MyPageViewController: UIViewController {
