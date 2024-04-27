@@ -9,6 +9,17 @@ import UIKit
 
 class WishListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    // 찜한 없을 때 표시할 레이블
+       let noBookingLabel: UILabel = {
+           let label = UILabel()
+           label.text = "찜한 내역이 없습니다."
+           label.textAlignment = .center
+           label.textColor = .gray
+           label.font = UIFont.systemFont(ofSize: 18)
+           label.translatesAutoresizingMaskIntoConstraints = false
+           return label
+       }()
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var CDM = CoreDataManager()
@@ -32,7 +43,26 @@ class WishListViewController: UIViewController, UICollectionViewDataSource, UICo
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.scrollDirection = .horizontal
         }
-    }
+        
+        // 예매 내역이 없을 때 표시할 레이블 추가
+        view.addSubview(noBookingLabel)
+        NSLayoutConstraint.activate([
+            noBookingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noBookingLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        noBookingLabel.isHidden = true // 초기에는 숨김
+        
+        // 찜한 내역이 없는 경우 레이블 표시
+               if CDM.readWish().isEmpty {
+                   noBookingLabel.isHidden = false
+               }
+           }
+    // 찜한 내역이 없을 때 레이블 표시
+     func showNoBookingLabelIfNeeded() {
+         noBookingLabel.isHidden = !CDM.readWish().isEmpty
+     }
+     
+    
     
     // MARK: - UICollectionViewDataSource
     

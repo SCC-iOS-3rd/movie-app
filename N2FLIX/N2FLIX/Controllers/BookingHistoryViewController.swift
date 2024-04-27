@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 let APIimage = APIDatamanager()
 
 class BookingCell: UITableViewCell {
@@ -46,16 +47,41 @@ class BookingHistoryViewController: UITableViewController {
     
     let CDM = CoreDataManager()
     
+    // 예매 내역이 없을 때 표시할 레이블
+    let noBookingLabel: UILabel = {
+        let label = UILabel()
+        label.text = "예매 내역이 없습니다"
+        label.textAlignment = .center
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 상단 여백 추가
         tableView.contentInset = UIEdgeInsets(top: 16.0, left: 0, bottom: 0, right: 0)
+        
+        tableView.backgroundView = noBookingLabel
+        noBookingLabel.isHidden = true // 초기에는 숨김
+        
+        // Auto Layout 제약 조건 설정
+                NSLayoutConstraint.activate([
+                    noBookingLabel.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+                    noBookingLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
+                ])
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CDM.readReservation().count
-    }
+          let reservationCount = CDM.readReservation().count
+          noBookingLabel.isHidden = reservationCount > 0 // 예매 내역이 있으면 숨김 해제
+          return reservationCount
+      }
+    
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return CDM.readReservation().count
+//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookingCell", for: indexPath) as! BookingCell

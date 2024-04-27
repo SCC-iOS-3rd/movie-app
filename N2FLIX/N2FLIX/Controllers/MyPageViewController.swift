@@ -147,7 +147,7 @@ class MyPageViewController: UIViewController {
     
     // 찜한 영화 리스트 버튼 액션
     @IBAction func wishListButtonTapped(_ sender: UIButton) {
-        let wishListVC = UIStoryboard(name: "WishList", bundle: nil).instantiateViewController(withIdentifier: "WishList") as! WishListViewController
+            let wishListVC = UIStoryboard(name: "WishList", bundle: nil).instantiateViewController(withIdentifier: "WishList") as! WishListViewController
             present(wishListVC, animated: true)
     }
     
