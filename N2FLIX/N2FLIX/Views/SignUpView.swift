@@ -108,12 +108,7 @@ class SignUpView: UIView {
     // pw 표시/가리기 버튼
     lazy var pwSecureButton: UIButton = {
         let button = UIButton(type: .custom)
-//        button.setTitle("표시", for: .normal)
-//        button.setTitleColor(#colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1), for: .normal)
-//        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .light)
-        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-//        button.imageColor
-//        button.tintColor = UIColor(named: )
+        button.setImage(UIImage(systemName: "eye.slash")?.withTintColor(.gray, renderingMode: .alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(pwSecureSetting), for: .touchUpInside)
         return button
     }()
@@ -230,7 +225,9 @@ class SignUpView: UIView {
         NSLayoutConstraint.activate([
             emailClearButton.topAnchor.constraint(equalTo: emailTextFieldView.topAnchor, constant: 15),
             emailClearButton.bottomAnchor.constraint(equalTo: emailTextFieldView.bottomAnchor, constant: -15),
-            emailClearButton.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8)
+            emailClearButton.trailingAnchor.constraint(equalTo: emailTextFieldView.trailingAnchor, constant: -8),
+            emailClearButton.widthAnchor.constraint(equalToConstant: 16),
+            emailClearButton.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
@@ -258,7 +255,9 @@ class SignUpView: UIView {
         NSLayoutConstraint.activate([
             pwClearButton.topAnchor.constraint(equalTo: pwTextFieldView.topAnchor, constant: 15),
             pwClearButton.bottomAnchor.constraint(equalTo: pwTextFieldView.bottomAnchor, constant: -15),
-            pwClearButton.trailingAnchor.constraint(equalTo: pwTextFieldView.trailingAnchor, constant: -8)
+            pwClearButton.trailingAnchor.constraint(equalTo: pwTextFieldView.trailingAnchor, constant: -8),
+            pwClearButton.widthAnchor.constraint(equalToConstant: 16),
+            pwClearButton.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
