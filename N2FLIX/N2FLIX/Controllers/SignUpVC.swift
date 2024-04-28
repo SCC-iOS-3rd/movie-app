@@ -86,8 +86,8 @@ final class SignUpVC: UIViewController {
             else {
                 print("로그인 실패")
                 userData.users.append(UserData(userEmail: email, userPW: pw, userNickName: "Guset"))
-                let signUpMassage = "회원가입이 완료 되었습니다"
-                let signUpGuide = "'다음' 버튼을 눌러 로그인 과정을 진행해 주세요"
+                let signUpMassage = "쩔죠??"
+                let signUpGuide = "회원가입이 완료 되었습니다"
                 
                 let alert = UIAlertController(title: signUpMassage, message: signUpGuide, preferredStyle: .alert)
                 let action = UIAlertAction(title: "Ok", style: .default)

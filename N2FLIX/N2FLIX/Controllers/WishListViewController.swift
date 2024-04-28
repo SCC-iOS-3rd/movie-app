@@ -62,6 +62,11 @@ class WishListViewController: UIViewController, UICollectionViewDataSource, UICo
          noBookingLabel.isHidden = !CDM.readWish().isEmpty
      }
      
+    // 찜 목록 업데이트
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
     
     
     // MARK: - UICollectionViewDataSource
