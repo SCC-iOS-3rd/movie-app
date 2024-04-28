@@ -116,6 +116,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="eRf-c1-93s" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="메인화면" image="TapBar/home_icon" selectedImage="TapBar/home_icon_active" id="Dah-Zm-rBh">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-9"/>
                         <color key="badgeColor" red="1" green="0.29411764709999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -151,7 +152,9 @@
         <scene sceneID="CM8-f7-sSc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jy0-mJ-sOn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="개봉예정작" image="TapBar/upcoming_icon" selectedImage="TapBar/upcoming_icon_active" id="atZ-4D-89Y"/>
+                    <tabBarItem key="tabBarItem" title="개봉예정작" image="TapBar/upcoming_icon" selectedImage="TapBar/upcoming_icon_active" id="atZ-4D-89Y">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-9"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="5LT-M7-4Pk">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -170,7 +173,9 @@
         <scene sceneID="ICY-eD-8R3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uxu-Tl-nVF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="찜한목록" image="TapBar/wish_icon" selectedImage="TapBar/wish_icon_active" id="nfb-8h-pLd"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="TapBar/wish_icon" selectedImage="TapBar/wish_icon_active" id="nfb-8h-pLd">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-9"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="UCq-rD-IM0">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
