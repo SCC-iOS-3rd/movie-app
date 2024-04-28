@@ -74,7 +74,7 @@
         <!--WishList-->
         <scene sceneID="6gZ-ej-ZSo">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="WishList" storyboardName="WishList" id="Kfd-wV-CXR" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="WishList" id="Kfd-wV-CXR" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="PCe-Ch-Uye"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEZ-Wp-ZzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -169,7 +169,7 @@
             </objects>
             <point key="canvasLocation" x="44" y="720"/>
         </scene>
-        <!--찜한목록-->
+        <!--Item-->
         <scene sceneID="ICY-eD-8R3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uxu-Tl-nVF" sceneMemberID="viewController">
