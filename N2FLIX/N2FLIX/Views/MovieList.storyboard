@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bnd-g6-XDi">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movie ListVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MovieList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MovieListVC" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gRR-8z-7BK">
+                                <rect key="frame" x="0.0" y="110" width="393" height="742"/>
+                                <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <sections/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIv-Ho-yUs">
+                                <rect key="frame" x="22" y="64" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="BRk-IL-bE8"/>
+                                    <constraint firstAttribute="height" constant="34" id="OJu-hE-pFm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Icon/user_BTN" imagePadding="0.0"/>
+                                <connections>
+                                    <action selector="MyPageBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="K6r-Fc-BaZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sG-I9-0vK">
+                                <rect key="frame" x="337" y="64" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="crr-e7-wmY"/>
+                                    <constraint firstAttribute="width" constant="34" id="ody-rI-kPy"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Icon/search_BTN" imagePadding="0.0"/>
+                                <connections>
+                                    <action selector="searchBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DZw-qh-4xu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gRR-8z-7BK" secondAttribute="bottom" id="5cr-ec-VfV"/>
+                            <constraint firstItem="xIv-Ho-yUs" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="22" id="CGx-W7-8Li"/>
+                            <constraint firstItem="gRR-8z-7BK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ksc-LB-Bth"/>
+                            <constraint firstItem="gRR-8z-7BK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="110" id="O4t-2F-pIs"/>
+                            <constraint firstAttribute="trailing" secondItem="2sG-I9-0vK" secondAttribute="trailing" constant="22" id="Qpe-ui-DFI"/>
+                            <constraint firstItem="xIv-Ho-yUs" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="64" id="SKt-eZ-VsM"/>
+                            <constraint firstItem="2sG-I9-0vK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="64" id="Whi-4i-11E"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gRR-8z-7BK" secondAttribute="trailing" id="Xxe-c8-2hk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nhg-Lg-GSp"/>
+                    <connections>
+                        <outlet property="tableView" destination="gRR-8z-7BK" id="YHc-R6-JPG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-735.1145038167939" y="1450"/>
+        </scene>
+        <!--WishList-->
+        <scene sceneID="6gZ-ej-ZSo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WishList" id="Kfd-wV-CXR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PCe-Ch-Uye"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEZ-Wp-ZzV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="1256"/>
+        </scene>
+        <!--UpcomingStoryboard-->
+        <scene sceneID="q5Y-2X-2eU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UpcomingStoryboard" id="Q7b-iM-fIJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="H8A-FB-cm9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQd-cX-xty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78" y="1257"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="eTI-cq-ziQ">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="Bnd-g6-XDi" customClass="TabBarViewController" customModule="N2FLIX" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BeI-JQ-xQz">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="selectedImageTintColor" red="1" green="0.29411764709999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eRf-c1-93s" kind="relationship" relationship="viewControllers" id="nFH-yl-gkw"/>
+                        <segue destination="jy0-mJ-sOn" kind="relationship" relationship="viewControllers" id="O2i-Yo-xG5"/>
+                        <segue destination="uxu-Tl-nVF" kind="relationship" relationship="viewControllers" id="JkW-oP-xhW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="21K-x6-vgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44" y="-72"/>
+        </scene>
+        <!--메인화면-->
+        <scene sceneID="L8m-LM-LfX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="eRf-c1-93s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="메인화면" image="TapBar/home_icon" selectedImage="TapBar/home_icon_active" id="Dah-Zm-rBh">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-9"/>
+                        <color key="badgeColor" red="1" green="0.29411764709999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="KeT-96-eGp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="JQh-Tz-OPy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QEy-m5-mJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-735" y="720"/>
+        </scene>
+        <!--MyPage-->
+        <scene sceneID="F9A-y6-FIk">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MyPage" storyboardName="MyPage" id="xfQ-8O-OGu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NDp-3H-9fb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1447" y="1246"/>
+        </scene>
+        <!--SearchStoryboard-->
+        <scene sceneID="ZpZ-DZ-JXL">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchStoryboard" storyboardName="SearchStoryboard" id="5dY-LC-ZA5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wth-nK-mXE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1434" y="1316"/>
+        </scene>
+        <!--개봉예정작-->
+        <scene sceneID="CM8-f7-sSc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jy0-mJ-sOn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="개봉예정작" image="TapBar/upcoming_icon" selectedImage="TapBar/upcoming_icon_active" id="atZ-4D-89Y">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-9"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="5LT-M7-4Pk">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q7b-iM-fIJ" kind="relationship" relationship="rootViewController" id="S6D-Ai-6ve"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uro-TH-5eI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44" y="720"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ICY-eD-8R3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uxu-Tl-nVF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="TapBar/wish_icon" selectedImage="TapBar/wish_icon_active" id="nfb-8h-pLd">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-9"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="UCq-rD-IM0">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kfd-wV-CXR" kind="relationship" relationship="rootViewController" id="qE6-SY-xUn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRf-a9-F12" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="720"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon/search_BTN" width="33" height="32"/>
+        <image name="Icon/user_BTN" width="32" height="32"/>
+        <image name="TapBar/home_icon" width="24" height="24"/>
+        <image name="TapBar/home_icon_active" width="24" height="24"/>
+        <image name="TapBar/upcoming_icon" width="24" height="24"/>
+        <image name="TapBar/upcoming_icon_active" width="24" height="24"/>
+        <image name="TapBar/wish_icon" width="24" height="24"/>
+        <image name="TapBar/wish_icon_active" width="24" height="24"/>
+    </resources>
+</document>
