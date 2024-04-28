@@ -5,6 +5,7 @@
 //  Created by Jeong-bok Lee on 4/23/24.
 //
 
+    
 import UIKit
 
 class MyPageViewController: UIViewController {
@@ -87,7 +88,7 @@ class MyPageViewController: UIViewController {
     
     // 뒤로가기 버튼 액션
     @objc func backButtonTapped() {
-        self.dismiss(animated: true)
+        self.dismiss(animated: false)
     }
     
     // 이미지 선택 알림 처리
@@ -99,10 +100,10 @@ class MyPageViewController: UIViewController {
     // 프로필 이미지 변경 버튼 액션
     @IBAction func profileButtonTapped(_ sender: UIButton) {
         let imageSelectionVC = ImageSelectionViewController()
-            imageSelectionVC.modalPresentationStyle = .overCurrentContext
-            imageSelectionVC.preferredContentSize = CGSize(width: 320, height: 320)
-            present(imageSelectionVC, animated: true, completion: nil)
-        }
+           imageSelectionVC.modalPresentationStyle = .overCurrentContext
+           present(imageSelectionVC, animated: true) {
+           }
+         }
 
     // 닉네임 변경 버튼 액션
     @IBAction func changeNicknameButtonTapped(_ sender: UIButton) {
@@ -146,8 +147,8 @@ class MyPageViewController: UIViewController {
     
     // 찜한 영화 리스트 버튼 액션
     @IBAction func wishListButtonTapped(_ sender: UIButton) {
-//                let wishListVC = WishListViewController()
-//                navigationController?.pushViewController(wishListVC, animated: true)
+            let wishListVC = UIStoryboard(name: "WishList", bundle: nil).instantiateViewController(withIdentifier: "WishList") as! WishListViewController
+            present(wishListVC, animated: true)
     }
     
     // 로그아웃 버튼 액션
@@ -156,7 +157,8 @@ class MyPageViewController: UIViewController {
         let alertController = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
         let logoutAction = UIAlertAction(title: "로그아웃", style: .destructive) { _ in
             self.currentUser = UserData(userEmail: "", userPW: "", userNickName: "")
-            self.navigationController?.popToRootViewController(animated: true)
+            let mainTableVC = SignUpVC()
+            self.view.window?.rootViewController = mainTableVC
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         alertController.addAction(logoutAction)

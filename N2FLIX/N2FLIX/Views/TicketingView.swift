@@ -53,7 +53,7 @@ class TicketingPageView: UIView {
         datePicker.datePickerMode = .dateAndTime
         datePicker.locale = Locale(identifier: "ko-KR")
         datePicker.minuteInterval = 30
-        datePicker.tintColor = .white
+//        datePicker.tintColor = .white
         datePicker.overrideUserInterfaceStyle = .dark
         datePicker.minimumDate = .now
         datePicker.setDate(Date(), animated: true)
@@ -86,7 +86,7 @@ class TicketingPageView: UIView {
         stepper.maximumValue = 8
         stepper.minimumValue = 0
         stepper.value = 0
-        stepper.tintColor = .white
+//        stepper.tintColor = .white
         stepper.overrideUserInterfaceStyle = .dark
         return stepper
     }()

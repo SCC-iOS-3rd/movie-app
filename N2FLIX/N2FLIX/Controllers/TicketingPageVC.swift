@@ -11,11 +11,10 @@ class TicketingPageVC: UIViewController {
     
     let api = APIDatamanager()
     let tickectingView = TicketingPageView()
-    
+    var CDM = CoreDataManager()
     var ticketingModel = [MovieDetailModel]()
     var myTicketDate = ""
     var myTicketPrice = 0
-    var myTicketModel: [ReserveTicket] = []
     
     override func loadView() {
         view = tickectingView
@@ -110,22 +109,23 @@ extension TicketingPageVC {
     }
     
     @objc func DoTicketing() {
-        self.myTicketModel.append(ReserveTicket(dataTime: self.myTicketDate, totalPrice: myTicketPrice, title: "\(ticketingModel[0].title)", posterPath: "\(ticketingModel[0].posterPath) "))
+        let myDate = self.myTicketDate.prefix(16)
         
-        
-//        print(myTicketModel)
+        CDM.saveReservation(reservationData: ReserveTicket(dataTime: String(myDate), totalPrice: myTicketPrice, title: "\(ticketingModel[0].title)", posterPath: "\(ticketingModel[0].posterPath) "))
     }
     
     @objc func paymentAlert() {
             let controller = UIAlertController(title: "예매하시겠습니까?", message: nil, preferredStyle: UIAlertController.Style.alert)
-        controller.message =  "총 구매가격 \(self.myTicketPrice)입니다. "
+        controller.message =  "결제 금액은 \(self.myTicketPrice)입니다. "
 
             
-            let okAction = UIAlertAction(title: "OK", style: .default){ (action) in
+            let okAction = UIAlertAction(title: "네", style: .default){ (action) in
+                
                 self.DoTicketing()
+                self.ticketingDoneAlert()
                 }
             
-            let cancel = UIAlertAction(title: "cancel", style: .destructive, handler : nil)
+            let cancel = UIAlertAction(title: "아니오", style: .destructive, handler : nil)
            
             controller.addAction(cancel)
             controller.addAction(okAction)
@@ -154,4 +154,16 @@ extension TicketingPageVC {
             controller.addAction(okAction)
             present(controller, animated: true, completion: nil)
         }
+    
+    //예매 완료 메세지
+    @objc func ticketingDoneAlert() {
+           let controller = UIAlertController(title: "예매 완료", message: nil, preferredStyle: UIAlertController.Style.alert)
+           controller.message =  "마이페이지를 확인해주세요."
+           
+           let okAction = UIAlertAction(title: "OK", style: .default){ (action) in
+               self.dismiss(animated: true, completion: nil)
+           }
+           controller.addAction(okAction)
+           present(controller, animated: true, completion: nil)
+       }
 }

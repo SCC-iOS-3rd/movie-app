@@ -12,7 +12,7 @@ import SnapKit
 
 class MovieDetailVC: UIViewController, UITextViewDelegate {
     let api = APIDatamanager()
-    
+    var CDM = CoreDataManager()
     var movieDetailModel: [MovieDetailModel] = []
     var id = 0
     
@@ -85,18 +85,21 @@ extension MovieDetailVC {
     }
     
     final private func setDetails() {
+        
         api.readImage("https://image.tmdb.org/t/p/w500/\( self.movieDetailModel[0].posterPath)") {data in
             DispatchQueue.main.async {
                 self.movieImageView.image  = UIImage(data: data)
             }
+        
         }
+    
+
         
-        
-        movieImageView.contentMode = .scaleToFill
+        movieImageView.contentMode = .scaleAspectFill
         hdMarkImageView.image = UIImage(named: "hdLogo")
         hdMarkImageView.contentMode = .scaleAspectFit
         
-        backButton.setImage(UIImage(named: "icon/cancel_icon"), for: .normal)
+        backButton.setImage(UIImage(named: "Icon/cancel_icon"), for: .normal)
         backButton.addTarget(self, action: #selector(touchupBackButton), for: .touchUpInside)
         // Mark: 제목이 길면 (부제 포함 ":" 을 통해 앞 뒤 구분해서 줄바꿈 추가...?
         movieNameLabel.text =  self.movieDetailModel[0].title
@@ -122,9 +125,9 @@ extension MovieDetailVC {
         starRatingLabel.textColor = .white
         //        self.movieDetailModel[0].voteAverage
         
-        overViewText.text =  self.movieDetailModel[0].overview
+        overViewText.setLineAndLetterSpacing(self.movieDetailModel[0].overview)
         overViewText.font = .systemFont(ofSize: 15)
-        overViewText.textColor = .white
+        overViewText.textColor = .white.withAlphaComponent(0.6)
         overViewText.textAlignment = NSTextAlignment.left
         overViewText.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
         overViewText.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
@@ -158,7 +161,7 @@ extension MovieDetailVC {
         gradientLayer.colors = [UIColor.clear.cgColor, #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1).cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
-        gradientLayer.locations = [0.0, 0.5 ,1.0]
+        gradientLayer.locations = [0.0, 0.4 ,1.0]
       
         
         wholeViewShield.backgroundColor = #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1)
@@ -198,7 +201,7 @@ extension MovieDetailVC {
         scrollView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview()
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
-            $0.bottom.equalTo(bookingButton.snp.top).offset(-40)
+            $0.bottom.equalTo(bookingButton.snp.top).offset(-4)
         }
         
         scrollView.addSubview(contentView)
@@ -215,7 +218,7 @@ extension MovieDetailVC {
         contentView.snp.makeConstraints {
             $0.edges.equalTo(scrollView.contentLayoutGuide)
             $0.width.equalTo(scrollView.frameLayoutGuide)
-            $0.height.equalTo(850)
+            $0.height.equalTo(800)
         }
         
         movieImageView.snp.makeConstraints { make in
@@ -227,15 +230,15 @@ extension MovieDetailVC {
         
         movieNameLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(gradientView.snp.centerY).offset(5)
-            make.width.equalToSuperview().inset(5)
+            make.top.equalTo(gradientView.snp.centerY).offset(-24)
+            make.width.equalToSuperview().inset(13)
             make.height.equalTo(50) // 수정 필요
         }
         // Mark: 개봉일, HD마크, 런타임
         detailStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(movieNameLabel.snp.bottom).offset(5)
-            make.width.equalToSuperview().inset(5)
+            make.width.equalToSuperview().inset(13)
             make.height.equalTo(40)
         }
         
@@ -245,31 +248,31 @@ extension MovieDetailVC {
         }
         hdMarkImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(releaseDateLabel.snp.trailing).offset(10)
+            make.leading.equalTo(releaseDateLabel.snp.trailing).offset(8)
             make.width.equalTo(30)
         }
         runTimeLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(hdMarkImageView.snp.trailing).offset(10)
+            make.leading.equalTo(hdMarkImageView.snp.trailing).offset(8)
         }
         
         genresLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(detailStackView.snp.bottom).offset(-10)
-            make.width.equalToSuperview().inset(5)
+            make.width.equalToSuperview().inset(13)
             //            make.height.equalTo(40)
         }
         
         starRatingLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(genresLabel.snp.bottom).offset(5)
-            make.width.equalToSuperview().inset(5)
+            make.width.equalToSuperview().inset(13)
         }
         
         overViewText.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(starRatingLabel.snp.bottom).offset(5)
-            make.width.equalToSuperview().inset(5)
+            make.width.equalToSuperview().inset(8)
             make.height.equalTo(10)
         }
         
@@ -279,9 +282,9 @@ extension MovieDetailVC {
         }
         
         gradientView.snp.makeConstraints{ make in
-            make.trailing.leading.equalToSuperview()
-            make.top.equalTo(self.movieImageView.snp.centerY)
-            make.bottom.equalTo(movieImageView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(movieImageView.snp.centerY)
+            make.bottom.equalToSuperview()
         }
         
         self.view.addSubview(wholeViewShield)
@@ -317,13 +320,22 @@ extension MovieDetailVC {
     }
     // Mark: 이곳에서 myWish를 CoreData에 추가.
     @objc private func touchupAddMyWishButton() {
-        
-        myWish.append(UserWish(title: movieDetailModel[0].title, posterPath: movieDetailModel[0].posterPath, id: movieDetailModel[0].id))
-        print(myWish)
+        CDM.saveWish(myWish: UserWish(title: movieDetailModel[0].title, posterPath: movieDetailModel[0].posterPath, id: movieDetailModel[0].id))
+        addWishDoneAlert()
     }
+    
+    @objc func addWishDoneAlert() {
+            let controller = UIAlertController(title: "완료", message: nil, preferredStyle: UIAlertController.Style.alert)
+            controller.message =  "찜한목록에 추가되었습니다."
+            
+            let okAction = UIAlertAction(title: "OK", style: .default){ (action) in
+            }
+            controller.addAction(okAction)
+            present(controller, animated: true, completion: nil)
+        }
+    
     // Mark: 코어데이터 읽어오기.
     private func checkMyWishCoreData() {
-        
     }
 }
 
@@ -348,3 +360,16 @@ extension UIScrollView {
     }
 }
 
+
+// 줄 간격 기능 확장
+extension UITextView {
+    func setLineAndLetterSpacing(_ text: String){
+        let style = NSMutableParagraphStyle()
+        // 행간 세팅
+        style.lineSpacing = 6
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(NSAttributedString.Key.kern, value: CGFloat(0), range: NSRange(location: 0, length: attributedString.length))
+            attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: attributedString.length))
+        self.attributedText = attributedString
+    }
+}

@@ -7,14 +7,16 @@
 
 import UIKit
 
+let APIimage = APIDatamanager()
 
 class BookingCell: UITableViewCell {
     
+    @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var screeningTimeLabel: UILabel!
     @IBOutlet weak var numberOfPeopleLabel: UILabel!
     @IBOutlet weak var paymentAmountLabel: UILabel!
-    @IBOutlet weak var containerView: UIView! // 셀의 컨텐트 뷰
+    @IBOutlet weak var containerView: UIView!
       
       override func layoutSubviews() {
           super.layoutSubviews()
@@ -33,6 +35,11 @@ class BookingCell: UITableViewCell {
         screeningTimeLabel.text = booking.dataTime
         numberOfPeopleLabel.text = "\(booking.totalPrice / 14000)명"
         paymentAmountLabel.text = "\(booking.totalPrice)원"
+        APIimage.readImage(booking.posterPath) { image in
+            DispatchQueue.main.async {
+                self.posterImage.image = UIImage(data: image)
+            }
+        }
     }
 }
 
@@ -40,18 +47,41 @@ class BookingHistoryViewController: UITableViewController {
     
     let CDM = CoreDataManager()
     
+    // 예매 내역이 없을 때 표시할 레이블
+    let noBookingLabel: UILabel = {
+        let label = UILabel()
+        label.text = "예매 내역이 없습니다"
+        label.textAlignment = .center
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 상단 여백 추가
         tableView.contentInset = UIEdgeInsets(top: 16.0, left: 0, bottom: 0, right: 0)
+        
+        tableView.backgroundView = noBookingLabel
+        noBookingLabel.isHidden = true // 초기에는 숨김
+        
+        // Auto Layout 제약 조건 설정
+                NSLayoutConstraint.activate([
+                    noBookingLabel.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+                    noBookingLabel.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
+                ])
     }
-    
-    // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CDM.readReservation().count
-    }
+          let reservationCount = CDM.readReservation().count
+          noBookingLabel.isHidden = reservationCount > 0 // 예매 내역이 있으면 숨김 해제
+          return reservationCount
+      }
+    
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return CDM.readReservation().count
+//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookingCell", for: indexPath) as! BookingCell
@@ -62,21 +92,16 @@ class BookingHistoryViewController: UITableViewController {
         
         return cell
     }
-    
-    // MARK: - Table view delegate
+  
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        // 선택한 예매 내역에 대한 추가 동작
+        tableView.deselectRow(at: indexPath, animated: true) // 선택한 행 해제
     }
-    
-    // MARK: - Actions
-    
+    // 닫기 버튼 동작
     @IBAction func closeButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    
+    // 셀 스와이프 삭제 기능 설정
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -84,16 +109,16 @@ class BookingHistoryViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "") { [weak self] (action, view, completionHandler) in
             // 삭제 확인 알림창 표시
-            let alertController = UIAlertController(title: "예매 삭제", message: "예매 내역을 삭제하실 건가요?", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "예매 삭제", message: "정말 삭제하실 건가요?", preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: "취소", style: .cancel) { _ in
-                completionHandler(false) // 삭제 취소
+                completionHandler(false)
             }
             let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { _ in
                 // 예매 내역 배열에서 해당 항목 삭제
                 self!.CDM.deleteReservation(num: indexPath.row)
                 // 테이블 뷰에서 해당 셀 삭제
                 tableView.deleteRows(at: [indexPath], with: .fade)
-                completionHandler(true) // 삭제 완료
+                completionHandler(true)
             }
             alertController.addAction(cancelAction)
             alertController.addAction(deleteAction)
@@ -104,5 +129,14 @@ class BookingHistoryViewController: UITableViewController {
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
         return configuration
     }
+    
 }
 
+// 결제 금액에 포멧 확장
+extension Int {
+    func withCommas() -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        return numberFormatter.string(from: NSNumber(value: self)) ?? "\(self)"
+    }
+}

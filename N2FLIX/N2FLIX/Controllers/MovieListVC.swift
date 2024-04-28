@@ -17,9 +17,10 @@ class MovieListVC: UIViewController {
         //        self.navigationController?.pushViewController(searchVC!, animated: true)
     }
     @IBAction func MyPageBtn(_ sender: Any) {
-                let myPageVC = UIStoryboard(name: "MyPage", bundle: nil)
-                    .instantiateViewController(withIdentifier: "MyPage") as? MyPageViewController
-                present(myPageVC!,animated: true)
+        let myPageVC = UIStoryboard(name: "MyPage", bundle: nil)
+            .instantiateViewController(withIdentifier: "MyPage") as? MyPageViewController
+        myPageVC?.modalPresentationStyle = .fullScreen
+        present(myPageVC!,animated: false)
     }
     let categories: [String] = ["popular", "now_playing", "top_rated", "adults"]
     var movieList: [String : [Result]] = ["now_playing" : [], "popular" : [], "top_rated" : [], "upcoming" : []]
@@ -38,13 +39,13 @@ class MovieListVC: UIViewController {
     func koName(_ name : String) -> String {
         switch name {
         case "now_playing" :
-            return "현재 상영중인 영화"
+            return "지금 상영중이에요"
         case "popular" :
-            return "인기순"
+            return "오늘의 TOP 5 영화"
         case "top_rated" :
-            return "현재 예매율 순위"
+            return "취향저격 베스트 영화"
         case "adults" :
-            return "19..순위"
+            return "우린 당당하니까..🔞"
         default:
             return "분류.."
         }

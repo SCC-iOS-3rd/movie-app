@@ -24,7 +24,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="edit"/>
                                         <connections>
-                                            <action selector="profileButtonTapped:" destination="TAY-fc-Z0s" eventType="touchUpInside" id="DgY-NH-Qr3"/>
+                                            <action selector="profileButtonTapped:" destination="TAY-fc-Z0s" eventType="touchUpInside" id="YyG-Mv-1Le"/>
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileImage/profileImage01" translatesAutoresizingMaskIntoConstraints="NO" id="5ed-hG-PnU">
@@ -187,7 +187,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.12" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="10" indentationWidth="10" reuseIdentifier="BookingCell" rowHeight="307" id="SmJ-Os-hhb" customClass="BookingCell" customModule="N2FLIX" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="307"/>
@@ -196,8 +196,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="307"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage_M" translatesAutoresizingMaskIntoConstraints="NO" id="Kto-b7-cEY">
-                                            <rect key="frame" x="20" y="15" width="180" height="277"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scribble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kto-b7-cEY">
+                                            <rect key="frame" x="20" y="15.333333333333343" width="180" height="275.66666666666663"/>
+                                            <color key="tintColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="180" id="L7w-yI-WZc"/>
                                                 <constraint firstAttribute="height" constant="277" id="vO4-IC-RMM"/>
@@ -247,13 +248,14 @@
                                         <constraint firstItem="Kto-b7-cEY" firstAttribute="leading" secondItem="iHu-Ya-1cV" secondAttribute="leadingMargin" id="yzE-aq-FFA"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.12" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.12" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="containerView" destination="iHu-Ya-1cV" id="6mI-1j-5Yg"/>
                                     <outlet property="movieTitleLabel" destination="MU0-uA-ASK" id="KNM-t9-VGg"/>
                                     <outlet property="numberOfPeopleLabel" destination="A1A-7d-mQx" id="vPt-uw-vQG"/>
                                     <outlet property="paymentAmountLabel" destination="zVA-UD-c2y" id="7HD-Lb-obE"/>
+                                    <outlet property="posterImage" destination="Kto-b7-cEY" id="rMg-Zk-zEe"/>
                                     <outlet property="screeningTimeLabel" destination="vqi-Hf-waj" id="Eah-2Y-4FX"/>
                                 </connections>
                             </tableViewCell>
@@ -276,7 +278,7 @@
         <image name="Icon/logout_icon" width="24" height="24"/>
         <image name="Icon/wishlist_icon" width="24" height="24"/>
         <image name="ProfileImage/profileImage01" width="500" height="500"/>
-        <image name="defaultImage_M" width="215" height="311"/>
         <image name="edit_icon" width="24" height="24"/>
+        <image name="scribble" catalog="system" width="128" height="117"/>
     </resources>
 </document>
